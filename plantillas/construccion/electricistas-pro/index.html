@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang=es>
+<head>
+    <meta charset=UTF-8>
+    <meta name=viewport content=width=device-width, initial-scale=1.0>
+    <title>Electricista Profesional | Servicio 24/7 Villarrica</title>
+    <meta name=description content=Electricista profesional en Villarrica. Servicios eléctricos residenciales y comerciales.>
+    <script src=https://cdn.tailwindcss.com></script>
+    <link href=https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Inter:wght@400;500;600&display=swap rel=stylesheet>
+    <link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css>
+    <style>
+        :root { --primary: #F59E0B; --dark: #0F172A; }
+        body { font-family: 'Inter', sans-serif; background: var(--dark); color: #fff; }
+        .orbitron { font-family: 'Orbitron', sans-serif; }
+        .hero-elec { background: linear-gradient(135deg, #0F172A 0%, #1E1B4B 50%, #0F172A 100%); }
+        .btn-yellow { background: var(--primary); color: #000; }
+        .card-elec:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(245,158,11,0.3); }
+    </style>
+</head>
+<body>
+    <nav class=fixed top-0 w-full z-50 bg-black/90 backdrop-blur-md border-b border-yellow-500/30>
+        <div class=max-w-7xl mx-auto px-6 py-4 flex justify-between items-center>
+            <a href=# class=orbitron text-2xl font-bold>
+                <i class=\"fas fa-bolt text-yellow-500 mr-2\"></i>ELECTRIC<span class=text-yellow-500>PRO</span>
+            </a>
+            <a href=\"https://wa.me/56964681874?text=Quiero%20un%20electricista\" class=\"btn-yellow px-6 py-2 rounded-full font-bold\">
+                <i class=\"fab fa-whatsapp mr-2\"></i>Llamar Ahora
+            </a>
+        </div>
+    </nav>
+
+    <section class=\"hero-elec min-h-screen flex items-center\">
+        <div class=max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center>
+            <div>
+                <span class=\"orbitron text-yellow-500 text-xl\">SERVICIO ELÉCTRICO PROFESIONAL</span>
+                <h1 class=\"orbitron text-5xl font-bold mt-2\">Electricista<br><span class=text-yellow-500>Certificado</span></h1>
+                <p class=\"text-xl text-gray-300 mt-4\">Servicios eléctricos residenciales y comerciales. Seguro autorizado. Diagnóstico gratuito.</p>
+                <div class=\"flex gap-4 mt-8\">
+                    <a href=#servicios class=\"btn-yellow px-8 py-3 rounded-full font-bold\">Ver Servicios</a>
+                    <a href=\"https://wa.me/56964681874\" class=\"border-2 border-yellow-500 text-yellow-500 px-8 py-3 rounded-full font-bold hover:bg-yellow-500 hover:text-black transition\">
+                        <i class=\"fab fa-whatsapp\"></i>
+                    </a>
+                </div>
+                <div class=\"grid grid-cols-3 gap-6 mt-10\">
+                    <div class=text-center>
+                        <p class=\"orbitron text-3xl text-yellow-500\">15+</p>
+                        <p class=\"text-gray-400 text-sm\">Años Exp.</p>
+                    </div>
+                    <div class=text-center>
+                        <p class=\"orbitron text-3xl text-yellow-500\">500+</p>
+                        <p class=\"text-gray-400 text-sm\">Clientes</p>
+                    </div>
+                    <div class=text-center>
+                        <p class=\"orbitron text-3xl text-yellow-500\">24/7</p>
+                        <p class=\"text-gray-400 text-sm\">Emergencias</p>
+                    </div>
+                </div>
+            </div>
+            <img src=https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=600 class=\"rounded-2xl shadow-2xl shadow-yellow-500/20\">
+        </div>
+    </section>
+
+    <section id=servicios class=\"py-20 bg-black\">
+        <div class=max-w-6xl mx-auto px-6>
+            <h2 class=\"orbitron text-4xl font-bold text-center mb-12\">NUESTROS SERVICIOS</h2>
+            <div class=\"grid md:grid-cols-3 gap-6\">
+                <div class=\"bg-zinc-900 p-6 rounded-xl card-elec border border-zinc-800 hover:border-yellow-500\">
+                    <i class=\"fas fa-home text-4xl text-yellow-500 mb-4\"></i>
+                    <h3 class=\"text-xl font-bold mb-2\">Instalaciones Eléctricas</h3>
+                    <p class=\"text-gray-400\">Instalación completa de sistemas eléctricos para viviendas y empresas.</p>
+                    <a href=\"https://wa.me/56964681874?text=Info%20instalaciones\" class=\"text-yellow-500 font-bold mt-4 block\">Cotizar ></a>
+                </div>
+                <div class=\"bg-zinc-900 p-6 rounded-xl card-elec border border-zinc-800 hover:border-yellow-500\">
+                    <i class=\"fas fa-tools text-4xl text-yellow-500 mb-4\"></i>
+                    <h3 class=\"text-xl font-bold mb-2\">Reparaciones</h3>
+                    <p class=\"text-gray-400\">Arreglo de cortocircuitos, fallas de éclairage y problemas eléctricos.</p>
+                    <a href=\"https://wa.me/56964681874?text=Info%20reparaciones\" class=\"text-yellow-500 font-bold mt-4 block\">Cotizar ></a>
+                </div>
+                <div class=\"bg-zinc-900 p-6 rounded-xl card-elec border border-zinc-800 hover:border-yellow-500\">
+                    <i class=\"fas fa-bolt text-4xl text-yellow-500 mb-4\"></i>
+                    <h3 class=\"text-xl font-bold mb-2\">Emergencias 24/7</h3>
+                    <p class=\"text-gray-400\">Servicio de urgencia disponible las 24 horas, todos los días.</p>
+                    <a href=\"https://wa.me/56964681874?text=Emergencia\" class=\"text-yellow-500 font-bold mt-4 block\">Llamar ></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class=\"py-20 bg-zinc-900\">
+        <div class=max-w-4xl mx-auto px-6 text-center>
+            <h2 class=\"orbitron text-3xl font-bold mb-6\">¿Problemas Eléctricos? Te Ayudamos</h2>
+            <p class=\"text-gray-300 mb-8\">Diagnóstico gratuito. Cotización sin compromiso.</p>
+            <a href=\"https://wa.me/56964681874?text=Quiero%20cotizacion%20electrica\" class=\"btn-yellow px-10 py-4 rounded-full font-bold text-lg inline-block\">
+                <i class=\"fab fa-whatsapp mr-2\"></i>Solicitar Cotización
+            </a>
+        </div>
+    </section>
+
+    <footer class=\"py-10 bg-black text-center border-t border-yellow-500/30\">
+        <p class=\"orbitron text-2xl font-bold\">ELECTRICPRO</p>
+        <p class=\"text-gray-400\">Villarrica | +56 9 6468 1874</p>
+    </footer>
+</body>
+</html>
