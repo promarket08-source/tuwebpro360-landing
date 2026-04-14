@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurante Gourmet | Sabores del Sur</title>
+    <meta name="description" content="Restaurante gourmet en Villarrica. Cocina chilena con toque internacional. Visítanos">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        :root { --primary: #D4A574; --secondary: #1a1a1a; }
+        body { font-family: 'Inter', sans-serif; background: #0a0a0a; color: #f5f5f5; }
+        h1, h2, h3 { font-family: 'Playfair Display', serif; }
+        .hero-bg { background: linear-gradient(135deg, #0a0a0a 0%, #1a1510 100%); }
+        .gold-text { color: #D4A574; }
+        .btn-gold { background: #D4A574; color: #0a0a0a; }
+        .card-gold { border: 1px solid #D4A57420; }
+        .card-gold:hover { border-color: #D4A574; box-shadow: 0 0 30px #D4A57420; }
+    </style>
+</head>
+<body>
+    <nav class="fixed top-0 w-full z-50 bg-black/90 backdrop-blur-md border-b border-yellow-900/30">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold gold-text">
+                <i class="fas fa-utensils mr-2"></i>Sabores del Sur
+            </a>
+            <div class="hidden md:flex gap-8">
+                <a href="#menu" class="hover:text-amber-400 transition">Menú</a>
+                <a href="#nosotros" class="hover:text-amber-400 transition">Nosotros</a>
+                <a href="#reservas" class="hover:text-amber-400 transition">Reservas</a>
+            </div>
+            <a href="https://wa.me/56964681874?text=Quiero%20reservar%20en%20Sabores%20del%20Sur" class="btn-gold px-6 py-2 rounded-full font-semibold">
+                <i class="fab fa-whatsapp mr-2"></i>Reservar
+            </a>
+        </div>
+    </nav>
+
+    <section class="hero-bg min-h-screen flex items-center justify-center relative overflow-hidden">
+        <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1517248135467-4c7edcad34bc?w=1920')] bg-cover bg-center opacity-30"></div>
+        <div class="relative z-10 text-center max-w-4xl mx-auto px-6">
+            <span class="text-amber-400 text-lg tracking-widest uppercase">Desde 2015</span>
+            <h1 class="text-5xl md:text-7xl font-bold mb-6 mt-4">Sabores del Sur</h1>
+            <p class="text-xl text-gray-300 mb-8">Cocina chilena contemporánea con ingredientes locales.</p>
+            <div class="flex gap-4 justify-center">
+                <a href="#menu" class="btn-gold px-8 py-3 rounded-full font-semibold text-lg">Ver Menú</a>
+                <a href="https://wa.me/56964681874" class="border border-amber-400 text-amber-400 px-8 py-3 rounded-full font-semibold text-lg hover:bg-amber-400 hover:text-black transition">
+                    <i class="fab fa-whatsapp mr-2"></i>Contactar
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="menu" class="py-20 bg-black">
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-12 gold-text">Nuestro Menú</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="card-gold bg-zinc-900 p-6 rounded-2xl">
+                    <img src="https://images.unsplash.com/photo-1544025162-d76694265947?w=400" class="w-full h-48 object-cover rounded-xl mb-4">
+                    <h3 class="text-xl font-bold mb-2">Cordero Asado</h3>
+                    <p class="text-gray-400 text-sm mb-3">Cordero de La Araucanía con hierbas</p>
+                    <span class="text-2xl font-bold gold-text">$28.900</span>
+                </div>
+                <div class="card-gold bg-zinc-900 p-6 rounded-2xl">
+                    <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=400" class="w-full h-48 object-cover rounded-xl mb-4">
+                    <h3 class="text-xl font-bold mb-2">Salmon Salvaje</h3>
+                    <p class="text-gray-400 text-sm mb-3">Salmón de lake con verduras</p>
+                    <span class="text-2xl font-bold gold-text">$24.900</span>
+                </div>
+                <div class="card-gold bg-zinc-900 p-6 rounded-2xl">
+                    <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae80?w=400" class="w-full h-48 object-cover rounded-xl mb-4">
+                    <h3 class="text-xl font-bold mb-2">Pasta Casera</h3>
+                    <p class="text-gray-400 text-sm mb-3">Pasta fresca con salsa de hongos</p>
+                    <span class="text-2xl font-bold gold-text">$18.900</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="reservas" class="py-20 bg-zinc-900">
+        <div class="max-w-3xl mx-auto px-6 text-center">
+            <h2 class="text-4xl font-bold mb-6 gold-text">Reserva tu Mesa</h2>
+            <p class="text-gray-300 mb-8">Contamos con saloon privado para eventos.</p>
+            <a href="https://wa.me/56964681874?text=Quiero%20reservar%20una%20mesa" class="btn-gold px-10 py-4 rounded-full font-bold text-xl inline-block">
+                <i class="fab fa-whatsapp mr-2"></i>Reservar por WhatsApp
+            </a>
+        </div>
+    </section>
+
+    <footer class="py-10 bg-black border-t border-yellow-900/30">
+        <div class="max-w-6xl mx-auto px-6 text-center">
+            <p class="text-amber-400 text-2xl font-bold mb-4">Sabores del Sur</p>
+            <p class="text-gray-400">Villarrica, Araucanía | +56 9 6468 1874</p>
+            <p class="text-gray-500 mt-4">&copy; 2026 Todos los derechos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Titan Fitness | Gym Premium Villarrica</title>
+    <meta name="description" content="Gimnasio premium en Villarrica. Entrena con los mejores equipamientos y profesionales.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        :root { --primary: #FF4D00; --dark: #0a0a0a; }
+        body { font-family: 'Inter', sans-serif; background: #0a0a0a; color: #fff; }
+        .bebas { font-family: 'Bebas Neue', sans-serif; }
+        .hero-gym { background: linear-gradient(180deg, #0a0a0a 0%, #1a0a00 100%); }
+        .btn-orange { background: #FF4D00; color: white; }
+        .card-gym:hover { transform: translateY(-10px); box-shadow: 0 20px 40px #FF4D0030; }
+    </style>
+</head>
+<body>
+    <nav class="fixed top-0 w-full z-50 bg-black/95 backdrop-blur-md border-b border-orange-500/30">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="bebas text-3xl text-orange-500">
+                <i class="fas fa-dumbbell mr-2"></i>TITAN <span class="text-white">FITNESS</span>
+            </a>
+            <div class="hidden md:flex gap-6">
+                <a href="#planes" class="hover:text-orange-400 transition">Planes</a>
+                <a href="#clases" class="hover:text-orange-400 transition">Clases</a>
+                <a href="#contacto" class="hover:text-orange-400 transition">Contacto</a>
+            </div>
+            <a href="https://wa.me/56964681874?text=Quiero%20empezar%20a%20entrenar" class="btn-orange px-6 py-2 rounded-full font-bold">
+                <i class="fab fa-whatsapp mr-2"></i>Comenzar
+            </a>
+        </div>
+    </nav>
+
+    <section class="hero-gym min-h-screen flex items-center justify-center relative overflow-hidden">
+        <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1920')] bg-cover bg-center opacity-40"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent"></div>
+        <div class="relative z-10 text-center max-w-4xl mx-auto px-6">
+            <span class="bebas text-orange-500 text-2xl tracking-widest">Villarrica</span>
+            <h1 class="bebas text-6xl md:text-9xl text-white mb-2 mt-2">TITAN</h1>
+            <h1 class="bebas text-6xl md:text-9xl text-orange-500">FITNESS</h1>
+            <p class="text-xl text-gray-300 mt-6 mb-8">Transforma tu cuerpo con el mejor equipamiento y coaches profesionales.</p>
+            <div class="flex gap-4 justify-center flex-wrap">
+                <a href="#planes" class="btn-orange px-8 py-4 rounded-full font-bold text-lg">Ver Planes</a>
+                <a href="https://wa.me/56964681874" class="border-2 border-white text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white hover:text-black transition">
+                    <i class="fab fa-whatsapp mr-2"></i>Consultar
+                </a>
+            </div>
+            <div class="grid grid-cols-3 gap-8 mt-16 max-w-2xl mx-auto">
+                <div>
+                    <p class="bebas text-5xl text-orange-500">500+</p>
+                    <p class="text-gray-400">Socios</p>
+                </div>
+                <div>
+                    <p class="bebas text-5xl text-orange-500">20+</p>
+                    <p class="text-gray-400">Coaches</p>
+                </div>
+                <div>
+                    <p class="bebas text-5xl text-orange-500">24/7</p>
+                    <p class="text-gray-400">Abierto</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="planes" class="py-20 bg-zinc-950">
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="bebas text-5xl text-center mb-12">NUESTROS PLANES</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-zinc-900 p-8 rounded-2xl border border-zinc-800 hover:border-orange-500 transition card-gym">
+                    <h3 class="bebas text-3xl mb-2">BÁSICO</h3>
+                    <p class="text-gray-400 mb-4">Acceso básico al gym</p>
+                    <p class="text-4xl font-bold text-orange-500 mb-6">$49.990<span class="text-lg text-gray-400">/mes</span></p>
+                    <ul class="text-gray-400 space-y-2 mb-8">
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>Acceso al gym</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>Casilleros</li>
+                        <li><i class="fas fa-times text-gray-600 mr-2"></i>Clases grupales</li>
+                    </ul>
+                    <a href="https://wa.me/56964681874?text=Quiero%20el%20plan%20B%C3%A1sico" class="block text-center bg-zinc-800 py-3 rounded-full font-bold hover:bg-orange-500 hover:text-black transition">
+                        Me Interesa
+                    </a>
+                </div>
+                <div class="bg-gradient-to-b from-orange-600 to-orange-700 p-8 rounded-2xl transform scale-105">
+                    <span class="bebas text-2xl">MÁS POPULAR</span>
+                    <h3 class="bebas text-3xl mt-2">PREMIUM</h3>
+                    <p class="text-orange-100 mb-4">Acceso total + clases</p>
+                    <p class="text-5xl font-bold mb-6">$79.990<span class="text-lg">/mes</span></p>
+                    <ul class="text-orange-100 space-y-2 mb-8">
+                        <li><i class="fas fa-check mr-2"></i>Acceso ilimitado</li>
+                        <li><i class="fas fa-check mr-2"></i>Todas las clases</li>
+                        <li><i class="fas fa-check mr-2"></i>Coach personal</li>
+                        <li><i class="fas fa-check mr-2"></i>Nutricionista</li>
+                    </ul>
+                    <a href="https://wa.me/56964681874?text=Quiero%20el%20plan%20Premium" class="block text-center bg-black text-orange-500 py-3 rounded-full font-bold hover:bg-white transition">
+                        Me Interesa
+                    </a>
+                </div>
+                <div class="bg-zinc-900 p-8 rounded-2xl border border-zinc-800 hover:border-orange-500 transition card-gym">
+                    <h3 class="bebas text-3xl mb-2">VIP</h3>
+                    <p class="text-gray-400 mb-4">Experiencia completa</p>
+                    <p class="text-4xl font-bold text-orange-500 mb-6">$99.990<span class="text-lg text-gray-400">/mes</span></p>
+                    <ul class="text-gray-400 space-y-2 mb-8">
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>Todo Premium</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>Spa & sauna</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>Plan personalizado</li>
+                    </ul>
+                    <a href="https://wa.me/56964681874?text=Quiero%20el%20plan%20VIP" class="block text-center bg-zinc-800 py-3 rounded-full font-bold hover:bg-orange-500 hover:text-black transition">
+                        Me Interesa
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contacto" class="py-20 bg-black">
+        <div class="max-w-3xl mx-auto px-6 text-center">
+            <h2 class="bebas text-5xl mb-6">EMPIEZA HOY</h2>
+            <p class="text-gray-300 mb-8">Tu primera sesión es gratis.</p>
+            <a href="https://wa.me/56964681874?text=Quiero%20mi%20sesi%C3%B3n%20gratis" class="btn-orange px-10 py-5 rounded-full font-bold text-xl inline-block">
+                <i class="fab fa-whatsapp mr-2"></i>Reservar Sesión Gratis
+            </a>
+        </div>
+    </section>
+
+    <footer class="py-10 bg-zinc-950 border-t border-orange-500/30">
+        <div class="max-w-6xl mx-auto px-6 text-center">
+            <p class="bebas text-4xl text-orange-500 mb-4">TITAN FITNESS</p>
+            <p class="text-gray-400">Villarrica | +56 9 6468 1874</p>
+        </div>
+    </footer>
+</body>
+</html>

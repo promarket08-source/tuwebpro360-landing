@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spa & Wellness | Cielo Villarrica</title>
+    <meta name="description" content="Spa premium en Villarrica. Masajes, tratamientos y relax total.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        body { font-family: 'Inter', sans-serif; background: #faf9f7; color: #2d2d2d; }
+        h1, h2, h3 { font-family: 'Cormorant Garamond', serif; }
+        .hero-spa { background: linear-gradient(135deg, #f5f4f0 0%, #e8e6e1 100%); }
+        .btn-spa { background: #9b8b7b; color: white; }
+    </style>
+</head>
+<body>
+    <nav class="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-md">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-light">
+                <i class="fas fa-spa mr-2"></i>CIELO <span class="font-bold">WELLNESS</span>
+            </a>
+            <a href="https://wa.me/56964681874?text=Quiero%20reservar%20un%20tratamiento" class="btn-spa px-6 py-2 rounded-full">
+                <i class="fab fa-whatsapp mr-2"></i>Reservar
+            </a>
+        </div>
+    </nav>
+
+    <section class="hero-spa min-h-screen flex items-center">
+        <div class="max-w-5xl mx-auto px-6 text-center">
+            <span class="text-sm tracking-widest text-gray-500">SPA & WELLNESS</span>
+            <h1 class="text-5xl md:text-7xl font-light mt-4 mb-6">Relajación<br><span class="italic">Total</span></h1>
+            <p class="text-gray-600 text-lg max-w-2xl mx-auto mb-8">Masajes terapéuticos, tratamentos faciales y más. Tu momento de paz en Villarrica.</p>
+            <a href="#tratamientos" class="btn-spa px-8 py-3 rounded-full text-lg">Ver Tratamientos</a>
+        </div>
+    </section>
+
+    <section id="tratamientos" class="py-20 bg-white">
+        <div class="max-w-5xl mx-auto px-6">
+            <h2 class="text-4xl font-light text-center mb-12">Tratamientos</h2>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="flex gap-4 p-6 bg-gray-50 rounded-xl">
+                    <img src="https://images.unsplash.com/photo-1544161515-4ab46ce25cc1?w=150" class="w-24 h-24 rounded-lg object-cover">
+                    <div>
+                        <h3 class="text-xl font-light">Masaje Sueco</h3>
+                        <p class="text-gray-500 text-sm">60 min</p>
+                        <p class="text-2xl font-light mt-2">$45.000</p>
+                    </div>
+                </div>
+                <div class="flex gap-4 p-6 bg-gray-50 rounded-xl">
+                    <img src="https://images.unsplash.com/photo-1519823551278-64ac927fdb11?w=150" class="w-24 h-24 rounded-lg object-cover">
+                    <div>
+                        <h3 class="text-xl font-light">Masaje Deportivo</h3>
+                        <p class="text-gray-500 text-sm">60 min</p>
+                        <p class="text-2xl font-light mt-2">$55.000</p>
+                    </div>
+                </div>
+                <div class="flex gap-4 p-6 bg-gray-50 rounded-xl">
+                    <img src="https://images.unsplash.com/photo-1570172619644-7dc885e4eb44?w=150" class="w-24 h-24 rounded-lg object-cover">
+                    <div>
+                        <h3 class="text-xl font-light">Tratamiento Facial</h3>
+                        <p class="text-gray-500 text-sm">45 min</p>
+                        <p class="text-2xl font-light mt-2">$40.000</p>
+                    </div>
+                </div>
+                <div class="flex gap-4 p-6 bg-gray-50 rounded-xl">
+                    <img src="https://images.unsplash.com/photo-1600334129128-685c5582fd35?w=150" class="w-24 h-24 rounded-lg object-cover">
+                    <div>
+                        <h3 class="text-xl font-light">Pack Relajación</h3>
+                        <p class="text-gray-500 text-sm">90 min</p>
+                        <p class="text-2xl font-light mt-2">$85.000</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-stone-900 text-white text-center">
+        <div class="max-w-3xl mx-auto px-6">
+            <h2 class="text-4xl font-light mb-6">Tu Momento de Paz</h2>
+            <p class="text-gray-400 mb-8">Agenda tu sesión hoy.</p>
+            <a href="https://wa.me/56964681874?text=Quiero%20reservar%20en%20Cielo%20Wellness" class="bg-white text-stone-900 px-10 py-4 rounded-full font-bold text-lg inline-block">
+                <i class="fab fa-whatsapp mr-2"></i>Reservar Ahora
+            </a>
+        </div>
+    </section>
+
+    <footer class="py-10 text-center bg-gray-100">
+        <p class="text-xl font-light mb-2">CIELO WELLNESS</p>
+        <p class="text-gray-500">Villarrica | +56 9 6468 1874</p>
+    </footer>
+</body>
+</html>

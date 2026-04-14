@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boutique Chic | Moda Premium Villarrica</title>
+    <meta name="description" content="Boutique de moda exclusiva en Villarrica. Las mejores marcas y diseños únicos.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        body { font-family: 'Montserrat', sans-serif; background: #fff; color: #1a1a1a; }
+        h1, h2 { font-family: 'Playfair Display', serif; }
+        .hero-fashion { background: linear-gradient(135deg, #fafafa 0%, #f0f0f0 100%); }
+        .btn-black { background: #1a1a1a; color: white; }
+        .product:hover .btn-view { opacity: 1; transform: translateY(0); }
+    </style>
+</head>
+<body>
+    <nav class="fixed top-0 w-full z-50 bg-white/95 backdrop-blur-md border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold tracking-wider">BOUTIQUE CHIC</a>
+            <div class="hidden md:flex gap-8 text-sm tracking-widest">
+                <a href="#tienda" class="hover:text-gray-600 transition">TIENDA</a>
+                <a href="#colecciones" class="hover:text-gray-600 transition">COLECCIONES</a>
+                <a href="#contacto" class="hover:text-gray-600 transition">CONTACTO</a>
+            </div>
+            <a href="https://wa.me/56964681874?text=Quiero%20ver%20las%20novedades" class="btn-black px-6 py-2 rounded-full text-sm font-medium">
+                <i class="fab fa-whatsapp mr-2"></i>Consultar
+            </a>
+        </div>
+    </nav>
+
+    <section class="hero-fashion min-h-screen flex items-center justify-center pt-20">
+        <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+            <div>
+                <span class="text-sm tracking-widest text-gray-500">NUEVA COLECCIÓN 2026</span>
+                <h1 class="text-5xl md:text-7xl font-bold mt-4 mb-6">Elegancia<br>Suramericana</h1>
+                <p class="text-gray-600 text-lg mb-8">Moda exclusiva para mujeres que aman la elegancia. Diseños únicos importados directamente.</p>
+                <div class="flex gap-4">
+                    <a href="#tienda" class="btn-black px-8 py-3 rounded-full font-medium">Ver Tienda</a>
+                    <a href="https://wa.me/56964681874" class="border-2 border-gray-300 px-8 py-3 rounded-full font-medium hover:border-black transition">
+                        <i class="fab fa-instagram mr-2"></i>Instagram
+                    </a>
+                </div>
+            </div>
+            <div class="relative">
+                <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600" alt="Moda" class="w-full rounded-2xl shadow-2xl">
+            </div>
+        </div>
+    </section>
+
+    <section id="tienda" class="py-20 bg-gray-50">
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-12">LO NUEVO</h2>
+            <div class="grid md:grid-cols-4 gap-6">
+                <div class="product group">
+                    <div class="relative overflow-hidden rounded-xl mb-4">
+                        <img src="https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=400" class="w-full h-80 object-cover">
+                        <div class="absolute bottom-0 left-0 right-0 bg-white/90 p-4 translate-y-full transition product .btn-view">
+                            <a href="https://wa.me/56964681874?text=Quiero%20info%20del%20vestido" class="block text-center btn-black py-2 rounded-full text-sm">
+                                Consultar
+                            </a>
+                        </div>
+                    </div>
+                    <h3 class="font-medium">Vestido Elegante</h3>
+                    <p class="text-gray-500">$89.990</p>
+                </div>
+                <div class="product group">
+                    <div class="relative overflow-hidden rounded-xl mb-4">
+                        <img src="https://images.unsplash.com/photo-1515372039744-8a58ef7bef07?w=400" class="w-full h-80 object-cover">
+                        <div class="absolute bottom-0 left-0 right-0 bg-white/90 p-4">
+                            <a href="https://wa.me/56964681874" class="block text-center btn-black py-2 rounded-full text-sm">
+                                Consultar
+                            </a>
+                        </div>
+                    </div>
+                    <h3 class="font-medium">Abrigo Premium</h3>
+                    <p class="text-gray-500">$159.990</p>
+                </div>
+                <div class="product group">
+                    <div class="relative overflow-hidden rounded-xl mb-4">
+                        <img src="https://images.unsplash.com/photo-1583744946564-b52ac1c2c98c?w=400" class="w-full h-80 object-cover">
+                        <div class="absolute bottom-0 left-0 right-0 bg-white/90 p-4">
+                            <a href="https://wa.me/56964681874" class="block text-center btn-black py-2 rounded-full text-sm">
+                                Consultar
+                            </a>
+                        </div>
+                    </div>
+                    <h3 class="font-medium">Blazer Clásico</h3>
+                    <p class="text-gray-500">$79.990</p>
+                </div>
+                <div class="product group">
+                    <div class="relative overflow-hidden rounded-xl mb-4">
+                        <img src="https://images.unsplash.com/photo-1578587018452-892bacefd3f2?w=400" class="w-full h-80 object-cover">
+                        <div class="absolute bottom-0 left-0 right-0 bg-white/90 p-4">
+                            <a href="https://wa.me/56964681874" class="block text-center btn-black py-2 rounded-full text-sm">
+                                Consultar
+                            </a>
+                        </div>
+                    </div>
+                    <h3 class="font-medium">Zapatos Firma</h3>
+                    <p class="text-gray-500">$129.990</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contacto" class="py-20 bg-black text-white">
+        <div class="max-w-3xl mx-auto px-6 text-center">
+            <h2 class="text-4xl font-bold mb-6">Visítanos</h2>
+            <p class="text-gray-400 mb-8">Villarrica centro. Siempre con las últimas tendencias.</p>
+            <a href="https://wa.me/56964681874?text=Quiero%20visitar%20la%20boutique" class="bg-white text-black px-10 py-4 rounded-full font-bold text-lg inline-block">
+                <i class="fab fa-whatsapp mr-2"></i>Agendar Visita
+            </a>
+        </div>
+    </section>
+
+    <footer class="py-10 bg-gray-100 text-center">
+        <p class="text-xl font-bold tracking-wider mb-4">BOUTIQUE CHIC</p>
+        <p class="text-gray-500">Villarrica | +56 9 6468 1874</p>
+    </footer>
+</body>
+</html>

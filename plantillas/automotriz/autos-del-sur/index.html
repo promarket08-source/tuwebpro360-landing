@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autos del Sur | Concesionario Villarrica</title>
+    <meta name="description" content="Concesionario de autos en Villarrica. Autos nuevos y usados.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        :root { --primary: #2563EB; }
+        body { font-family: 'Inter', sans-serif; background: #0a0a0a; color: #fff; }
+        .rajdhani { font-family: 'Rajdhani', sans-serif; }
+        .hero-auto { background: linear-gradient(135deg, #0a0a0a 0%, #1e3a8a 100%); }
+    </style>
+</head>
+<body>
+    <nav class="fixed top-0 w-full z-50 bg-black/90 backdrop-blur-md border-b border-blue-900">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="rajdhani text-2xl font-bold">
+                <i class="fas fa-car mr-2 text-blue-500"></i>AUTOS <span class="text-blue-500">DEL SUR</span>
+            </a>
+            <a href="https://wa.me/56964681874?text=Quiero%20ver%20los%20autos" class="bg-blue-600 px-6 py-2 rounded-full font-bold">
+                <i class="fab fa-whatsapp mr-2"></i>Ver Autos
+            </a>
+        </div>
+    </nav>
+
+    <section class="hero-auto min-h-screen flex items-center">
+        <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+            <div>
+                <span class="rajdhani text-blue-500 text-xl">CONCESIONARIO</span>
+                <h1 class="rajdhani text-6xl font-bold mt-2">AUTOS DEL SUR</h1>
+                <p class="text-xl text-gray-300 mt-4 mb-8">Autos nuevos y usados en Villarrica. Financiamiento disponible.</p>
+                <a href="#autos" class="bg-blue-600 px-8 py-4 rounded-full font-bold text-lg">Ver Inventario</a>
+            </div>
+            <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?w=600" class="rounded-2xl shadow-2xl shadow-blue-500/20">
+        </div>
+    </section>
+
+    <section id="autos" class="py-20 bg-black">
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="rajdhani text-4xl font-bold mb-12">AUTOS DISPONIBLES</h2>
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-zinc-900 rounded-xl overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1549399542-8602099005e8?w=400" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="rajdhani text-2xl">Toyota Prado 2024</h3>
+                        <p class="text-gray-400">0 km | Automático</p>
+                        <p class="text-3xl font-bold text-blue-500 mt-2">$65.000.000</p>
+                        <a href="https://wa.me/56964681874?text=Quiero%20info%20del%20Toyota%20Prado" class="block text-center bg-blue-600 py-2 rounded-full font-bold mt-4">
+                            Consultar
+                        </a>
+                    </div>
+                </div>
+                <div class="bg-zinc-900 rounded-xl overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1580273916550-e323be2ed5fa?w=400" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="rajdhani text-2xl">Mazda CX-5 2023</h3>
+                        <p class="text-gray-400">25.000 km</p>
+                        <p class="text-3xl font-bold text-blue-500 mt-2">$28.000.000</p>
+                        <a href="https://wa.me/56964681874" class="block text-center bg-blue-600 py-2 rounded-full font-bold mt-4">
+                            Consultar
+                        </a>
+                    </div>
+                </div>
+                <div class="bg-zinc-900 rounded-xl overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1606664515520-ed2f786a6bd7?w=400" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="rajdhani text-2xl">Kia Sportage 2024</h3>
+                        <p class="text-gray-400">0 km | Automático</p>
+                        <p class="text-3xl font-bold text-blue-500 mt-2">$24.900.000</p>
+                        <a href="https://wa.me/56964681874" class="block text-center bg-blue-600 py-2 rounded-full font-bold mt-4">
+                            Consultar
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-10 bg-black text-center border-t border-blue-900">
+        <p class="rajdhani text-2xl font-bold">AUTOS DEL SUR</p>
+        <p class="text-gray-400">Villarrica | +56 9 6468 1874</p>
+    </footer>
+</body>
+</html>
