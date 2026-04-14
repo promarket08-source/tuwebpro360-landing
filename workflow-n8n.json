@@ -1,0 +1,128 @@
+{
+  "name": "EP360 - Lead Capture",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "ep360-lead",
+        "responseMode": "onReceived",
+        "options": {}
+      },
+      "id": "webhook-trigger",
+      "name": "Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [250, 300],
+      "webhookId": "ep360-lead"
+    },
+    {
+      "parameters": {
+        "fromEmail": "noreply@ep360.cl",
+        "toEmail": "promarket08@gmail.com",
+        "subject": "=🎨 Nuevo Lead EP360: {{ $json.nombre }}",
+        "emailFormat": "html",
+        "html": "=<!DOCTYPE html>\n<html>\n<head>\n  <style>\n    body { font-family: Arial, sans-serif; background: #0F172A; color: #F8FAFC; padding: 20px; }\n    .container { max-width: 600px; margin: 0 auto; background: #1E293B; border-radius: 15px; padding: 30px; }\n    .header { text-align: center; margin-bottom: 30px; }\n    .logo { font-size: 24px; font-weight: bold; background: linear-gradient(135deg, #6366F1, #EC4899); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }\n    .badge { display: inline-block; background: linear-gradient(135deg, #6366F1, #EC4899); color: white; padding: 5px 15px; border-radius: 20px; font-size: 12px; margin-bottom: 20px; }\n    .field { margin-bottom: 20px; padding: 15px; background: #0F172A; border-radius: 10px; }\n    .label { font-size: 12px; color: #94A3B8; margin-bottom: 5px; }\n    .value { font-size: 16px; font-weight: 500; }\n    .whatsapp { display: inline-block; background: #25D366; color: white; padding: 10px 20px; border-radius: 10px; text-decoration: none; margin-top: 10px; }\n    .footer { text-align: center; margin-top: 30px; font-size: 12px; color: #64748B; }\n  </style>\n</head>\n<body>\n  <div class=\"container\">\n    <div class=\"header\">\n      <div class=\"badge\">🚀 NUEVO LEAD</div>\n      <div class=\"logo\">EP360 - TuWebPro360</div>\n    </div>\n    \n    <div class=\"field\">\n      <div class=\"label\">👤 NOMBRE</div>\n      <div class=\"value\">{{ $json.nombre }}</div>\n    </div>\n    \n    <div class=\"field\">\n      <div class=\"label\">📱 WHATSAPP</div>\n      <div class=\"value\">{{ $json.whatsapp }}</div>\n      <a href=\"https://wa.me/{{ $json.whatsapp.replace('+', '').replace(' ', '').replace('-', '') }}\" class=\"whatsapp\" target=\"_blank\">💬 Contactar por WhatsApp</a>\n    </div>\n    \n    <div class=\"field\">\n      <div class=\"label\">💬 MENSAJE</div>\n      <div class=\"value\">{{ $json.mensaje }}</div>\n    </div>\n    \n    <div class=\"field\">\n      <div class=\"label\">📅 FECHA</div>\n      <div class=\"value\">{{ $json.fecha }}</div>\n    </div>\n    \n    <div class=\"footer\">\n      <p>Este lead fue capturado desde tu landing page EP360</p>\n      <p>Impulsado por Emprende Online</p>\n    </div>\n  </div>\n</body>\n</html>"
+      },
+      "id": "email-node",
+      "name": "Enviar Email",
+      "type": "n8n-nodes-base.emailSend",
+      "typeVersion": 1,
+      "position": [500, 300],
+      "credentials": {
+        "smtp": {}
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "nombre-condition",
+              "leftValue": "={{ $json.nombre }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "isNotEmpty"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "filter-node",
+      "name": "Validar Datos",
+      "type": "n8n-nodes-base.filter",
+      "typeVersion": 1,
+      "position": [400, 150]
+    },
+    {
+      "parameters": {
+        "command": "=Nuevo lead EP360: {{ $json.nombre }} - WhatsApp: {{ $json.whatsapp }}"
+      },
+      "id": "slack-node",
+      "name": "Notificar Slack (Opcional)",
+      "type": "n8n-nodes-base.slack",
+      "typeVersion": 1,
+      "position": [700, 300],
+      "credentials": {
+        "slackApi": {}
+      }
+    }
+  ],
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Validar Datos",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Validar Datos": {
+      "main": [
+        [
+          {
+            "node": "Enviar Email",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Enviar Email": {
+      "main": [
+        [
+          {
+            "node": "Notificar Slack (Opcional)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {},
+  "id": "ep360-lead-workflow",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "templateId": "ep360-lead"
+  },
+  "tags": [
+    {
+      "name": "EP360"
+    },
+    {
+      "name": "Leads"
+    }
+  ]
+}

@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="EP360 - TuWebPro360. Páginas web premium diseñadas para convertir visitantes en clientes. Impulsado por Emprende Online.">
+    <meta name="keywords" content="páginas web, landing page, diseño premium, desarrollo web, Chile">
+    <meta name="author" content="EP360 - TuWebPro360">
+    <meta property="og:title" content="EP360 - Tu Web Pro 360 | Páginas Web Premium">
+    <meta property="og:description" content="Creamos páginas web premium que convierten visitantes en clientes.">
+    <meta property="og:type" content="website">
+    <title>EP360 - Tu Web Pro 360 | Páginas Web Premium</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Animation Libraries -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Custom Cursor Glow -->
+    <div class="cursor-glow" id="cursorGlow"></div>
+    
+    <!-- Particles Background -->
+    <canvas id="particlesCanvas"></canvas>
+    
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">
+                <img src="assets/logo-ep360.svg" alt="EP360" class="logo-animated">
+                <span class="logo-text">EP360</span>
+            </a>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#inicio" class="nav-link">Inicio</a></li>
+                <li><a href="#portafolio" class="nav-link">Portafolio</a></li>
+                <li><a href="#servicios" class="nav-link">Servicios</a></li>
+                <li><a href="#proceso" class="nav-link">Proceso</a></li>
+                <li><a href="#testimonios" class="nav-link">Testimonios</a></li>
+                <li><a href="#contacto" class="nav-link">Contacto</a></li>
+            </ul>
+            <button class="nav-toggle" id="navToggle" aria-label="Menú">
+                <span class="hamburger"></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="inicio">
+        <div class="hero-content">
+            <div class="hero-badge animate-float">
+                <span class="badge-icon">🚀</span>
+                <span>Impulsado por Emprende Online</span>
+            </div>
+            <h1 class="hero-title">
+                <span class="title-line" id="typedTitle"></span>
+                <span class="title-cursor">|</span>
+            </h1>
+            <p class="hero-subtitle animate-fade-up">
+                Somos <strong>EP360</strong>. Creamos páginas web premium que 
+                <span class="gradient-text">convierten visitantes en clientes</span>.
+            </p>
+            <div class="hero-ctas">
+                <a href="#portafolio" class="btn btn-primary animate-bounce-in">
+                    <span>VER EJEMPLOS</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+                <a href="https://wa.me/56964681874?text=Hola%20EP360!%20Quiero%20una%20web%20premium" target="_blank" class="btn btn-secondary animate-bounce-in delay-1">
+                    <i class="fab fa-whatsapp"></i>
+                    <span>HABLEMOS AHORA</span>
+                </a>
+            </div>
+            <div class="hero-stats animate-fade-up delay-2">
+                <div class="stat-item">
+                    <span class="stat-number" data-target="150">0</span>
+                    <span class="stat-label">Proyectos</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-target="98">0</span>
+                    <span class="stat-suffix">%</span>
+                    <span class="stat-label">Clientes Felices</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-target="5">0</span>
+                    <span class="stat-label">Años de Experiencia</span>
+                </div>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <div class="floating-shapes">
+                <div class="shape shape-1"></div>
+                <div class="shape shape-2"></div>
+                <div class="shape shape-3"></div>
+                <div class="shape shape-4"></div>
+            </div>
+        </div>
+        <div class="scroll-indicator animate-float">
+            <span>Scroll</span>
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <!-- Problema Section -->
+    <section class="section problema" id="problema">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge animate-on-scroll">⚠️ EL PROBLEMA</span>
+                <h2 class="section-title animate-on-scroll">¿Tienes Una Web Mediocre?</h2>
+                <p class="section-subtitle animate-on-scroll">
+                    El 94% de las primeras impresiones dependen del diseño. 
+                    Tu web es tu carta de presentación al mundo.
+                </p>
+            </div>
+            <div class="problema-grid">
+                <div class="problema-card animate-on-scroll">
+                    <div class="card-icon">
+                        <i class="fas fa-spinner fa-spin"></i>
+                    </div>
+                    <h3>Lenta como Tortuga</h3>
+                    <p>Cada segundo de carga extra pierde el 7% de tus visitantes.</p>
+                </div>
+                <div class="problema-card animate-on-scroll">
+                    <div class="card-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>No se Ve en Móvil</h3>
+                    <p>El 60% del tráfico viene de celulares. ¿Tu web está lista?</p>
+                </div>
+                <div class="problema-card animate-on-scroll">
+                    <div class="card-icon">
+                        <i class="fas fa-eye-slash"></i>
+                    </div>
+                    <h3>No Convierte</h3>
+                    <p>Visitas que se van sin contactarte = dinero perdido.</p>
+                </div>
+                <div class="problema-card animate-on-scroll">
+                    <div class="card-icon">
+                        <i class="fas fa-paint-brush"></i>
+                    </div>
+                    <h3>Diseño Antiqueda</h3>
+                    <p>Si parece de 2010, tu negocio parece de 2010.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solución Section -->
+    <section class="section solucion" id="solucion">
+        <div class="container">
+            <div class="solucion-content">
+                <span class="section-badge animate-on-scroll">✨ LA SOLUCIÓN</span>
+                <h2 class="section-title animate-on-scroll">
+                    EP360 Tiene La Respuesta
+                </h2>
+                <p class="section-subtitle animate-on-scroll">
+                    No vendemos páginas web. Vendemos <strong>máquinas de hacer dinero</strong> 
+                    diseñadas para tu éxito.
+                </p>
+                <div class="beneficios-list">
+                    <div class="beneficio-item animate-on-scroll">
+                        <i class="fas fa-bolt"></i>
+                        <span>Rapidez Extrema (Menos de 2s de carga)</span>
+                    </div>
+                    <div class="beneficio-item animate-on-scroll">
+                        <i class="fas fa-mobile-alt"></i>
+                        <span>100% Responsive (Móvil + Desktop)</span>
+                    </div>
+                    <div class="beneficio-item animate-on-scroll">
+                        <i class="fas fa-rocket"></i>
+                        <span>Animaciones Premium que Impactan</span>
+                    </div>
+                    <div class="beneficio-item animate-on-scroll">
+                        <i class="fas fa-search-engine"></i>
+                        <span>SEO Optimizado (Google te encuentra)</span>
+                    </div>
+                    <div class="beneficio-item animate-on-scroll">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>Seguridad de Nivel Empresarial</span>
+                    </div>
+                    <div class="beneficio-item animate-on-scroll">
+                        <i class="fas fa-chart-line"></i>
+                        <span>Diseñada Para Convertir Visitantes en Clientes</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portafolio Section -->
+    <section class="section portafolio" id="portafolio">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge animate-on-scroll">🎨 PORTFOLIO</span>
+                <h2 class="section-title animate-on-scroll">Nuestros Trabajos</h2>
+                <p class="section-subtitle animate-on-scroll">
+                    Cada proyecto es único. Cada web es una obra de arte digital.
+                </p>
+            </div>
+            <div class="bento-grid">
+                <div class="bento-item bento-large animate-on-scroll">
+                    <div class="bento-image">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80" alt="Proyecto Restaurant Premium">
+                    </div>
+                    <div class="bento-overlay">
+                        <span class="bento-category">Restaurante</span>
+                        <h3>Café Artesanal</h3>
+                        <p>Landing premium con reservas online</p>
+                    </div>
+                </div>
+                <div class="bento-item animate-on-scroll">
+                    <div class="bento-image">
+                        <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=600&q=80" alt="Tienda Online">
+                    </div>
+                    <div class="bento-overlay">
+                        <span class="bento-category">E-commerce</span>
+                        <h3>Boutique Chic</h3>
+                    </div>
+                </div>
+                <div class="bento-item animate-on-scroll">
+                    <div class="bento-image">
+                        <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=600&q=80" alt="SaaS Tech">
+                    </div>
+                    <div class="bento-overlay">
+                        <span class="bento-category">SaaS</span>
+                        <h3>TechStart</h3>
+                    </div>
+                </div>
+                <div class="bento-item animate-on-scroll">
+                    <div class="bento-image">
+                        <img src="https://images.unsplash.com/photo-1560179707-f14e90ef3623?w=600&q=80" alt="Inmobiliaria">
+                    </div>
+                    <div class="bento-overlay">
+                        <span class="bento-category">Inmobiliaria</span>
+                        <h3>Propiedades Elite</h3>
+                    </div>
+                </div>
+                <div class="bento-item bento-wide animate-on-scroll">
+                    <div class="bento-image">
+                        <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800&q=80" alt="Consultora">
+                    </div>
+                    <div class="bento-overlay">
+                        <span class="bento-category">Consultora</span>
+                        <h3>Asesoría Premium</h3>
+                        <p>Diseño corporativo de alto impacto</p>
+                    </div>
+                </div>
+                <div class="bento-item animate-on-scroll">
+                    <div class="bento-image">
+                        <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=600&q=80" alt="Fitness">
+                    </div>
+                    <div class="bento-overlay">
+                        <span class="bento-category">Fitness</span>
+                        <h3>FitLife Pro</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Servicios Section -->
+    <section class="section servicios" id="servicios">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge animate-on-scroll">💰 SERVICIOS</span>
+                <h2 class="section-title animate-on-scroll">Elige Tu Plan Perfecto</h2>
+                <p class="section-subtitle animate-on-scroll">
+                    Dos opciones. Mismo nivel de calidad premium.
+                </p>
+            </div>
+            <div class="pricing-grid">
+                <div class="pricing-card animate-on-scroll">
+                    <div class="pricing-header">
+                        <span class="pricing-badge">MÁS POPULAR</span>
+                        <h3 class="pricing-title">OPCIÓN 1</h3>
+                        <p class="pricing-subtitle">Web Igual</p>
+                        <div class="pricing-price">
+                            <span class="price-currency">$</span>
+                            <span class="price-value">297</span>
+                            <span class="price-period">USD</span>
+                        </div>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> Landing idéntica a la que ves</li>
+                        <li><i class="fas fa-check"></i> Cambiamos textos e imágenes</li>
+                        <li><i class="fas fa-check"></i> Tu branding y colores</li>
+                        <li><i class="fas fa-check"></i> Animaciones premium incluidas</li>
+                        <li><i class="fas fa-check"></i> 100% Responsive</li>
+                        <li><i class="fas fa-check"></i> Entrega en 48-72 horas</li>
+                    </ul>
+                    <a href="https://wa.me/56964681874?text=Hola!%20Quiero%20la%20OPCIÓN%201%20(Web%20Igual)" target="_blank" class="btn btn-pricing">
+                        <i class="fab fa-whatsapp"></i>
+                        SOLICITAR AHORA
+                    </a>
+                </div>
+                <div class="pricing-card pricing-featured animate-on-scroll">
+                    <div class="featured-glow"></div>
+                    <div class="pricing-header">
+                        <span class="pricing-badge featured">⭐ RECOMENDADO</span>
+                        <h3 class="pricing-title">OPCIÓN 2</h3>
+                        <p class="pricing-subtitle">Web a Tu Medida</p>
+                        <div class="pricing-price">
+                            <span class="price-currency">$</span>
+                            <span class="price-value">597</span>
+                            <span class="price-period">USD</span>
+                        </div>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> <strong>100% Personalizada</strong></li>
+                        <li><i class="fas fa-check"></i> Diseño único para tu marca</li>
+                        <li><i class="fas fa-check"></i> Dominio .CL o .COM (1 año)</li>
+                        <li><i class="fas fa-check"></i> Hosting incluido (1 año)</li>
+                        <li><i class="fas fa-check"></i> Animaciones premium exclusivas</li>
+                        <li><i class="fas fa-check"></i> Código 100% tuyo para siempre</li>
+                        <li><i class="fas fa-check"></i> Soporte prioritario 30 días</li>
+                    </ul>
+                    <a href="https://wa.me/56964681874?text=Hola!%20Quiero%20la%20OPCIÓN%202%20(Web%20a%20Tu%20Medida)" target="_blank" class="btn btn-pricing featured">
+                        <i class="fab fa-whatsapp"></i>
+                        SOLICITAR AHORA
+                    </a>
+                </div>
+            </div>
+            <div class="garantia animate-on-scroll">
+                <i class="fas fa-shield-alt"></i>
+                <div>
+                    <strong>Garantía de Satisfacción</strong>
+                    <p>Si no te encanta tu web, te devolvemos tu dinero. Sin preguntas.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Proceso Section -->
+    <section class="section proceso" id="proceso">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge animate-on-scroll">⚡ PROCESO</span>
+                <h2 class="section-title animate-on-scroll">3 Pasos Hacia Tu Web Premium</h2>
+                <p class="section-subtitle animate-on-scroll">
+                    Simple. Rápido. Sin complicaciones.
+                </p>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item animate-on-scroll">
+                    <div class="timeline-marker">
+                        <span class="marker-number">1</span>
+                        <span class="marker-line"></span>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-icon">
+                            <i class="fas fa-comments"></i>
+                        </div>
+                        <h3>Contactanos</h3>
+                        <p>Cuéntanos sobre tu proyecto por WhatsApp. Te asesoramos gratis y definimos tu visión.</p>
+                    </div>
+                </div>
+                <div class="timeline-item animate-on-scroll">
+                    <div class="timeline-marker">
+                        <span class="marker-number">2</span>
+                        <span class="marker-line"></span>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-icon">
+                            <i class="fas fa-magic"></i>
+                        </div>
+                        <h3>Diseñamos</h3>
+                        <p>Creamos tu web con animaciones premium, optimizada para convertir visitantes en clientes.</p>
+                    </div>
+                </div>
+                <div class="timeline-item animate-on-scroll">
+                    <div class="timeline-marker">
+                        <span class="marker-number">3</span>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-icon">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <h3>Tu Web Lista</h3>
+                        <p>Recibes tu web lista para conquistar el mundo digital. ¡Listo para escalar!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonios Section -->
+    <section class="section testimonios" id="testimonios">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge animate-on-scroll">⭐ TESTIMONIOS</span>
+                <h2 class="section-title animate-on-scroll">Lo Que Dicen Nuestros Clientes</h2>
+                <p class="section-subtitle animate-on-scroll">
+                    Más de 150 proyectos exitosos y counting.
+                </p>
+            </div>
+            <div class="testimonios-carousel" id="testimoniosCarousel">
+                <div class="testimonios-track">
+                    <div class="testimonio-card animate-on-scroll">
+                        <div class="testimonio-stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonio-text">
+                            "EP360 transformó mi restaurante. Las reservas aumentaron un 200% desde que 
+                            lancé la nueva web. El diseño es impresionante y los clientes no paran de 
+                            preguntar quién me la hizo."
+                        </p>
+                        <div class="testimonio-autor">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80" alt="Carlos Mendoza" class="autor-avatar">
+                            <div class="autor-info">
+                                <strong>Carlos Mendoza</strong>
+                                <span>Restaurante Café Artesanal, Santiago</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonio-card animate-on-scroll">
+                        <div class="testimonio-stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonio-text">
+                            "Mi boutique online pasó de 0 a 100 ventas mensuales en solo 2 meses 
+                            con la web que me crearon. Las animaciones son brutales, mis clientes 
+                            aman la experiencia."
+                        </p>
+                        <div class="testimonio-autor">
+                            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&q=80" alt="María Fernández" class="autor-avatar">
+                            <div class="autor-info">
+                                <strong>María Fernández</strong>
+                                <span>Boutique Chic, Viña del Mar</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonio-card animate-on-scroll">
+                        <div class="testimonio-stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonio-text">
+                            "Como abogado necesitaba una web que transmitiera seriedad y profesionalismo. 
+                            EP360 superó mis expectativas. Ahora mis clientes me contactan diciendo 
+                            'tu web se ve cara'."
+                        </p>
+                        <div class="testimonio-autor">
+                            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&q=80" alt="Andrés Vega" class="autor-avatar">
+                            <div class="autor-info">
+                                <strong>Andrés Vega</strong>
+                                <span>Consultora Legal Vega & Asociados</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonio-card animate-on-scroll">
+                        <div class="testimonio-stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonio-text">
+                            "El centro estético lucía anticuado comparado con la competencia. 
+                            Después de la web de EP360, mis clientas me preguntan si abrí en 
+                            otro lado porque 'se ve increíble'. ¡Las ventas subieron 150%!"
+                        </p>
+                        <div class="testimonio-autor">
+                            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&q=80" alt="Patricia Ruiz" class="autor-avatar">
+                            <div class="autor-info">
+                                <strong>Patricia Ruiz</strong>
+                                <span>Centro Estético Bella Vita, Providencia</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonio-card animate-on-scroll">
+                        <div class="testimonio-stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonio-text">
+                            "EP360 no solo me dio una web, me dio una máquina de leads. 
+                            Mi agencia pasó de 5 consultas semanales a más de 30. 
+                            La mejor inversión que hice para mi negocio."
+                        </p>
+                        <div class="testimonio-autor">
+                            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&q=80" alt="Diego Torres" class="autor-avatar">
+                            <div class="autor-info">
+                                <strong>Diego Torres</strong>
+                                <span>Agencia Digital Growth, Santiago</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonios-nav">
+                <button class="nav-btn prev" id="prevBtn"><i class="fas fa-chevron-left"></i></button>
+                <div class="nav-dots" id="navDots"></div>
+                <button class="nav-btn next" id="nextBtn"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contacto Section -->
+    <section class="section contacto" id="contacto">
+        <div class="container">
+            <div class="contact-wrapper">
+                <div class="contact-info animate-on-scroll">
+                    <span class="section-badge">📬 CONTACTO</span>
+                    <h2 class="section-title">Hablemos de Tu Proyecto</h2>
+                    <p class="section-subtitle">
+                        ¿Listo para tener una web que realmente convierte? 
+                        Escríbenos y te respondemos en menos de 2 horas.
+                    </p>
+                    <div class="contact-methods">
+                        <a href="https://wa.me/56964681874" target="_blank" class="contact-method">
+                            <i class="fab fa-whatsapp"></i>
+                            <span>+56 9 6468 1874</span>
+                        </a>
+                        <a href="mailto:promarket08@gmail.com" class="contact-method">
+                            <i class="fas fa-envelope"></i>
+                            <span>promarket08@gmail.com</span>
+                        </a>
+                        <a href="mailto:tuwebpro369@gmail.com" class="contact-method">
+                            <i class="fas fa-envelope"></i>
+                            <span>tuwebpro369@gmail.com</span>
+                        </a>
+                        <a href="https://www.instagram.com/tu.web.pro360/" target="_blank" class="contact-method">
+                            <i class="fab fa-instagram"></i>
+                            <span>@tu.web.pro360</span>
+                        </a>
+                    </div>
+                </div>
+                <form class="contact-form animate-on-scroll" id="contactForm">
+                    <div class="form-group">
+                        <label for="nombre">Tu Nombre</label>
+                        <input type="text" id="nombre" name="nombre" placeholder="Ej: Juan Pérez" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="whatsapp">WhatsApp</label>
+                        <input type="tel" id="whatsapp" name="whatsapp" placeholder="+56 9 XXXX XXXX" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="mensaje">¿Qué tienes en mente?</label>
+                        <textarea id="mensaje" name="mensaje" rows="4" placeholder="Cuéntame sobre tu proyecto, negocio o idea..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-submit" id="submitBtn">
+                        <span class="btn-text">ENVIAR MENSAJE</span>
+                        <span class="btn-loading"><i class="fas fa-spinner fa-spin"></i></span>
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                    <div class="form-message" id="formMessage"></div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand animate-on-scroll">
+                    <img src="assets/logo-ep360.svg" alt="EP360" class="footer-logo">
+                    <p class="footer-tagline">TuWebPro360 - Páginas Web Premium</p>
+                    <p class="footer-powered">Impulsado por <strong>Emprende Online</strong></p>
+                </div>
+                <div class="footer-links animate-on-scroll">
+                    <h4>Enlaces</h4>
+                    <ul>
+                        <li><a href="#inicio">Inicio</a></li>
+                        <li><a href="#portafolio">Portafolio</a></li>
+                        <li><a href="#servicios">Servicios</a></li>
+                        <li><a href="#contacto">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social animate-on-scroll">
+                    <h4>Síguenos</h4>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/tu.web.pro360/" target="_blank" class="social-link">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="mailto:promarket08@gmail.com" class="social-link">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                        <a href="https://wa.me/56964681874" target="_blank" class="social-link">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom animate-on-scroll">
+                <p>&copy; 2026 EP360 - TuWebPro360. Todos los derechos reservados.</p>
+                <p>Hecho con ❤️ en Chile</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/56964681874?text=Hola%20EP360!%20Quiero%20una%20web%20premium" target="_blank" class="whatsapp-float" id="whatsappFloat">
+        <i class="fab fa-whatsapp"></i>
+        <span class="whatsapp-tooltip">¿Hablamos?</span>
+    </a>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
+    <script src="js/animations.js"></script>
+</body>
+</html>
