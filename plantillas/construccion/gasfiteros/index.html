@@ -1,0 +1,1015 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AquaPro Chile - Servicios profesionales de gasfitería. Instalaciones, reparaciones y mantención. Atención 24/7.">
+    <title>AquaPro Chile | Gasfitería Profesional 24/7</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    
+    <style>
+        :root {
+            --primary: #3498DB;
+            --primary-dark: #2980B9;
+            --secondary: #1ABC9C;
+            --accent: #E74C3C;
+            --bg-dark: #0F1923;
+            --bg-card: #1A2634;
+            --bg-gradient: linear-gradient(135deg, #0F1923 0%, #1A2634 100%);
+            --text-white: #FFFFFF;
+            --text-gray: #A0B0C0;
+            --water: #00D2D3;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-white);
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3 { font-family: 'Oswald', sans-serif; text-transform: uppercase; }
+
+        /* NAVBAR */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 15px 0;
+            background: rgba(15, 25, 35, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(52, 152, 219, 0.2);
+        }
+
+        .nav-container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+
+        .logo-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary), var(--water));
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+
+        .logo span { color: var(--water); }
+
+        .nav-menu { display: flex; gap: 30px; }
+
+        .nav-link {
+            color: var(--text-gray);
+            font-weight: 500;
+            transition: 0.3s;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+        }
+
+        .nav-link:hover { color: var(--water); }
+
+        .nav-cta {
+            background: linear-gradient(135deg, var(--primary), var(--water));
+            padding: 12px 24px;
+            border-radius: 5px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .nav-cta:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(52, 152, 219, 0.4);
+        }
+
+        /* HERO */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            padding: 100px 20px 60px;
+        }
+
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            background: var(--bg-gradient);
+        }
+
+        /* Water wave effect */
+        .wave {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(transparent, rgba(52, 152, 219, 0.1));
+        }
+
+        .wave::before,
+        .wave::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            width: 200%;
+            height: 100px;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%233498DB' fill-opacity='0.1' d='M0,96L48,112C96,128,192,160,288,165.3C384,171,480,149,576,128C672,107,768,85,864,90.7C960,96,1056,128,1152,133.3C1248,139,1344,117,1392,106.7L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E") repeat-x;
+            animation: wave 10s linear infinite;
+        }
+
+        .wave::after {
+            bottom: 10px;
+            opacity: 0.5;
+            animation: wave 8s linear infinite reverse;
+        }
+
+        @keyframes wave {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            max-width: 1300px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .hero-text h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 20px;
+        }
+
+        .hero-text h1 span {
+            color: var(--water);
+            display: block;
+        }
+
+        .hero-text p {
+            font-size: 1.15rem;
+            color: var(--text-gray);
+            margin-bottom: 30px;
+            line-height: 1.8;
+        }
+
+        .hero-services {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        .service-tag {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(52, 152, 219, 0.1);
+            border: 1px solid rgba(52, 152, 219, 0.3);
+            padding: 10px 18px;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .service-tag i { color: var(--water); }
+
+        .hero-buttons { display: flex; gap: 15px; flex-wrap: wrap; }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 16px 32px;
+            border-radius: 5px;
+            font-weight: 600;
+            text-transform: uppercase;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--water));
+            color: white;
+            box-shadow: 0 10px 30px rgba(52, 152, 219, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(52, 152, 219, 0.5);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            border: 2px solid var(--secondary);
+            color: var(--secondary);
+        }
+
+        .btn-secondary:hover {
+            background: var(--secondary);
+            color: white;
+        }
+
+        .btn-emergency {
+            background: var(--accent);
+            color: white;
+        }
+
+        .btn-emergency:hover {
+            background: #C0392B;
+            transform: translateY(-3px);
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .stat-item { text-align: center; }
+
+        .stat-number {
+            font-family: 'Oswald', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--water);
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: var(--text-gray);
+            text-transform: uppercase;
+        }
+
+        /* SERVICES */
+        .services {
+            padding: 100px 20px;
+            background: var(--bg-card);
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 60px;
+        }
+
+        .section-badge {
+            display: inline-block;
+            background: rgba(52, 152, 219, 0.15);
+            border: 1px solid rgba(52, 152, 219, 0.3);
+            padding: 8px 20px;
+            border-radius: 5px;
+            font-size: 0.85rem;
+            color: var(--water);
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .section-title {
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin-bottom: 15px;
+        }
+
+        .section-subtitle { color: var(--text-gray); font-size: 1.1rem; }
+
+        .services-grid {
+            max-width: 1300px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: var(--bg-dark);
+            border-radius: 15px;
+            padding: 40px 30px;
+            transition: 0.4s;
+            border-left: 4px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(52, 152, 219, 0.05), transparent);
+        }
+
+        .service-card:hover {
+            border-left-color: var(--water);
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(52, 152, 219, 0.15);
+        }
+
+        .service-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--primary), var(--water));
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: white;
+            margin-bottom: 25px;
+            position: relative;
+        }
+
+        .service-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 12px;
+        }
+
+        .service-card p {
+            color: var(--text-gray);
+            font-size: 0.95rem;
+            line-height: 1.7;
+            position: relative;
+        }
+
+        /* PRICING */
+        .pricing {
+            padding: 100px 20px;
+            background: var(--bg-dark);
+        }
+
+        .pricing-grid {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .price-card {
+            background: var(--bg-card);
+            border-radius: 15px;
+            padding: 40px 30px;
+            text-align: center;
+            transition: 0.4s;
+            position: relative;
+            border: 1px solid rgba(52, 152, 219, 0.1);
+        }
+
+        .price-card.featured {
+            border-color: var(--water);
+            background: linear-gradient(145deg, var(--bg-card), rgba(52, 152, 219, 0.05));
+            transform: scale(1.05);
+        }
+
+        .price-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .price-card.featured:hover {
+            transform: scale(1.05) translateY(-10px);
+        }
+
+        .price-badge {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, var(--primary), var(--water));
+            padding: 8px 25px;
+            border-radius: 5px;
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
+
+        .price-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+        }
+
+        .price-card .description {
+            color: var(--text-gray);
+            font-size: 0.9rem;
+            margin-bottom: 25px;
+        }
+
+        .price-amount {
+            font-family: 'Oswald', sans-serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: var(--water);
+            margin-bottom: 5px;
+        }
+
+        .price-period {
+            color: var(--text-gray);
+            font-size: 0.85rem;
+            margin-bottom: 25px;
+        }
+
+        .price-features { text-align: left; margin-bottom: 30px; }
+
+        .price-features li {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .price-features li:last-child { border-bottom: none; }
+        .price-features i { color: var(--secondary); }
+
+        .btn-price {
+            width: 100%;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--primary), var(--water));
+            color: white;
+        }
+
+        .btn-price:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(52, 152, 219, 0.4);
+        }
+
+        /* TESTIMONIALS */
+        .testimonials {
+            padding: 100px 20px;
+            background: var(--bg-card);
+        }
+
+        .testimonials-grid {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .testimonial-card {
+            background: var(--bg-dark);
+            border-radius: 15px;
+            padding: 35px;
+            transition: 0.4s;
+            border: 1px solid transparent;
+        }
+
+        .testimonial-card:hover {
+            border-color: rgba(52, 152, 219, 0.3);
+            transform: translateY(-5px);
+        }
+
+        .testimonial-stars { color: #F1C40F; margin-bottom: 15px; }
+
+        .testimonial-text {
+            font-size: 1rem;
+            line-height: 1.8;
+            color: var(--text-gray);
+            margin-bottom: 25px;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .testimonial-author img {
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--water);
+        }
+
+        .testimonial-author h4 { font-size: 1rem; font-weight: 600; }
+        .testimonial-author span { font-size: 0.85rem; color: var(--text-gray); }
+
+        /* CONTACT */
+        .contact {
+            padding: 100px 20px;
+            background: var(--bg-dark);
+        }
+
+        .contact-grid {
+            max-width: 1300px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .contact-info h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin-bottom: 20px;
+        }
+
+        .contact-info p {
+            color: var(--text-gray);
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+        }
+
+        .contact-methods { display: flex; flex-direction: column; gap: 20px; }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding: 20px;
+            background: var(--bg-card);
+            border-radius: 10px;
+            transition: 0.3s;
+        }
+
+        .contact-item:hover {
+            transform: translateX(10px);
+            border-left: 4px solid var(--water);
+        }
+
+        .contact-item i {
+            width: 55px;
+            height: 55px;
+            background: linear-gradient(135deg, var(--primary), var(--water));
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+
+        .contact-item h4 { font-size: 1rem; margin-bottom: 5px; }
+        .contact-item span { color: var(--text-gray); font-size: 0.9rem; }
+
+        .contact-form {
+            background: var(--bg-card);
+            border-radius: 15px;
+            padding: 45px;
+        }
+
+        .form-group { margin-bottom: 20px; }
+
+        .form-group label {
+            display: block;
+            font-weight: 500;
+            margin-bottom: 8px;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 15px 20px;
+            background: var(--bg-dark);
+            border: 2px solid rgba(52, 152, 219, 0.1);
+            border-radius: 8px;
+            color: var(--text-white);
+            font-size: 1rem;
+            font-family: inherit;
+            transition: 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--water);
+            box-shadow: 0 0 20px rgba(52, 152, 219, 0.2);
+        }
+
+        .form-group textarea { resize: vertical; min-height: 120px; }
+
+        /* FOOTER */
+        .footer {
+            background: #070D12;
+            padding: 60px 20px 30px;
+            border-top: 1px solid rgba(52, 152, 219, 0.1);
+        }
+
+        .footer-content {
+            max-width: 1300px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-brand p { color: var(--text-gray); margin-top: 15px; line-height: 1.7; }
+        .footer h4 { font-size: 1.1rem; margin-bottom: 20px; color: var(--water); }
+        .footer ul { display: flex; flex-direction: column; gap: 12px; }
+        .footer a { color: var(--text-gray); transition: 0.3s; }
+        .footer a:hover { color: var(--water); }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(52, 152, 219, 0.1);
+            color: var(--text-gray);
+            font-size: 0.9rem;
+        }
+
+        /* WHATSAPP */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 65px;
+            height: 65px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: white;
+            box-shadow: 0 8px 30px rgba(37, 211, 102, 0.5);
+            z-index: 1000;
+            animation: pulse 2s infinite;
+            text-decoration: none;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 1024px) {
+            .hero-content { grid-template-columns: 1fr; }
+            .pricing-grid { grid-template-columns: 1fr; max-width: 450px; }
+            .price-card.featured { transform: scale(1); }
+            .testimonials-grid { grid-template-columns: 1fr; }
+            .contact-grid { grid-template-columns: 1fr; }
+            .footer-content { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media (max-width: 768px) {
+            .nav-menu { display: none; }
+            .hero-services { flex-direction: column; }
+            .hero-stats { flex-wrap: wrap; gap: 20px; }
+            .services-grid { grid-template-columns: 1fr; }
+            .footer-content { grid-template-columns: 1fr; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <div class="logo-icon"><i class="fas fa-faucet"></i></div>
+                <span>AQUA</span>PRO
+            </a>
+            <div class="nav-menu">
+                <a href="#inicio" class="nav-link">Inicio</a>
+                <a href="#servicios" class="nav-link">Servicios</a>
+                <a href="#precios" class="nav-link">Precios</a>
+                <a href="#contacto" class="nav-link">Contacto</a>
+            </div>
+            <a href="https://wa.me/56964681874?text=Hola!%20Tengo%20una%20emergencia%20de%20agua" target="_blank" class="nav-cta">
+                <i class="fab fa-whatsapp"></i> 24/7
+            </a>
+        </div>
+    </nav>
+
+    <section class="hero" id="inicio">
+        <div class="hero-bg">
+            <div class="wave"></div>
+        </div>
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>
+                    Soluciones en<br>
+                    <span>Gasfitería Profesional</span>
+                </h1>
+                <p>
+                    Instalaciones, reparaciones y mantención de sistemas de agua y drenaje. 
+                    Atención de emergencias 24/7. Técnicos certificados.
+                </p>
+                <div class="hero-services">
+                    <span class="service-tag"><i class="fas fa-check"></i> Emergencias 24/7</span>
+                    <span class="service-tag"><i class="fas fa-check"></i> Garantía</span>
+                    <span class="service-tag"><i class="fas fa-check"></i> Precios Justos</span>
+                </div>
+                <div class="hero-buttons">
+                    <a href="https://wa.me/56964681874?text=Hola!%20Necesito%20un%20gasfiter" target="_blank" class="btn btn-primary">
+                        <i class="fab fa-whatsapp"></i> Contactar
+                    </a>
+                    <a href="tel:+56223456789" class="btn btn-emergency">
+                        <i class="fas fa-phone-alt"></i> Emergencia
+                    </a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <div class="stat-number">4,000+</div>
+                        <div class="stat-label">Clientes</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">18+</div>
+                        <div class="stat-label">Años</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">30min</div>
+                        <div class="stat-label">Respuesta</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="services" id="servicios">
+        <div class="section-header">
+            <span class="section-badge">SERVICIOS</span>
+            <h2 class="section-title">Soluciones Completas en Agua</h2>
+            <p class="section-subtitle">Desde grifería hasta sistemas completos de alcantarillado</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon"><i class="fas fa-wrench"></i></div>
+                <h3>Reparación de Fugas</h3>
+                <p>Detectamos y reparamos fugas de agua en tuberías, grifos y uniones. Sin obras innecesarias.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon"><i class="fas fa-shower"></i></div>
+                <h3>Instalación Sanitaria</h3>
+                <p>Baños, cocinas y lavanderías. Instalamos WS, inodoros, lavamanos y más.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon"><i class="fas fa-fire-alt"></i></div>
+                <h3>Calefont y Calderas</h3>
+                <p>Instalación, reparación y mantención de calefont a gas y sistemas de calefacción.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon"><i class="fas fa-tint"></i></div>
+                <h3>Bombas de Agua</h3>
+                <p>Instalación y reparación de bombas centrífugas, hidropacks y sistemas de presión.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon"><i class="fas fa-pipe-section"></i></div>
+                <h3>Destape de Drenajes</h3>
+                <p>Desatoros de alcantarillado, cámaras y tuberías con equipos de alta presión.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon"><i class="fas fa-tools"></i></div>
+                <h3>Mantención Preventiva</h3>
+                <p>Revisiones completas para evitar emergencias. Planes de mantención para edificios.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="pricing" id="precios">
+        <div class="section-header">
+            <span class="section-badge">PRECIOS</span>
+            <h2 class="section-title">Planes según tu Necesidad</h2>
+            <p class="section-subtitle">Precios claros sin sorpresas. Diagnóstico gratuito</p>
+        </div>
+        <div class="pricing-grid">
+            <div class="price-card">
+                <h3>REPLICAR</h3>
+                <p class="description">Servicio básico</p>
+                <div class="price-amount">$69.000</div>
+                <p class="price-period">visita técnica</p>
+                <ul class="price-features">
+                    <li><i class="fas fa-check"></i> Diagnóstico</li>
+                    <li><i class="fas fa-check"></i> Reparación simple</li>
+                    <li><i class="fas fa-check"></i> Materiales básicos</li>
+                    <li><i class="fas fa-check"></i> Garantía 30 días</li>
+                </ul>
+                <a href="https://wa.me/56964681874?text=Hola!%20Quiero%20el%20plan%20REPLICAR" target="_blank" class="btn btn-price">
+                    <i class="fab fa-whatsapp"></i> Solicitar
+                </a>
+            </div>
+            <div class="price-card featured">
+                <span class="price-badge">MÁS POPULAR</span>
+                <h3>ADAPTAR</h3>
+                <p class="description">Servicio completo</p>
+                <div class="price-amount">$149.000</div>
+                <p class="price-period">proyecto</p>
+                <ul class="price-features">
+                    <li><i class="fas fa-check"></i> Instalación WS/lavamanos</li>
+                    <li><i class="fas fa-check"></i> Cambio de grifería</li>
+                    <li><i class="fas fa-check"></i> Materiales premium</li>
+                    <li><i class="fas fa-check"></i> Garantía 1 año</li>
+                </ul>
+                <a href="https://wa.me/56964681874?text=Hola!%20Quiero%20el%20plan%20ADAPTAR" target="_blank" class="btn btn-price">
+                    <i class="fab fa-whatsapp"></i> Solicitar
+                </a>
+            </div>
+            <div class="price-card">
+                <span class="price-badge" style="background: var(--accent);">EMERGENCIA</span>
+                <h3>URGENCIA</h3>
+                <p class="description">24/7 disponible</p>
+                <div class="price-amount">$99.000</div>
+                <p class="price-period">visita + reparación</p>
+                <ul class="price-features">
+                    <li><i class="fas fa-check"></i> Respuesta 30 min</li>
+                    <li><i class="fas fa-check"></i> Fugas de agua</li>
+                    <li><i class="fas fa-check"></i> Destape urgente</li>
+                    <li><i class="fas fa-check"></i> 24 horas / 7 días</li>
+                </ul>
+                <a href="https://wa.me/56964681874?text=Hola!%20EMERGENCIA%20de%20agua!" target="_blank" class="btn btn-price">
+                    <i class="fab fa-whatsapp"></i> EMERGENCIA
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials">
+        <div class="section-header">
+            <span class="section-badge">TESTIMONIOS</span>
+            <h2 class="section-title">Clientes Satisfechos</h2>
+        </div>
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <div class="testimonial-stars">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+                <p class="testimonial-text">
+                    "Se reventó una tubería a las 10pm y llegaron en 20 minutos. Solucionaron todo rapidísimo. Excelente servicio."
+                </p>
+                <div class="testimonial-author">
+                    <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop" alt="Cliente">
+                    <div>
+                        <h4>Ricardo Mansilla</h4>
+                        <span>Propietario, Santiago</span>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-stars">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+                <p class="testimonial-text">
+                    "Instalaron un calefont nuevo y cambiaron las tuberías del baño. Trabajo impecable y muy profesionales."
+                </p>
+                <div class="testimonial-author">
+                    <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop" alt="Cliente">
+                    <div>
+                        <h4>Isabel Vega</h4>
+                        <span>Dueña de casa, Providencia</span>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-stars">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+                <p class="testimonial-text">
+                    "Contratamos el plan de mantención para el edificio. Muy contents. Previenen problemas antes de que ocurran."
+                </p>
+                <div class="testimonial-author">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop" alt="Cliente">
+                    <div>
+                        <h4>Carlos Building</h4>
+                        <span>Admin. Edificio, Las Condes</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact" id="contacto">
+        <div class="contact-grid">
+            <div class="contact-info">
+                <h2>¿Problema con el Agua?</h2>
+                <p>Llámanos ahora. Respondemos en menos de 30 minutos. Servicio de emergencia 24/7.</p>
+                <div class="contact-methods">
+                    <a href="https://wa.me/56964681874?text=Hola!%20Necesito%20un%20gasfiter" target="_blank" class="contact-item">
+                        <i class="fab fa-whatsapp"></i>
+                        <div>
+                            <h4>WhatsApp 24/7</h4>
+                            <span>+56 9 6468 1874</span>
+                        </div>
+                    </a>
+                    <a href="tel:+56223456789" class="contact-item">
+                        <i class="fas fa-phone-alt"></i>
+                        <div>
+                            <h4>Teléfono</h4>
+                            <span>(02) 2345 6789</span>
+                        </div>
+                    </a>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <span>contacto@aquapro.cl</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <form class="contact-form" onsubmit="event.preventDefault(); alert('¡Te contactaremos pronto!');">
+                <h3 style="margin-bottom: 25px;">Solicita tu Cotización</h3>
+                <div class="form-group">
+                    <label>Nombre</label>
+                    <input type="text" placeholder="Tu nombre" required>
+                </div>
+                <div class="form-group">
+                    <label>Teléfono</label>
+                    <input type="tel" placeholder="+56 9 XXXX XXXX" required>
+                </div>
+                <div class="form-group">
+                    <label>Tipo de servicio</label>
+                    <input type="text" placeholder="Ej: Fuga, Instalación...">
+                </div>
+                <div class="form-group">
+                    <label>Mensaje</label>
+                    <textarea placeholder="Describe tu problema..."></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center;">
+                    <i class="fas fa-paper-plane"></i> Enviar
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <div class="logo">
+                    <div class="logo-icon"><i class="fas fa-faucet"></i></div>
+                    <span>AQUA</span>PRO
+                </div>
+                <p>Expertos en gasfitería profesional. Más de 18 años，带来 soluciones hídricas completas.</p>
+            </div>
+            <div>
+                <h4>Servicios</h4>
+                <ul>
+                    <li><a href="#">Reparaciones</a></li>
+                    <li><a href="#">Instalaciones</a></li>
+                    <li><a href="#">Emergencias</a></li>
+                    <li><a href="#">Mantención</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Empresa</h4>
+                <ul>
+                    <li><a href="#">Nosotros</a></li>
+                    <li><a href="#">Proyectos</a></li>
+                    <li><a href="#">Testimonios</a></li>
+                    <li><a href="#">Blog</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Contacto</h4>
+                <ul>
+                    <li><a href="https://wa.me/56964681874" target="_blank">WhatsApp</a></li>
+                    <li><a href="tel:+56223456789">Fono</a></li>
+                    <li><a href="mailto:contacto@aquapro.cl">Email</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 AquaPro Chile. Todos los derechos reservados.</p>
+            <p style="margin-top: 10px; color: var(--water);">Impulsado por TuWebPro360 | EP360</p>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/56964681874?text=Hola!%20Necesito%20un%20gasfiter" target="_blank" class="whatsapp-float">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+
+        console.log('%cAquaPro Chile', 'color: #3498DB; font-size: 24px; font-weight: bold;');
+        console.log('%cTuWebPro360 | EP360', 'color: #1ABC9C; font-size: 14px;');
+    </script>
+</body>
+</html>

@@ -3,623 +3,1061 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="EP360 - TuWebPro360. Páginas web premium diseñadas para convertir visitantes en clientes. Impulsado por Emprende Online.">
-    <meta name="keywords" content="páginas web, landing page, diseño premium, desarrollo web, Chile">
-    <meta name="author" content="EP360 - TuWebPro360">
-    <meta property="og:title" content="EP360 - Tu Web Pro 360 | Páginas Web Premium">
-    <meta property="og:description" content="Creamos páginas web premium que convierten visitantes en clientes.">
+    <meta name="description" content="TuWebPro360 - El repertorio más grande de páginas web premium en Chile. 295 plantillas para tu negocio. Diseños únicos, animaciones 3D y precios que se ajustan a tu presupuesto.">
+    <meta name="keywords" content="páginas web, landing page, diseño premium, plantillas web, Chile, constructoras, electricistas, restaurantes">
+    <meta name="author" content="TuWebPro360 - EP360">
+    <meta property="og:title" content="TuWebPro360 | 295 Plantillas Web Premium">
+    <meta property="og:description" content="El repertorio más grande de páginas web premium en Chile. Diseños únicos, animaciones 3D.">
     <meta property="og:type" content="website">
-    <title>EP360 - Tu Web Pro 360 | Páginas Web Premium</title>
+    <title>TuWebPro360 | 295 Plantillas Web Premium - TuWebPro360 - EP360</title>
     
-    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&family=Orbitron:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    
-    <!-- Animation Libraries -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-    
-    <!-- Custom Styles -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <!-- Custom Cursor Glow -->
     <div class="cursor-glow" id="cursorGlow"></div>
-    
-    <!-- Particles Background -->
     <canvas id="particlesCanvas"></canvas>
     
-    <!-- Navbar -->
     <nav class="navbar" id="navbar">
         <div class="nav-container">
             <a href="#" class="nav-logo">
                 <img src="assets/logo-ep360.svg" alt="EP360" class="logo-animated">
-                <span class="logo-text">EP360</span>
+                <span class="logo-text">TuWeb<span class="gradient-text">Pro</span>360</span>
             </a>
+            <div class="nav-brand">
+                <span class="brand-badge">IMPULSADO POR EMPRENDE ONLINE</span>
+            </div>
             <ul class="nav-menu" id="navMenu">
-                <li><a href="#inicio" class="nav-link">Inicio</a></li>
-                <li><a href="#portafolio" class="nav-link">Portafolio</a></li>
-                <li><a href="#servicios" class="nav-link">Servicios</a></li>
-                <li><a href="#proceso" class="nav-link">Proceso</a></li>
-                <li><a href="#testimonios" class="nav-link">Testimonios</a></li>
+                <li><a href="#inicio" class="nav-link active">Inicio</a></li>
+                <li><a href="#catalogo" class="nav-link">Plantillas</a></li>
+                <li><a href="#construccion" class="nav-link">Construcción</a></li>
+                <li><a href="#ofertas" class="nav-link">Ofertas</a></li>
+                <li><a href="#precios" class="nav-link">Precios</a></li>
                 <li><a href="#contacto" class="nav-link">Contacto</a></li>
             </ul>
-            <button class="nav-toggle" id="navToggle" aria-label="Menú">
+            <a href="https://wa.me/56964681874?text=Hola!%20Quiero%20una%20web%20premium" target="_blank" class="btn-nav-whatsapp pulse-glow">
+                <i class="fab fa-whatsapp"></i>
+                <span>WhatsApp</span>
+            </a>
+            <button class="nav-toggle" id="navToggle">
                 <span class="hamburger"></span>
             </button>
         </div>
     </nav>
 
-    <!-- Hero Section -->
     <section class="hero" id="inicio">
+        <div class="hero-bg-effects">
+            <div class="hero-gradient-orb orb-1"></div>
+            <div class="hero-gradient-orb orb-2"></div>
+            <div class="hero-gradient-orb orb-3"></div>
+        </div>
         <div class="hero-content">
             <div class="hero-badge animate-float">
-                <span class="badge-icon">🚀</span>
+                <span class="badge-icon"><i class="fas fa-rocket"></i></span>
                 <span>Impulsado por Emprende Online</span>
+                <span class="badge-pulse"></span>
             </div>
             <h1 class="hero-title">
-                <span class="title-line" id="typedTitle"></span>
-                <span class="title-cursor">|</span>
+                <span class="title-line">El Repertorio #1 de</span>
+                <span class="title-highlight">Páginas Web Premium</span>
+                <span class="title-count">295 PLANTILLAS</span>
             </h1>
             <p class="hero-subtitle animate-fade-up">
-                Somos <strong>EP360</strong>. Creamos páginas web premium que 
-                <span class="gradient-text">convierten visitantes en clientes</span>.
+                Diseños <strong class="gradient-text">espectaculares</strong> con animaciones 3D. 
+                Tu negocio merece una web que <span class="typewriter-text" id="typewriter"></span>
             </p>
-            <div class="hero-ctas">
-                <a href="#portafolio" class="btn btn-primary animate-bounce-in">
-                    <span>VER EJEMPLOS</span>
-                    <i class="fas fa-arrow-right"></i>
+            <div class="hero-search animate-bounce-in">
+                <div class="search-container">
+                    <i class="fas fa-search search-icon"></i>
+                    <input type="text" id="heroSearch" placeholder="Busca tu sector: restaurantes, constructoras, gyms..." autocomplete="off">
+                    <button class="search-btn" onclick="performSearch()">
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+                <div class="search-tags">
+                    <span class="tag" data-sector="restaurantes">Restaurantes</span>
+                    <span class="tag" data-sector="construccion">Construcción</span>
+                    <span class="tag" data-sector="gyms">Gyms</span>
+                    <span class="tag" data-sector="boutique">Boutique</span>
+                    <span class="tag" data-sector="consultoras">Consultoras</span>
+                </div>
+            </div>
+            <div class="hero-stats animate-fade-up delay-1">
+                <div class="stat-card">
+                    <span class="stat-number" data-target="295">0</span>
+                    <span class="stat-label">Plantillas</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number" data-target="35">0</span>
+                    <span class="stat-label">Sectores</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number" data-target="500">0</span>
+                    <span class="stat-suffix">+</span>
+                    <span class="stat-label">Clientes</span>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <span class="stat-label">5.0 Rating</span>
+                </div>
+            </div>
+            <div class="hero-ctas animate-bounce-in delay-2">
+                <a href="#catalogo" class="btn btn-primary btn-lg">
+                    <i class="fas fa-th-large"></i>
+                    <span>EXPLORAR PLANTILLAS</span>
                 </a>
-                <a href="https://wa.me/56964681874?text=Hola%20EP360!%20Quiero%20una%20web%20premium" target="_blank" class="btn btn-secondary animate-bounce-in delay-1">
+                <a href="https://wa.me/56964681874?text=Hola!%20Quiero%20una%20web%20premium%20para%20mi%20negocio" target="_blank" class="btn btn-whatsapp btn-lg">
                     <i class="fab fa-whatsapp"></i>
                     <span>HABLEMOS AHORA</span>
                 </a>
             </div>
-            <div class="hero-stats animate-fade-up delay-2">
-                <div class="stat-item">
-                    <span class="stat-number" data-target="150">0</span>
-                    <span class="stat-label">Proyectos</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-number" data-target="98">0</span>
-                    <span class="stat-suffix">%</span>
-                    <span class="stat-label">Clientes Felices</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-number" data-target="5">0</span>
-                    <span class="stat-label">Años de Experiencia</span>
-                </div>
-            </div>
         </div>
         <div class="hero-visual">
-            <div class="floating-shapes">
-                <div class="shape shape-1"></div>
-                <div class="shape shape-2"></div>
-                <div class="shape shape-3"></div>
-                <div class="shape shape-4"></div>
+            <div class="hero-showcase">
+                <div class="showcase-frame frame-1">
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=300&fit=crop" alt="Dashboard Premium">
+                    <div class="frame-label">Landing Pro</div>
+                </div>
+                <div class="showcase-frame frame-2">
+                    <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?w=400&h=300&fit=crop" alt="Mobile First">
+                    <div class="frame-label">100% Responsive</div>
+                </div>
+                <div class="showcase-frame frame-3">
+                    <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=400&h=300&fit=crop" alt="Team Collaboration">
+                    <div class="frame-label">Animaciones 3D</div>
+                </div>
             </div>
         </div>
-        <div class="scroll-indicator animate-float">
+        <div class="scroll-indicator animate-bounce">
             <span>Scroll</span>
             <i class="fas fa-chevron-down"></i>
         </div>
     </section>
 
-    <!-- Problema Section -->
-    <section class="section problema" id="problema">
+    <section class="social-proof" id="social-proof">
         <div class="container">
-            <div class="section-header">
-                <span class="section-badge animate-on-scroll">⚠️ EL PROBLEMA</span>
-                <h2 class="section-title animate-on-scroll">¿Tienes Una Web Mediocre?</h2>
-                <p class="section-subtitle animate-on-scroll">
-                    El 94% de las primeras impresiones dependen del diseño. 
-                    Tu web es tu carta de presentación al mundo.
-                </p>
-            </div>
-            <div class="problema-grid">
-                <div class="problema-card animate-on-scroll">
-                    <div class="card-icon">
-                        <i class="fas fa-spinner fa-spin"></i>
-                    </div>
-                    <h3>Lenta como Tortuga</h3>
-                    <p>Cada segundo de carga extra pierde el 7% de tus visitantes.</p>
+            <div class="proof-logos">
+                <div class="proof-item">
+                    <i class="fas fa-building"></i>
+                    <span>+150 Constructoras</span>
                 </div>
-                <div class="problema-card animate-on-scroll">
-                    <div class="card-icon">
-                        <i class="fas fa-mobile-alt"></i>
-                    </div>
-                    <h3>No se Ve en Móvil</h3>
-                    <p>El 60% del tráfico viene de celulares. ¿Tu web está lista?</p>
+                <div class="proof-item">
+                    <i class="fas fa-utensils"></i>
+                    <span>+80 Restaurantes</span>
                 </div>
-                <div class="problema-card animate-on-scroll">
-                    <div class="card-icon">
-                        <i class="fas fa-eye-slash"></i>
-                    </div>
-                    <h3>No Convierte</h3>
-                    <p>Visitas que se van sin contactarte = dinero perdido.</p>
+                <div class="proof-item">
+                    <i class="fas fa-store"></i>
+                    <span>+60 Boutiques</span>
                 </div>
-                <div class="problema-card animate-on-scroll">
-                    <div class="card-icon">
-                        <i class="fas fa-paint-brush"></i>
-                    </div>
-                    <h3>Diseño Antiqueda</h3>
-                    <p>Si parece de 2010, tu negocio parece de 2010.</p>
+                <div class="proof-item">
+                    <i class="fas fa-dumbbell"></i>
+                    <span>+40 Gimnasios</span>
+                </div>
+                <div class="proof-item">
+                    <i class="fas fa-bolt"></i>
+                    <span>+30 Electricistas</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Solución Section -->
-    <section class="section solucion" id="solucion">
+    <section class="ofertas-banner" id="ofertas">
         <div class="container">
-            <div class="solucion-content">
-                <span class="section-badge animate-on-scroll">✨ LA SOLUCIÓN</span>
-                <h2 class="section-title animate-on-scroll">
-                    EP360 Tiene La Respuesta
+            <div class="offer-cards">
+                <div class="offer-card offer-1">
+                    <div class="offer-badge">🔥 OFERTA LANZAMIENTO</div>
+                    <div class="offer-countdown">
+                        <span class="countdown-label">Termina en:</span>
+                        <div class="countdown-timer" id="countdown1">
+                            <div class="countdown-unit">
+                                <span class="countdown-num" id="days1">00</span>
+                                <span class="countdown-text">Días</span>
+                            </div>
+                            <div class="countdown-unit">
+                                <span class="countdown-num" id="hours1">00</span>
+                                <span class="countdown-text">Horas</span>
+                            </div>
+                            <div class="countdown-unit">
+                                <span class="countdown-num" id="minutes1">00</span>
+                                <span class="countdown-text">Min</span>
+                            </div>
+                            <div class="countdown-unit">
+                                <span class="countdown-num" id="seconds1">00</span>
+                                <span class="countdown-text">Seg</span>
+                            </div>
+                        </div>
+                    </div>
+                    <h3>-30% OFF</h3>
+                    <p>En todas las plantillas de Construcción</p>
+                    <a href="#construccion" class="btn btn-offer">VER AHORA</a>
+                </div>
+                <div class="offer-card offer-2">
+                    <div class="offer-badge">⚡ 2x1 ESPECIAL</div>
+                    <h3>Landing + Multi página</h3>
+                    <div class="offer-price">
+                        <span class="price-old">$498.000</span>
+                        <span class="price-new">$249.000</span>
+                    </div>
+                    <p>Solo 15 cupos disponibles</p>
+                    <div class="offer-progress">
+                        <div class="progress-bar" style="width: 60%"></div>
+                        <span>11/15 vendidos</span>
+                    </div>
+                    <a href="https://wa.me/56964681874?text=Hola!%20Quiero%20aprovechar%20la%20oferta%202x1" target="_blank" class="btn btn-offer">APROVECHAR</a>
+                </div>
+                <div class="offer-card offer-3">
+                    <div class="offer-badge">👥 PLAN REFERIDOS</div>
+                    <h3>Trae 3 clientes</h3>
+                    <div class="offer-price">
+                        <span class="price-bonus">Gana $100.000</span>
+                    </div>
+                    <p>Por cada 3 ventas cerradas</p>
+                    <a href="https://wa.me/56964681874?text=Hola!%20Quiero%20ser%20referido" target="_blank" class="btn btn-offer">MÁS INFO</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="catalogo" id="catalogo">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">
+                    <i class="fas fa-palette"></i>
+                    <span>NUESTRO REPERTORIO</span>
+                </div>
+                <h2 class="section-title">
+                    <span class="gradient-text">295 Plantillas</span> Premium
                 </h2>
-                <p class="section-subtitle animate-on-scroll">
-                    No vendemos páginas web. Vendemos <strong>máquinas de hacer dinero</strong> 
-                    diseñadas para tu éxito.
+                <p class="section-subtitle">
+                    Elige el diseño perfecto para tu negocio. Cada plantilla incluye animaciones 3D, 
+                    optimizado para conversiones y 100% responsive.
                 </p>
-                <div class="beneficios-list">
-                    <div class="beneficio-item animate-on-scroll">
+            </div>
+            
+            <div class="filter-bar">
+                <div class="filter-group">
+                    <label>Tipo:</label>
+                    <select id="filterTipo" class="filter-select">
+                        <option value="">Todos</option>
+                        <option value="landing">Landing Page</option>
+                        <option value="multi">Multi Página</option>
+                        <option value="ecommerce">E-Commerce</option>
+                        <option value="premium">Premium</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label>Precio:</label>
+                    <select id="filterPrecio" class="filter-select">
+                        <option value="">Todos</option>
+                        <option value="bajo">$99.000 - $199.000</option>
+                        <option value="medio">$199.000 - $399.000</option>
+                        <option value="alto">$399.000+</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label>Sector:</label>
+                    <select id="filterSector" class="filter-select">
+                        <option value="">Todos</option>
+                        <option value="restaurantes">Restaurantes</option>
+                        <option value="construccion">Construcción</option>
+                        <option value="retail">Retail</option>
+                        <option value="servicios">Servicios</option>
+                        <option value="salud">Salud</option>
+                        <option value="educacion">Educación</option>
+                        <option value="tecnologia">Tecnología</option>
+                        <option value="automotriz">Automotriz</option>
+                    </select>
+                </div>
+                <button class="filter-reset" onclick="resetFilters()">
+                    <i class="fas fa-redo"></i> Limpiar
+                </button>
+            </div>
+            
+            <div class="catalogo-grid" id="catalogoGrid">
+                <div class="template-card" data-tipo="landing" data-precio="bajo" data-sector="restaurantes">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=600&h=400&fit=crop" alt="Restaurante Premium">
+                        <div class="card-overlay">
+                            <button class="btn-preview" onclick="previewTemplate(this)">
+                                <i class="fas fa-eye"></i> Vista Previa
+                            </button>
+                            <a href="https://wa.me/56964681874?text=Hola!%20Me%20interesa%20la%20plantilla%20de%20Restaurante" class="btn-interest">
+                                <i class="fab fa-whatsapp"></i> Interesado
+                            </a>
+                        </div>
+                        <div class="card-badges">
+                            <span class="badge-new">NUEVA</span>
+                            <span class="badge-offer">-30%</span>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <span class="card-category">Restaurantes</span>
+                        <h3 class="card-title">Restaurante Fine Dining</h3>
+                        <p class="card-description">Diseño elegante para restaurantes de alta cocina</p>
+                        <div class="card-footer">
+                            <div class="card-price">
+                                <span class="price-old">$149.000</span>
+                                <span class="price-current">$99.000</span>
+                            </div>
+                            <div class="card-rating">
+                                <i class="fas fa-star"></i> 4.9
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="template-card" data-tipo="landing" data-precio="bajo" data-sector="construccion">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&h=400&fit=crop" alt="Constructora Pro">
+                        <div class="card-overlay">
+                            <button class="btn-preview" onclick="previewTemplate(this)">
+                                <i class="fas fa-eye"></i> Vista Previa
+                            </button>
+                            <a href="https://wa.me/56964681874?text=Hola!%20Me%20interesa%20la%20plantilla%20de%20Constructora" class="btn-interest">
+                                <i class="fab fa-whatsapp"></i> Interesado
+                            </a>
+                        </div>
+                        <div class="card-badges">
+                            <span class="badge-hot">🔥 HOT</span>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <span class="card-category">Construcción</span>
+                        <h3 class="card-title">Constructora Industrial</h3>
+                        <p class="card-description">Diseño robusto para empresas de construcción</p>
+                        <div class="card-footer">
+                            <div class="card-price">
+                                <span class="price-current">$149.000</span>
+                            </div>
+                            <div class="card-rating">
+                                <i class="fas fa-star"></i> 5.0
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="template-card" data-tipo="multi" data-precio="medio" data-sector="gyms">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=600&h=400&fit=crop" alt="Gym Premium">
+                        <div class="card-overlay">
+                            <button class="btn-preview" onclick="previewTemplate(this)">
+                                <i class="fas fa-eye"></i> Vista Previa
+                            </button>
+                            <a href="https://wa.me/56964681874?text=Hola!%20Me%20interesa%20la%20plantilla%20de%20Gimnasio" class="btn-interest">
+                                <i class="fab fa-whatsapp"></i> Interesado
+                            </a>
+                        </div>
+                        <div class="card-badges">
+                            <span class="badge-offer">-20%</span>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <span class="card-category">Gimnasios</span>
+                        <h3 class="card-title">Gym & Fitness Pro</h3>
+                        <p class="card-description">Energía y dinamismo para centros deportivos</p>
+                        <div class="card-footer">
+                            <div class="card-price">
+                                <span class="price-old">$249.000</span>
+                                <span class="price-current">$199.000</span>
+                            </div>
+                            <div class="card-rating">
+                                <i class="fas fa-star"></i> 4.8
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="template-card" data-tipo="landing" data-precio="bajo" data-sector="boutique">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=600&h=400&fit=crop" alt="Boutique Elegante">
+                        <div class="card-overlay">
+                            <button class="btn-preview" onclick="previewTemplate(this)">
+                                <i class="fas fa-eye"></i> Vista Previa
+                            </button>
+                            <a href="https://wa.me/56964681874?text=Hola!%20Me%20interesa%20la%20plantilla%20de%20Boutique" class="btn-interest">
+                                <i class="fab fa-whatsapp"></i> Interesado
+                            </a>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <span class="card-category">Retail</span>
+                        <h3 class="card-title">Boutique Fashion</h3>
+                        <p class="card-description">Elegancia minimalista para tiendas de moda</p>
+                        <div class="card-footer">
+                            <div class="card-price">
+                                <span class="price-current">$99.000</span>
+                            </div>
+                            <div class="card-rating">
+                                <i class="fas fa-star"></i> 4.9
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="template-card" data-tipo="multi" data-precio="medio" data-sector="consultoras">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&h=400&fit=crop" alt="Consultora Empresarial">
+                        <div class="card-overlay">
+                            <button class="btn-preview" onclick="previewTemplate(this)">
+                                <i class="fas fa-eye"></i> Vista Previa
+                            </button>
+                            <a href="https://wa.me/56964681874?text=Hola!%20Me%20interesa%20la%20plantilla%20de%20Consultora" class="btn-interest">
+                                <i class="fab fa-whatsapp"></i> Interesado
+                            </a>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <span class="card-category">Servicios</span>
+                        <h3 class="card-title">Consultora Legal</h3>
+                        <p class="card-description">Profesionalismo y confianza para asesorías</p>
+                        <div class="card-footer">
+                            <div class="card-price">
+                                <span class="price-current">$249.000</span>
+                            </div>
+                            <div class="card-rating">
+                                <i class="fas fa-star"></i> 5.0
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="template-card" data-tipo="ecommerce" data-precio="alto" data-sector="retail">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=400&fit=crop" alt="E-Commerce Pro">
+                        <div class="card-overlay">
+                            <button class="btn-preview" onclick="previewTemplate(this)">
+                                <i class="fas fa-eye"></i> Vista Previa
+                            </button>
+                            <a href="https://wa.me/56964681874?text=Hola!%20Me%20interesa%20la%20plantilla%20E-Commerce" class="btn-interest">
+                                <i class="fab fa-whatsapp"></i> Interesado
+                            </a>
+                        </div>
+                        <div class="card-badges">
+                            <span class="badge-premium">PREMIUM</span>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <span class="card-category">E-Commerce</span>
+                        <h3 class="card-title">Tienda Online Completa</h3>
+                        <p class="card-description">Carrito, pagos integrados, gestión de inventario</p>
+                        <div class="card-footer">
+                            <div class="card-price">
+                                <span class="price-current">$399.000</span>
+                            </div>
+                            <div class="card-rating">
+                                <i class="fas fa-star"></i> 4.9
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="template-card" data-tipo="landing" data-precio="bajo" data-sector="belleza">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=600&h=400&fit=crop" alt="Centro Estético">
+                        <div class="card-overlay">
+                            <button class="btn-preview" onclick="previewTemplate(this)">
+                                <i class="fas fa-eye"></i> Vista Previa
+                            </button>
+                            <a href="https://wa.me/56964681874?text=Hola!%20Me%20interesa%20la%20plantilla%20de%20Belleza" class="btn-interest">
+                                <i class="fab fa-whatsapp"></i> Interesado
+                            </a>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <span class="card-category">Belleza</span>
+                        <h3 class="card-title">Centro Estético Spa</h3>
+                        <p class="card-description">Relajación y sofisticación para centros de belleza</p>
+                        <div class="card-footer">
+                            <div class="card-price">
+                                <span class="price-current">$99.000</span>
+                            </div>
+                            <div class="card-rating">
+                                <i class="fas fa-star"></i> 4.8
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="template-card" data-tipo="multi" data-precio="medio" data-sector="inmobiliaria">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=600&h=400&fit=crop" alt="Inmobiliaria Premium">
+                        <div class="card-overlay">
+                            <button class="btn-preview" onclick="previewTemplate(this)">
+                                <i class="fas fa-eye"></i> Vista Previa
+                            </button>
+                            <a href="https://wa.me/56964681874?text=Hola!%20Me%20interesa%20la%20plantilla%20de%20Inmobiliaria" class="btn-interest">
+                                <i class="fab fa-whatsapp"></i> Interesado
+                            </a>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <span class="card-category">Inmobiliaria</span>
+                        <h3 class="card-title">Agencia Inmobiliaria</h3>
+                        <p class="card-description">Diseño premium para corretaje de propiedades</p>
+                        <div class="card-footer">
+                            <div class="card-price">
+                                <span class="price-current">$249.000</span>
+                            </div>
+                            <div class="card-rating">
+                                <i class="fas fa-star"></i> 5.0
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="catalogo-more">
+                <p class="more-text">+287 plantillas más disponibles</p>
+                <a href="#contacto" class="btn btn-primary btn-lg">
+                    <i class="fas fa-envelope"></i>
+                    <span>SOLICITAR CATÁLOGO COMPLETO</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="construccion-section" id="construccion">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">
+                    <i class="fas fa-hard-hat"></i>
+                    <span>SECTOR CONSTRUCCIÓN</span>
+                </div>
+                <h2 class="section-title">
+                    <span class="gradient-text">175 Plantillas</span> para Construcción
+                </h2>
+                <p class="section-subtitle">
+                    El sector más completo con 35 subsectores. Ventanas, electricistas, pintores, 
+                    arquitectos, constructoras y más. Cada una con diseño único y animaciones premium.
+                </p>
+            </div>
+            
+            <div class="construccion-categories">
+                <div class="category-card" data-subsector="ventanas">
+                    <div class="category-icon">
+                        <i class="fas fa-vector-square"></i>
+                    </div>
+                    <h3>Ventanas</h3>
+                    <span class="category-count">5 plantillas</span>
+                </div>
+                <div class="category-card" data-subsector="electricistas">
+                    <div class="category-icon">
                         <i class="fas fa-bolt"></i>
-                        <span>Rapidez Extrema (Menos de 2s de carga)</span>
                     </div>
-                    <div class="beneficio-item animate-on-scroll">
-                        <i class="fas fa-mobile-alt"></i>
-                        <span>100% Responsive (Móvil + Desktop)</span>
+                    <h3>Electricistas</h3>
+                    <span class="category-count">5 plantillas</span>
+                </div>
+                <div class="category-card" data-subsector="pintores">
+                    <div class="category-icon">
+                        <i class="fas fa-paint-roller"></i>
                     </div>
-                    <div class="beneficio-item animate-on-scroll">
-                        <i class="fas fa-rocket"></i>
-                        <span>Animaciones Premium que Impactan</span>
+                    <h3>Pintores</h3>
+                    <span class="category-count">5 plantillas</span>
+                </div>
+                <div class="category-card" data-subsector="gasfiteros">
+                    <div class="category-icon">
+                        <i class="fas fa-faucet"></i>
                     </div>
-                    <div class="beneficio-item animate-on-scroll">
-                        <i class="fas fa-search-engine"></i>
-                        <span>SEO Optimizado (Google te encuentra)</span>
+                    <h3>Gasfiteros</h3>
+                    <span class="category-count">5 plantillas</span>
+                </div>
+                <div class="category-card" data-subsector="constructoras">
+                    <div class="category-icon">
+                        <i class="fas fa-building"></i>
                     </div>
-                    <div class="beneficio-item animate-on-scroll">
-                        <i class="fas fa-shield-alt"></i>
-                        <span>Seguridad de Nivel Empresarial</span>
+                    <h3>Constructoras</h3>
+                    <span class="category-count">5 plantillas</span>
+                </div>
+                <div class="category-card" data-subsector="arquitectos">
+                    <div class="category-icon">
+                        <i class="fas fa-drafting-compass"></i>
                     </div>
-                    <div class="beneficio-item animate-on-scroll">
-                        <i class="fas fa-chart-line"></i>
-                        <span>Diseñada Para Convertir Visitantes en Clientes</span>
+                    <h3>Arquitectos</h3>
+                    <span class="category-count">5 plantillas</span>
+                </div>
+                <div class="category-card" data-subsector="pisos">
+                    <div class="category-icon">
+                        <i class="fas fa-th-large"></i>
                     </div>
+                    <h3>Pisos y Pavimentos</h3>
+                    <span class="category-count">5 plantillas</span>
+                </div>
+                <div class="category-card" data-subsector="techumbres">
+                    <div class="category-icon">
+                        <i class="fas fa-umbrella"></i>
+                    </div>
+                    <h3>Techumbres</h3>
+                    <span class="category-count">5 plantillas</span>
+                </div>
+                <div class="category-card" data-subsector="demoliciones">
+                    <div class="category-icon">
+                        <i class="fas fa-hammer"></i>
+                    </div>
+                    <h3>Demoliciones</h3>
+                    <span class="category-count">5 plantillas</span>
+                </div>
+                <div class="category-card" data-subsector="jardineria">
+                    <div class="category-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3>Jardinería</h3>
+                    <span class="category-count">5 plantillas</span>
+                </div>
+                <div class="category-card" data-subsector="piscinas">
+                    <div class="category-icon">
+                        <i class="fas fa-swimming-pool"></i>
+                    </div>
+                    <h3>Piscinas</h3>
+                    <span class="category-count">5 plantillas</span>
+                </div>
+                <div class="category-card" data-subsector="aluminio">
+                    <div class="category-icon">
+                        <i class="fas fa-window-maximize"></i>
+                    </div>
+                    <h3>Aluminio y Vidrios</h3>
+                    <span class="category-count">5 plantillas</span>
+                </div>
+            </div>
+            
+            <div class="construccion-search">
+                <div class="search-advanced">
+                    <input type="text" id="construccionSearch" placeholder="Busca tu especialidad: cerrajería, climatización, mudanzas...">
+                    <button onclick="searchConstruccion()">
+                        <i class="fas fa-search"></i> Buscar
+                    </button>
+                </div>
+                <div class="subsector-tags">
+                    <span class="subsector-tag">Cerrajería</span>
+                    <span class="subsector-tag">Climatización</span>
+                    <span class="subsector-tag">Mudanzas</span>
+                    <span class="subsector-tag">Pintura</span>
+                    <span class="subsector-tag">Flooring</span>
+                    <span class="subsector-tag">Mármol</span>
+                    <span class="subsector-tag">Puertas</span>
+                    <span class="subsector-tag">Ferretería</span>
+                    <span class="subsector-tag">Sistemas Solares</span>
+                    <span class="subsector-tag">Impermeabilización</span>
+                </div>
+            </div>
+            
+            <div class="construccion-cta">
+                <div class="cta-content">
+                    <h3>¿No encuentras tu especialidad?</h3>
+                    <p>Tenemos +35 subsectores. Contáctanos y te mostramos todo el repertorio.</p>
+                    <a href="https://wa.me/56964681874?text=Hola!%20Quiero%20ver%20las%20plantillas%20del%20sector%20construcción" target="_blank" class="btn btn-whatsapp btn-lg">
+                        <i class="fab fa-whatsapp"></i>
+                        <span>VER CATÁLOGO COMPLETO</span>
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Portafolio Section -->
-    <section class="section portafolio" id="portafolio">
+    <section class="pricing-section" id="precios">
         <div class="container">
             <div class="section-header">
-                <span class="section-badge animate-on-scroll">🎨 PORTFOLIO</span>
-                <h2 class="section-title animate-on-scroll">Nuestros Trabajos</h2>
-                <p class="section-subtitle animate-on-scroll">
-                    Cada proyecto es único. Cada web es una obra de arte digital.
+                <div class="section-badge">
+                    <i class="fas fa-tags"></i>
+                    <span>PLANES Y PRECIOS</span>
+                </div>
+                <h2 class="section-title">
+                    Elige tu <span class="gradient-text">Plan Perfecto</span>
+                </h2>
+                <p class="section-subtitle">
+                    Tres opciones diseñadas para cada presupuesto. 
+                    Todos incluyen animaciones premium, diseño responsive y soporte incluido.
                 </p>
             </div>
-            <div class="bento-grid">
-                <div class="bento-item bento-large animate-on-scroll">
-                    <div class="bento-image">
-                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80" alt="Proyecto Restaurant Premium">
-                    </div>
-                    <div class="bento-overlay">
-                        <span class="bento-category">Restaurante</span>
-                        <h3>Café Artesanal</h3>
-                        <p>Landing premium con reservas online</p>
-                    </div>
-                </div>
-                <div class="bento-item animate-on-scroll">
-                    <div class="bento-image">
-                        <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=600&q=80" alt="Tienda Online">
-                    </div>
-                    <div class="bento-overlay">
-                        <span class="bento-category">E-commerce</span>
-                        <h3>Boutique Chic</h3>
-                    </div>
-                </div>
-                <div class="bento-item animate-on-scroll">
-                    <div class="bento-image">
-                        <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=600&q=80" alt="SaaS Tech">
-                    </div>
-                    <div class="bento-overlay">
-                        <span class="bento-category">SaaS</span>
-                        <h3>TechStart</h3>
-                    </div>
-                </div>
-                <div class="bento-item animate-on-scroll">
-                    <div class="bento-image">
-                        <img src="https://images.unsplash.com/photo-1560179707-f14e90ef3623?w=600&q=80" alt="Inmobiliaria">
-                    </div>
-                    <div class="bento-overlay">
-                        <span class="bento-category">Inmobiliaria</span>
-                        <h3>Propiedades Elite</h3>
-                    </div>
-                </div>
-                <div class="bento-item bento-wide animate-on-scroll">
-                    <div class="bento-image">
-                        <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800&q=80" alt="Consultora">
-                    </div>
-                    <div class="bento-overlay">
-                        <span class="bento-category">Consultora</span>
-                        <h3>Asesoría Premium</h3>
-                        <p>Diseño corporativo de alto impacto</p>
-                    </div>
-                </div>
-                <div class="bento-item animate-on-scroll">
-                    <div class="bento-image">
-                        <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=600&q=80" alt="Fitness">
-                    </div>
-                    <div class="bento-overlay">
-                        <span class="bento-category">Fitness</span>
-                        <h3>FitLife Pro</h3>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Servicios Section -->
-    <section class="section servicios" id="servicios">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-badge animate-on-scroll">💰 SERVICIOS</span>
-                <h2 class="section-title animate-on-scroll">Elige Tu Plan Perfecto</h2>
-                <p class="section-subtitle animate-on-scroll">
-                    Dos opciones. Mismo nivel de calidad premium.
-                </p>
-            </div>
+            
             <div class="pricing-grid">
-                <div class="pricing-card animate-on-scroll">
+                <div class="pricing-card">
                     <div class="pricing-header">
-                        <span class="pricing-badge">MÁS POPULAR</span>
-                        <h3 class="pricing-title">OPCIÓN 1</h3>
-                        <p class="pricing-subtitle">Web Igual</p>
-                        <div class="pricing-price">
-                            <span class="price-currency">$</span>
-                            <span class="price-value">297</span>
-                            <span class="price-period">USD</span>
+                        <div class="plan-icon">
+                            <i class="fas fa-copy"></i>
                         </div>
+                        <h3 class="plan-name">REPLICAR</h3>
+                        <p class="plan-description">Misma plantilla, tu contenido</p>
                     </div>
-                    <ul class="pricing-features">
-                        <li><i class="fas fa-check"></i> Landing idéntica a la que ves</li>
-                        <li><i class="fas fa-check"></i> Cambiamos textos e imágenes</li>
-                        <li><i class="fas fa-check"></i> Tu branding y colores</li>
-                        <li><i class="fas fa-check"></i> Animaciones premium incluidas</li>
-                        <li><i class="fas fa-check"></i> 100% Responsive</li>
-                        <li><i class="fas fa-check"></i> Entrega en 48-72 horas</li>
-                    </ul>
-                    <a href="https://wa.me/56964681874?text=Hola!%20Quiero%20la%20OPCIÓN%201%20(Web%20Igual)" target="_blank" class="btn btn-pricing">
-                        <i class="fab fa-whatsapp"></i>
-                        SOLICITAR AHORA
-                    </a>
+                    <div class="pricing-price">
+                        <span class="price-range">Desde</span>
+                        <span class="price-amount">$99.000</span>
+                        <span class="price-range">hasta $249.000</span>
+                    </div>
+                    <div class="pricing-features">
+                        <ul>
+                            <li><i class="fas fa-check"></i> Diseño idéntico a la plantilla</li>
+                            <li><i class="fas fa-check"></i> Textos e imágenes personalizados</li>
+                            <li><i class="fas fa-check"></i> Tu branding y colores</li>
+                            <li><i class="fas fa-check"></i> Animaciones premium incluidas</li>
+                            <li><i class="fas fa-check"></i> 100% Responsive</li>
+                            <li><i class="fas fa-check"></i> Entrega en 48-72 horas</li>
+                            <li><i class="fas fa-check"></i> 3 rondas de cambios</li>
+                        </ul>
+                    </div>
+                    <div class="pricing-cta">
+                        <a href="https://wa.me/56964681874?text=Hola!%20Quiero%20el%20plan%20REPLICAR" target="_blank" class="btn btn-outline">
+                            <i class="fab fa-whatsapp"></i>
+                            <span>SOLICITAR AHORA</span>
+                        </a>
+                    </div>
                 </div>
-                <div class="pricing-card pricing-featured animate-on-scroll">
-                    <div class="featured-glow"></div>
+                
+                <div class="pricing-card featured">
+                    <div class="pricing-badge">⭐ MÁS POPULAR</div>
                     <div class="pricing-header">
-                        <span class="pricing-badge featured">⭐ RECOMENDADO</span>
-                        <h3 class="pricing-title">OPCIÓN 2</h3>
-                        <p class="pricing-subtitle">Web a Tu Medida</p>
-                        <div class="pricing-price">
-                            <span class="price-currency">$</span>
-                            <span class="price-value">597</span>
-                            <span class="price-period">USD</span>
-                        </div>
-                    </div>
-                    <ul class="pricing-features">
-                        <li><i class="fas fa-check"></i> <strong>100% Personalizada</strong></li>
-                        <li><i class="fas fa-check"></i> Diseño único para tu marca</li>
-                        <li><i class="fas fa-check"></i> Dominio .CL o .COM (1 año)</li>
-                        <li><i class="fas fa-check"></i> Hosting incluido (1 año)</li>
-                        <li><i class="fas fa-check"></i> Animaciones premium exclusivas</li>
-                        <li><i class="fas fa-check"></i> Código 100% tuyo para siempre</li>
-                        <li><i class="fas fa-check"></i> Soporte prioritario 30 días</li>
-                    </ul>
-                    <a href="https://wa.me/56964681874?text=Hola!%20Quiero%20la%20OPCIÓN%202%20(Web%20a%20Tu%20Medida)" target="_blank" class="btn btn-pricing featured">
-                        <i class="fab fa-whatsapp"></i>
-                        SOLICITAR AHORA
-                    </a>
-                </div>
-            </div>
-            <div class="garantia animate-on-scroll">
-                <i class="fas fa-shield-alt"></i>
-                <div>
-                    <strong>Garantía de Satisfacción</strong>
-                    <p>Si no te encanta tu web, te devolvemos tu dinero. Sin preguntas.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Proceso Section -->
-    <section class="section proceso" id="proceso">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-badge animate-on-scroll">⚡ PROCESO</span>
-                <h2 class="section-title animate-on-scroll">3 Pasos Hacia Tu Web Premium</h2>
-                <p class="section-subtitle animate-on-scroll">
-                    Simple. Rápido. Sin complicaciones.
-                </p>
-            </div>
-            <div class="timeline">
-                <div class="timeline-item animate-on-scroll">
-                    <div class="timeline-marker">
-                        <span class="marker-number">1</span>
-                        <span class="marker-line"></span>
-                    </div>
-                    <div class="timeline-content">
-                        <div class="timeline-icon">
-                            <i class="fas fa-comments"></i>
-                        </div>
-                        <h3>Contactanos</h3>
-                        <p>Cuéntanos sobre tu proyecto por WhatsApp. Te asesoramos gratis y definimos tu visión.</p>
-                    </div>
-                </div>
-                <div class="timeline-item animate-on-scroll">
-                    <div class="timeline-marker">
-                        <span class="marker-number">2</span>
-                        <span class="marker-line"></span>
-                    </div>
-                    <div class="timeline-content">
-                        <div class="timeline-icon">
+                        <div class="plan-icon">
                             <i class="fas fa-magic"></i>
                         </div>
-                        <h3>Diseñamos</h3>
-                        <p>Creamos tu web con animaciones premium, optimizada para convertir visitantes en clientes.</p>
+                        <h3 class="plan-name">ADAPTAR</h3>
+                        <p class="plan-description">Diseño basado en plantilla, único para ti</p>
+                        <span class="plan-cert">Certificado de Exclusividad</span>
+                    </div>
+                    <div class="pricing-price">
+                        <span class="price-range">Desde</span>
+                        <span class="price-amount">$249.000</span>
+                        <span class="price-range">hasta $449.000</span>
+                    </div>
+                    <div class="pricing-features">
+                        <ul>
+                            <li><i class="fas fa-check"></i> Diseño basado en plantilla con cambios significativos</li>
+                            <li><i class="fas fa-check"></i> Layout personalizado y exclusivo</li>
+                            <li><i class="fas fa-check"></i> Animaciones 3D únicas</li>
+                            <li><i class="fas fa-check"></i> Tu branding y colores corporativos</li>
+                            <li><i class="fas fa-check"></i> Certificado de Exclusividad</li>
+                            <li><i class="fas fa-check"></i> 5 rondas de cambios</li>
+                            <li><i class="fas fa-check"></i> Soporte 30 días</li>
+                            <li><i class="fas fa-check"></i> Entrega en 5-7 días</li>
+                        </ul>
+                    </div>
+                    <div class="pricing-cta">
+                        <a href="https://wa.me/56964681874?text=Hola!%20Quiero%20el%20plan%20ADAPTAR" target="_blank" class="btn btn-primary">
+                            <i class="fab fa-whatsapp"></i>
+                            <span>SOLICITAR AHORA</span>
+                        </a>
                     </div>
                 </div>
-                <div class="timeline-item animate-on-scroll">
-                    <div class="timeline-marker">
-                        <span class="marker-number">3</span>
-                    </div>
-                    <div class="timeline-content">
-                        <div class="timeline-icon">
-                            <i class="fas fa-rocket"></i>
+                
+                <div class="pricing-card premium">
+                    <div class="pricing-badge">👑 PREMIUM</div>
+                    <div class="pricing-header">
+                        <div class="plan-icon">
+                            <i class="fas fa-crown"></i>
                         </div>
-                        <h3>Tu Web Lista</h3>
-                        <p>Recibes tu web lista para conquistar el mundo digital. ¡Listo para escalar!</p>
+                        <h3 class="plan-name">PERSONALIZAR</h3>
+                        <p class="plan-description">100% desde cero, 100% tuyo</p>
+                        <span class="plan-cert">Propiedad Intelectual Incluida</span>
+                    </div>
+                    <div class="pricing-price">
+                        <span class="price-range">Desde</span>
+                        <span class="price-amount">$549.000</span>
+                        <span class="price-range">hasta $999.000</span>
+                    </div>
+                    <div class="pricing-features">
+                        <ul>
+                            <li><i class="fas fa-check"></i> Diseño 100% personalizado desde cero</li>
+                            <li><i class="fas fa-check"></i> Código 100% tuyo</li>
+                            <li><i class="fas fa-check"></i> Propiedad Intelectual incluida</li>
+                            <li><i class="fas fa-check"></i> Animaciones 3D exclusivas</li>
+                            <li><i class="fas fa-check"></i> Dominio .CL o .COM (1 año)</li>
+                            <li><i class="fas fa-check"></i> Hosting incluido (1 año)</li>
+                            <li><i class="fas fa-check"></i> 10 rondas de cambios</li>
+                            <li><i class="fas fa-check"></i> Soporte prioritario 60 días</li>
+                            <li><i class="fas fa-check"></i> Entrega en 10-15 días</li>
+                        </ul>
+                    </div>
+                    <div class="pricing-cta">
+                        <a href="https://wa.me/56964681874?text=Hola!%20Quiero%20el%20plan%20PERSONALIZAR" target="_blank" class="btn btn-premium">
+                            <i class="fab fa-whatsapp"></i>
+                            <span>SOLICITAR AHORA</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="pricing-guarantee">
+                <div class="guarantee-item">
+                    <i class="fas fa-shield-alt"></i>
+                    <div>
+                        <h4>Garantía de Satisfacción</h4>
+                        <p>Si no te gusta, te devolvemos tu dinero</p>
+                    </div>
+                </div>
+                <div class="guarantee-item">
+                    <i class="fas fa-clock"></i>
+                    <div>
+                        <h4>Entrega Rápida</h4>
+                        <p>Mínimo 48 horas, máximo 15 días</p>
+                    </div>
+                </div>
+                <div class="guarantee-item">
+                    <i class="fas fa-headset"></i>
+                    <div>
+                        <h4>Soporte Incluido</h4>
+                        <p>Estamos contigo después de la entrega</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Testimonios Section -->
-    <section class="section testimonios" id="testimonios">
+    <section class="payment-section">
+        <div class="container">
+            <h3 class="payment-title">Métodos de Pago</h3>
+            <div class="payment-methods">
+                <div class="payment-method">
+                    <img src="https://www.mercadopago.com/org-img/MLB3/MPCO/03/20191212_1748.jpg" alt="Mercado Pago">
+                    <span>Mercado Pago</span>
+                </div>
+                <div class="payment-method">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/TransferWise_logo.svg/200px-TransferWise_logo.svg.png" alt="Transferencia">
+                    <span>Transferencia</span>
+                </div>
+                <div class="payment-method">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Webpay_Logo.svg/200px-Webpay_Logo.svg.png" alt="Webpay">
+                    <span>Webpay</span>
+                </div>
+                <div class="payment-method">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/PayPal.svg/200px-PayPal.svg.png" alt="PayPal">
+                    <span>PayPal</span>
+                </div>
+            </div>
+            <p class="payment-note">
+                <i class="fas fa-lock"></i>
+                Pagos 100% seguros. Aceptamos tarjetas de crédito, débito y transferencia.
+            </p>
+        </div>
+    </section>
+
+    <section class="testimonials-section">
         <div class="container">
             <div class="section-header">
-                <span class="section-badge animate-on-scroll">⭐ TESTIMONIOS</span>
-                <h2 class="section-title animate-on-scroll">Lo Que Dicen Nuestros Clientes</h2>
-                <p class="section-subtitle animate-on-scroll">
-                    Más de 150 proyectos exitosos y counting.
-                </p>
-            </div>
-            <div class="testimonios-carousel" id="testimoniosCarousel">
-                <div class="testimonios-track">
-                    <div class="testimonio-card animate-on-scroll">
-                        <div class="testimonio-stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <p class="testimonio-text">
-                            "EP360 transformó mi restaurante. Las reservas aumentaron un 200% desde que 
-                            lancé la nueva web. El diseño es impresionante y los clientes no paran de 
-                            preguntar quién me la hizo."
-                        </p>
-                        <div class="testimonio-autor">
-                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80" alt="Carlos Mendoza" class="autor-avatar">
-                            <div class="autor-info">
-                                <strong>Carlos Mendoza</strong>
-                                <span>Restaurante Café Artesanal, Santiago</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="testimonio-card animate-on-scroll">
-                        <div class="testimonio-stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <p class="testimonio-text">
-                            "Mi boutique online pasó de 0 a 100 ventas mensuales en solo 2 meses 
-                            con la web que me crearon. Las animaciones son brutales, mis clientes 
-                            aman la experiencia."
-                        </p>
-                        <div class="testimonio-autor">
-                            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&q=80" alt="María Fernández" class="autor-avatar">
-                            <div class="autor-info">
-                                <strong>María Fernández</strong>
-                                <span>Boutique Chic, Viña del Mar</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="testimonio-card animate-on-scroll">
-                        <div class="testimonio-stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <p class="testimonio-text">
-                            "Como abogado necesitaba una web que transmitiera seriedad y profesionalismo. 
-                            EP360 superó mis expectativas. Ahora mis clientes me contactan diciendo 
-                            'tu web se ve cara'."
-                        </p>
-                        <div class="testimonio-autor">
-                            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&q=80" alt="Andrés Vega" class="autor-avatar">
-                            <div class="autor-info">
-                                <strong>Andrés Vega</strong>
-                                <span>Consultora Legal Vega & Asociados</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="testimonio-card animate-on-scroll">
-                        <div class="testimonio-stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <p class="testimonio-text">
-                            "El centro estético lucía anticuado comparado con la competencia. 
-                            Después de la web de EP360, mis clientas me preguntan si abrí en 
-                            otro lado porque 'se ve increíble'. ¡Las ventas subieron 150%!"
-                        </p>
-                        <div class="testimonio-autor">
-                            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&q=80" alt="Patricia Ruiz" class="autor-avatar">
-                            <div class="autor-info">
-                                <strong>Patricia Ruiz</strong>
-                                <span>Centro Estético Bella Vita, Providencia</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="testimonio-card animate-on-scroll">
-                        <div class="testimonio-stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <p class="testimonio-text">
-                            "EP360 no solo me dio una web, me dio una máquina de leads. 
-                            Mi agencia pasó de 5 consultas semanales a más de 30. 
-                            La mejor inversión que hice para mi negocio."
-                        </p>
-                        <div class="testimonio-autor">
-                            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&q=80" alt="Diego Torres" class="autor-avatar">
-                            <div class="autor-info">
-                                <strong>Diego Torres</strong>
-                                <span>Agencia Digital Growth, Santiago</span>
-                            </div>
-                        </div>
-                    </div>
+                <div class="section-badge">
+                    <i class="fas fa-star"></i>
+                    <span>TESTIMONIOS</span>
                 </div>
+                <h2 class="section-title">
+                    Lo que dicen nuestros <span class="gradient-text">Clientes</span>
+                </h2>
             </div>
-            <div class="testimonios-nav">
-                <button class="nav-btn prev" id="prevBtn"><i class="fas fa-chevron-left"></i></button>
-                <div class="nav-dots" id="navDots"></div>
-                <button class="nav-btn next" id="nextBtn"><i class="fas fa-chevron-right"></i></button>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contacto Section -->
-    <section class="section contacto" id="contacto">
-        <div class="container">
-            <div class="contact-wrapper">
-                <div class="contact-info animate-on-scroll">
-                    <span class="section-badge">📬 CONTACTO</span>
-                    <h2 class="section-title">Hablemos de Tu Proyecto</h2>
-                    <p class="section-subtitle">
-                        ¿Listo para tener una web que realmente convierte? 
-                        Escríbenos y te respondemos en menos de 2 horas.
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">
+                        "Mi restaurante pasó de tener 20 reservas semanales a más de 80. 
+                        La web que crearon es simplemente espectacular."
                     </p>
-                    <div class="contact-methods">
-                        <a href="https://wa.me/56964681874" target="_blank" class="contact-method">
-                            <i class="fab fa-whatsapp"></i>
-                            <span>+56 9 6468 1874</span>
-                        </a>
-                        <a href="mailto:promarket08@gmail.com" class="contact-method">
-                            <i class="fas fa-envelope"></i>
-                            <span>promarket08@gmail.com</span>
-                        </a>
-                        <a href="mailto:tuwebpro369@gmail.com" class="contact-method">
-                            <i class="fas fa-envelope"></i>
-                            <span>tuwebpro369@gmail.com</span>
-                        </a>
-                        <a href="https://www.instagram.com/tu.web.pro360/" target="_blank" class="contact-method">
-                            <i class="fab fa-instagram"></i>
-                            <span>@tu.web.pro360</span>
-                        </a>
+                    <div class="testimonial-author">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop" alt="Carlos">
+                        <div>
+                            <h4>Carlos Mendoza</h4>
+                            <span>Restaurante Café Artesanal, Santiago</span>
+                        </div>
                     </div>
                 </div>
-                <form class="contact-form animate-on-scroll" id="contactForm">
-                    <div class="form-group">
-                        <label for="nombre">Tu Nombre</label>
-                        <input type="text" id="nombre" name="nombre" placeholder="Ej: Juan Pérez" required>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
                     </div>
-                    <div class="form-group">
-                        <label for="whatsapp">WhatsApp</label>
-                        <input type="tel" id="whatsapp" name="whatsapp" placeholder="+56 9 XXXX XXXX" required>
+                    <p class="testimonial-text">
+                        "Crecimos un 300% en consultas los primeros 2 meses. 
+                        El diseño es profesional y mis clientes lo preguntan siempre."
+                    </p>
+                    <div class="testimonial-author">
+                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=100&h=100&fit=crop" alt="Andrés">
+                        <div>
+                            <h4>Andrés Vega</h4>
+                            <span>Constructora Vega & Asociados, Providencia</span>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label for="mensaje">¿Qué tienes en mente?</label>
-                        <textarea id="mensaje" name="mensaje" rows="4" placeholder="Cuéntame sobre tu proyecto, negocio o idea..." required></textarea>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
                     </div>
-                    <button type="submit" class="btn btn-submit" id="submitBtn">
-                        <span class="btn-text">ENVIAR MENSAJE</span>
-                        <span class="btn-loading"><i class="fas fa-spinner fa-spin"></i></span>
-                        <i class="fas fa-paper-plane"></i>
-                    </button>
-                    <div class="form-message" id="formMessage"></div>
-                </form>
+                    <p class="testimonial-text">
+                        "La boutique se ve ahora como una tienda de moda internacional. 
+                        Las clientas entran solo por ver la web en Instagram."
+                    </p>
+                    <div class="testimonial-author">
+                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop" alt="María">
+                        <div>
+                            <h4>María Fernández</h4>
+                            <span>Boutique Chic, Viña del Mar</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
+    <section class="contact-section" id="contacto">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="section-badge">
+                        <i class="fas fa-envelope"></i>
+                        <span>CONTÁCTANOS</span>
+                    </div>
+                    <h2 class="section-title">
+                        ¿Listo para tu <span class="gradient-text">Web Premium</span>?
+                    </h2>
+                    <p class="contact-description">
+                        Escríbenos por WhatsApp o completa el formulario. 
+                        Te respondemos en menos de 2 horas.
+                    </p>
+                    
+                    <div class="contact-methods">
+                        <a href="https://wa.me/56964681874?text=Hola!%20Quiero%20una%20web%20premium%20para%20mi%20negocio" target="_blank" class="contact-method whatsapp">
+                            <i class="fab fa-whatsapp"></i>
+                            <div>
+                                <span class="method-label">WhatsApp</span>
+                                <span class="method-value">+56 9 6468 1874</span>
+                            </div>
+                        </a>
+                        <a href="mailto:tuwebpro369@gmail.com" class="contact-method email">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <span class="method-label">Email</span>
+                                <span class="method-value">tuwebpro369@gmail.com</span>
+                            </div>
+                        </a>
+                        <a href="https://www.instagram.com/tu.web.pro360/" target="_blank" class="contact-method instagram">
+                            <i class="fab fa-instagram"></i>
+                            <div>
+                                <span class="method-label">Instagram</span>
+                                <span class="method-value">@tu.web.pro360</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="contact-form-container">
+                    <form class="contact-form" id="contactForm">
+                        <h3>Envíanos un mensaje</h3>
+                        <div class="form-group">
+                            <label for="name">Nombre completo</label>
+                            <input type="text" id="name" name="name" required placeholder="Tu nombre">
+                        </div>
+                        <div class="form-group">
+                            <label for="whatsapp">WhatsApp</label>
+                            <input type="tel" id="whatsapp" name="whatsapp" required placeholder="+56 9 XXXX XXXX">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" placeholder="tu@email.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="business">Tu negocio</label>
+                            <input type="text" id="business" name="business" placeholder="Ej: Restaurante, Constructora...">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Mensaje</label>
+                            <textarea id="message" name="message" rows="4" placeholder="Cuéntanos sobre tu proyecto..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-lg btn-block">
+                            <i class="fas fa-paper-plane"></i>
+                            <span>ENVIAR MENSAJE</span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <div class="footer-brand animate-on-scroll">
-                    <img src="assets/logo-ep360.svg" alt="EP360" class="footer-logo">
-                    <p class="footer-tagline">TuWebPro360 - Páginas Web Premium</p>
-                    <p class="footer-powered">Impulsado por <strong>Emprende Online</strong></p>
+                <div class="footer-brand">
+                    <img src="assets/logo-ep360.svg" alt="EP360" class="logo-animated">
+                    <span class="brand-name">TuWebPro360</span>
+                    <p class="brand-tagline">
+                        Impulsado por <strong>Emprende Online</strong> y <strong>Promarket</strong>
+                    </p>
                 </div>
-                <div class="footer-links animate-on-scroll">
+                <div class="footer-links">
                     <h4>Enlaces</h4>
                     <ul>
                         <li><a href="#inicio">Inicio</a></li>
-                        <li><a href="#portafolio">Portafolio</a></li>
-                        <li><a href="#servicios">Servicios</a></li>
+                        <li><a href="#catalogo">Plantillas</a></li>
+                        <li><a href="#precios">Precios</a></li>
                         <li><a href="#contacto">Contacto</a></li>
                     </ul>
                 </div>
-                <div class="footer-social animate-on-scroll">
+                <div class="footer-contact">
+                    <h4>Contacto</h4>
+                    <ul>
+                        <li><i class="fab fa-whatsapp"></i> +56 9 6468 1874</li>
+                        <li><i class="fas fa-envelope"></i> tuwebpro369@gmail.com</li>
+                        <li><i class="fab fa-instagram"></i> @tu.web.pro360</li>
+                    </ul>
+                </div>
+                <div class="footer-social">
                     <h4>Síguenos</h4>
-                    <div class="social-links">
-                        <a href="https://www.instagram.com/tu.web.pro360/" target="_blank" class="social-link">
+                    <div class="social-icons">
+                        <a href="https://www.instagram.com/tu.web.pro360/" target="_blank">
                             <i class="fab fa-instagram"></i>
                         </a>
-                        <a href="mailto:promarket08@gmail.com" class="social-link">
-                            <i class="fas fa-envelope"></i>
-                        </a>
-                        <a href="https://wa.me/56964681874" target="_blank" class="social-link">
+                        <a href="https://wa.me/56964681874" target="_blank">
                             <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <a href="mailto:promarket08@gmail.com">
+                            <i class="fas fa-envelope"></i>
                         </a>
                     </div>
                 </div>
             </div>
-            <div class="footer-bottom animate-on-scroll">
-                <p>&copy; 2026 EP360 - TuWebPro360. Todos los derechos reservados.</p>
-                <p>Hecho con ❤️ en Chile</p>
+            <div class="footer-bottom">
+                <p>&copy; 2024-2026 TuWebPro360. Todos los derechos reservados.</p>
+                <p class="footer-credits">
+                    Impulsado por <strong>Emprende Online</strong> & <strong>Promarket</strong>
+                </p>
             </div>
         </div>
     </footer>
 
-    <!-- WhatsApp Floating Button -->
-    <a href="https://wa.me/56964681874?text=Hola%20EP360!%20Quiero%20una%20web%20premium" target="_blank" class="whatsapp-float" id="whatsappFloat">
+    <a href="https://wa.me/56964681874?text=Hola!%20Quiero%20una%20web%20premium%20para%20mi%20negocio" target="_blank" class="whatsapp-float pulse-glow">
         <i class="fab fa-whatsapp"></i>
-        <span class="whatsapp-tooltip">¿Hablamos?</span>
+        <span class="whatsapp-tooltip">¿Necesitas ayuda?</span>
     </a>
 
-    <!-- Scripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
+    <div class="modal" id="previewModal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closePreview()">&times;</span>
+            <div class="modal-body">
+                <img src="" alt="Preview" id="previewImage">
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
     <script src="js/animations.js"></script>
 </body>
 </html>

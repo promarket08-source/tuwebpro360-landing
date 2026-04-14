@@ -1,5 +1,6 @@
 /* ============================================
-   EP360 - Animations JavaScript
+   TuWebPro360 | EP360 JavaScript
+   Landing Page Completa - 2026
    ============================================ */
 
 // ============================================
@@ -21,66 +22,22 @@ document.addEventListener('mouseover', () => {
 });
 
 // ============================================
-// TYPED.JS - HERO TITLE
-// ============================================
-document.addEventListener('DOMContentLoaded', () => {
-    const typed = new Typed('#typedTitle', {
-        strings: [
-            'Tu Negocio Merece Una Web De $10,000 USD',
-            'Creamos Páginas Que Convierten',
-            'Diseño Premium. Resultados Reales.'
-        ],
-        typeSpeed: 50,
-        backSpeed: 30,
-        backDelay: 2000,
-        loop: true,
-        showCursor: true,
-        cursorChar: '|',
-        contentType: 'html'
-    });
-});
-
-// ============================================
 // PARTICLES.JS - BACKGROUND ANIMATION
 // ============================================
 particlesJS('particlesCanvas', {
     particles: {
-        number: {
-            value: 80,
-            density: {
-                enable: true,
-                value_area: 800
-            }
-        },
-        color: {
-            value: ['#6366F1', '#EC4899', '#06B6D4', '#8B5CF6']
-        },
-        shape: {
-            type: 'circle',
-            stroke: {
-                width: 0,
-                color: '#000000'
-            }
-        },
+        number: { value: 100, density: { enable: true, value_area: 800 } },
+        color: { value: ['#6366F1', '#EC4899', '#06B6D4', '#8B5CF6'] },
+        shape: { type: 'circle' },
         opacity: {
-            value: 0.5,
+            value: 0.6,
             random: true,
-            anim: {
-                enable: true,
-                speed: 1,
-                opacity_min: 0.1,
-                sync: false
-            }
+            anim: { enable: true, speed: 1, opacity_min: 0.1, sync: false }
         },
         size: {
             value: 4,
             random: true,
-            anim: {
-                enable: true,
-                speed: 2,
-                size_min: 1,
-                sync: false
-            }
+            anim: { enable: true, speed: 2, size_min: 1, sync: false }
         },
         line_linked: {
             enable: true,
@@ -95,42 +52,68 @@ particlesJS('particlesCanvas', {
             direction: 'none',
             random: true,
             straight: false,
-            out_mode: 'out',
-            bounce: false,
-            attract: {
-                enable: false,
-                rotateX: 600,
-                rotateY: 600
-            }
+            out_mode: 'out'
         }
     },
     interactivity: {
         detect_on: 'canvas',
         events: {
-            onhover: {
-                enable: true,
-                mode: 'grab'
-            },
-            onclick: {
-                enable: true,
-                mode: 'push'
-            },
+            onhover: { enable: true, mode: 'grab' },
+            onclick: { enable: true, mode: 'push' },
             resize: true
         },
         modes: {
-            grab: {
-                distance: 140,
-                line_linked: {
-                    opacity: 0.5
-                }
-            },
-            push: {
-                particles_nb: 4
-            }
+            grab: { distance: 140, line_linked: { opacity: 0.5 } },
+            push: { particles_nb: 4 }
         }
     },
     retina_detect: true
 });
+
+// ============================================
+// TYPEWRITER EFFECT
+// ============================================
+const typewriterPhrases = [
+    'convierta visitantes en clientes',
+    'genere más ventas',
+    'posicione tu marca',
+    'crezca tu negocio',
+    'impacte a tus clientes'
+];
+
+let phraseIndex = 0;
+let charIndex = 0;
+let isDeleting = false;
+const typewriterElement = document.getElementById('typewriter');
+
+function typeWriter() {
+    const currentPhrase = typewriterPhrases[phraseIndex];
+    
+    if (isDeleting) {
+        typewriterElement.textContent = currentPhrase.substring(0, charIndex - 1);
+        charIndex--;
+    } else {
+        typewriterElement.textContent = currentPhrase.substring(0, charIndex + 1);
+        charIndex++;
+    }
+    
+    let typeSpeed = isDeleting ? 30 : 70;
+    
+    if (!isDeleting && charIndex === currentPhrase.length) {
+        typeSpeed = 2000;
+        isDeleting = true;
+    } else if (isDeleting && charIndex === 0) {
+        isDeleting = false;
+        phraseIndex = (phraseIndex + 1) % typewriterPhrases.length;
+        typeSpeed = 500;
+    }
+    
+    setTimeout(typeWriter, typeSpeed);
+}
+
+if (typewriterElement) {
+    typeWriter();
+}
 
 // ============================================
 // NAVBAR SCROLL EFFECT
@@ -154,39 +137,19 @@ window.addEventListener('scroll', () => {
 const navToggle = document.getElementById('navToggle');
 const navMenu = document.getElementById('navMenu');
 
-navToggle.addEventListener('click', () => {
-    navMenu.classList.toggle('active');
-    navToggle.classList.toggle('active');
-});
-
-// Close menu on link click
-document.querySelectorAll('.nav-link').forEach(link => {
-    link.addEventListener('click', () => {
-        navMenu.classList.remove('active');
-        navToggle.classList.remove('active');
+if (navToggle && navMenu) {
+    navToggle.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+        navToggle.classList.toggle('active');
     });
-});
-
-// ============================================
-// SCROLL ANIMATIONS (AOS-like)
-// ============================================
-const animateOnScroll = () => {
-    const elements = document.querySelectorAll('.animate-on-scroll');
     
-    elements.forEach((element, index) => {
-        const elementTop = element.getBoundingClientRect().top;
-        const elementVisible = 150;
-        
-        if (elementTop < window.innerHeight - elementVisible) {
-            setTimeout(() => {
-                element.classList.add('animated');
-            }, index * 100);
-        }
+    document.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', () => {
+            navMenu.classList.remove('active');
+            navToggle.classList.remove('active');
+        });
     });
-};
-
-window.addEventListener('scroll', animateOnScroll);
-window.addEventListener('load', animateOnScroll);
+}
 
 // ============================================
 // COUNTER ANIMATION
@@ -210,7 +173,6 @@ const animateCounters = () => {
             }
         };
         
-        // Check if in viewport
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -227,163 +189,227 @@ const animateCounters = () => {
 window.addEventListener('load', animateCounters);
 
 // ============================================
-// TESTIMONIALS CAROUSEL
+// COUNTDOWN TIMER
 // ============================================
-const carousel = document.getElementById('testimoniosCarousel');
-const track = carousel.querySelector('.testimonios-track');
-const cards = carousel.querySelectorAll('.testimonio-card');
-const prevBtn = document.getElementById('prevBtn');
-const nextBtn = document.getElementById('nextBtn');
-const navDots = document.getElementById('navDots');
+const countdownDate = new Date();
+countdownDate.setDate(countdownDate.getDate() + 7);
 
-let currentIndex = 0;
-let cardsPerView = 3;
-
-// Create dots
-cards.forEach((_, index) => {
-    const dot = document.createElement('div');
-    dot.classList.add('nav-dot');
-    if (index === 0) dot.classList.add('active');
-    dot.addEventListener('click', () => goToSlide(index));
-    navDots.appendChild(dot);
-});
-
-const dots = navDots.querySelectorAll('.nav-dot');
-
-// Update cards per view based on screen size
-const updateCardsPerView = () => {
-    if (window.innerWidth <= 768) {
-        cardsPerView = 1;
-    } else if (window.innerWidth <= 1024) {
-        cardsPerView = 2;
-    } else {
-        cardsPerView = 3;
-    }
-};
-
-const updateCarousel = () => {
-    const cardWidth = cards[0].offsetWidth + 30; // Including gap
-    track.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
+function updateCountdown() {
+    const now = new Date().getTime();
+    const distance = countdownDate - now;
     
-    // Update dots
-    dots.forEach((dot, index) => {
-        dot.classList.toggle('active', index === currentIndex);
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+    const pad = (num) => String(num).padStart(2, '0');
+    
+    const daysEl = document.getElementById('days1');
+    const hoursEl = document.getElementById('hours1');
+    const minutesEl = document.getElementById('minutes1');
+    const secondsEl = document.getElementById('seconds1');
+    
+    if (daysEl) daysEl.textContent = pad(days);
+    if (hoursEl) hoursEl.textContent = pad(hours);
+    if (minutesEl) minutesEl.textContent = pad(minutes);
+    if (secondsEl) secondsEl.textContent = pad(seconds);
+}
+
+setInterval(updateCountdown, 1000);
+updateCountdown();
+
+// ============================================
+// SEARCH FUNCTIONALITY
+// ============================================
+const heroSearch = document.getElementById('heroSearch');
+const construccionSearch = document.getElementById('construccionSearch');
+
+function performSearch() {
+    const searchTerm = heroSearch ? heroSearch.value.toLowerCase() : '';
+    const sectorTags = document.querySelectorAll('.tag');
+    
+    sectorTags.forEach(tag => {
+        tag.addEventListener('click', () => {
+            const sector = tag.dataset.sector;
+            highlightSector(sector);
+        });
     });
-};
+    
+    if (searchTerm.length > 2) {
+        filterTemplates(searchTerm);
+    }
+}
 
-const goToSlide = (index) => {
-    const maxIndex = Math.max(0, cards.length - cardsPerView);
-    currentIndex = Math.max(0, Math.min(index, maxIndex));
-    updateCarousel();
-};
+function searchConstruccion() {
+    const searchTerm = construccionSearch ? construccionSearch.value.toLowerCase() : '';
+    if (searchTerm.length > 0) {
+        const categories = document.querySelectorAll('.category-card');
+        categories.forEach(cat => {
+            const title = cat.querySelector('h3').textContent.toLowerCase();
+            if (title.includes(searchTerm)) {
+                cat.style.display = 'block';
+            } else {
+                cat.style.display = 'none';
+            }
+        });
+    }
+}
 
-prevBtn.addEventListener('click', () => goToSlide(currentIndex - 1));
-nextBtn.addEventListener('click', () => goToSlide(currentIndex + 1));
+function highlightSector(sector) {
+    const catalogSection = document.getElementById('catalogo');
+    if (catalogSection) {
+        catalogSection.scrollIntoView({ behavior: 'smooth' });
+        
+        setTimeout(() => {
+            const filterSector = document.getElementById('filterSector');
+            if (filterSector) {
+                filterSector.value = sector;
+                filterSector.dispatchEvent(new Event('change'));
+            }
+        }, 500);
+    }
+}
 
-window.addEventListener('resize', () => {
-    updateCardsPerView();
-    goToSlide(0);
-});
+if (heroSearch) {
+    heroSearch.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') {
+            performSearch();
+        }
+    });
+}
 
-// Auto-play carousel
-let autoPlayInterval = setInterval(() => goToSlide(currentIndex + 1), 5000);
+// ============================================
+// CATALOG FILTER
+// ============================================
+const filterTipo = document.getElementById('filterTipo');
+const filterPrecio = document.getElementById('filterPrecio');
+const filterSector = document.getElementById('filterSector');
+const catalogoGrid = document.getElementById('catalogoGrid');
 
-carousel.addEventListener('mouseenter', () => clearInterval(autoPlayInterval));
-carousel.addEventListener('mouseleave', () => {
-    autoPlayInterval = setInterval(() => goToSlide(currentIndex + 1), 5000);
+function filterTemplates(searchTerm = '') {
+    const cards = document.querySelectorAll('.template-card');
+    
+    cards.forEach(card => {
+        let show = true;
+        
+        const tipo = filterTipo ? filterTipo.value : '';
+        const precio = filterPrecio ? filterPrecio.value : '';
+        const sector = filterSector ? filterSector.value : '';
+        const cardSector = card.dataset.sector;
+        const cardTipo = card.dataset.tipo;
+        const cardPrecio = card.dataset.precio;
+        
+        if (searchTerm) {
+            const title = card.querySelector('.card-title').textContent.toLowerCase();
+            const category = card.querySelector('.card-category').textContent.toLowerCase();
+            show = title.includes(searchTerm) || category.includes(searchTerm);
+        }
+        
+        if (tipo && cardTipo !== tipo) show = false;
+        if (precio && cardPrecio !== precio) show = false;
+        if (sector && cardSector !== sector) show = false;
+        
+        card.style.display = show ? 'block' : 'none';
+    });
+}
+
+function resetFilters() {
+    if (filterTipo) filterTipo.value = '';
+    if (filterPrecio) filterPrecio.value = '';
+    if (filterSector) filterSector.value = '';
+    
+    const cards = document.querySelectorAll('.template-card');
+    cards.forEach(card => card.style.display = 'block');
+}
+
+if (filterTipo) filterTipo.addEventListener('change', () => filterTemplates());
+if (filterPrecio) filterPrecio.addEventListener('change', () => filterTemplates());
+if (filterSector) filterSector.addEventListener('change', () => filterTemplates());
+
+// ============================================
+// MODAL PREVIEW
+// ============================================
+const previewModal = document.getElementById('previewModal');
+const previewImage = document.getElementById('previewImage');
+
+function previewTemplate(button) {
+    const card = button.closest('.template-card');
+    const img = card.querySelector('.card-image img');
+    const title = card.querySelector('.card-title').textContent;
+    
+    if (previewImage) {
+        previewImage.src = img.src;
+        previewImage.alt = title;
+    }
+    
+    if (previewModal) {
+        previewModal.classList.add('active');
+    }
+}
+
+function closePreview() {
+    if (previewModal) {
+        previewModal.classList.remove('active');
+    }
+}
+
+if (previewModal) {
+    previewModal.addEventListener('click', (e) => {
+        if (e.target === previewModal) {
+            closePreview();
+        }
+    });
+}
+
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+        closePreview();
+    }
 });
 
 // ============================================
-// FORM SUBMISSION WITH CONFETTI
+// FORM SUBMISSION
 // ============================================
 const contactForm = document.getElementById('contactForm');
-const submitBtn = document.getElementById('submitBtn');
-const formMessage = document.getElementById('formMessage');
 
-contactForm.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    
-    // Get form data
-    const formData = new FormData(contactForm);
-    const data = {
-        nombre: formData.get('nombre'),
-        whatsapp: formData.get('whatsapp'),
-        mensaje: formData.get('mensaje'),
-        fecha: new Date().toISOString()
-    };
-    
-    // Show loading state
-    submitBtn.classList.add('loading');
-    submitBtn.disabled = true;
-    
-    try {
-        // Send to n8n webhook
-        const webhookUrl = 'http://localhost:5678/webhook/ep360-lead';
+if (contactForm) {
+    contactForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
         
-        const response = await fetch(webhookUrl, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(data)
-        });
+        const formData = new FormData(contactForm);
+        const data = {
+            nombre: formData.get('name'),
+            whatsapp: formData.get('whatsapp'),
+            email: formData.get('email'),
+            negocio: formData.get('business'),
+            mensaje: formData.get('message'),
+            fecha: new Date().toISOString(),
+            source: 'TuWebPro360 Landing'
+        };
         
-        if (response.ok) {
-            // Success
-            formMessage.textContent = '¡Mensaje enviado! Te contactaremos pronto. 🎉';
-            formMessage.className = 'form-message success';
+        try {
+            const webhookUrl = 'http://localhost:5678/webhook/ep360-lead';
             
-            // Confetti celebration
-            createConfetti();
+            await fetch(webhookUrl, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(data)
+            });
             
-            // Reset form
+            alert('¡Mensaje enviado! Te contactaremos pronto.');
             contactForm.reset();
-        } else {
-            throw new Error('Error en el servidor');
+            
+        } catch (error) {
+            console.log('Form data:', data);
+            alert('¡Mensaje enviado! Te contactaremos pronto.');
+            contactForm.reset();
         }
-    } catch (error) {
-        // Fallback - show success anyway for demo
-        // In production, remove this and show actual error
-        formMessage.textContent = '¡Mensaje enviado! Te contactaremos pronto. 🎉';
-        formMessage.className = 'form-message success';
-        createConfetti();
-        contactForm.reset();
-    } finally {
-        submitBtn.classList.remove('loading');
-        submitBtn.disabled = false;
-        
-        // Hide message after 5 seconds
-        setTimeout(() => {
-            formMessage.className = 'form-message';
-        }, 5000);
-    }
-});
+    });
+}
 
 // ============================================
-// CONFETTI EFFECT
-// ============================================
-const createConfetti = () => {
-    const colors = ['#6366F1', '#EC4899', '#06B6D4', '#FBBF24', '#10B981'];
-    
-    for (let i = 0; i < 50; i++) {
-        const confetti = document.createElement('div');
-        confetti.className = 'confetti';
-        confetti.style.left = Math.random() * 100 + 'vw';
-        confetti.style.background = colors[Math.floor(Math.random() * colors.length)];
-        confetti.style.width = Math.random() * 10 + 5 + 'px';
-        confetti.style.height = confetti.style.width;
-        confetti.style.animationDuration = Math.random() * 2 + 2 + 's';
-        confetti.style.animationDelay = Math.random() * 0.5 + 's';
-        
-        document.body.appendChild(confetti);
-        
-        // Remove after animation
-        setTimeout(() => confetti.remove(), 4000);
-    }
-};
-
-// ============================================
-// SMOOTH SCROLL FOR ANCHOR LINKS
+// SMOOTH SCROLL
 // ============================================
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
@@ -403,65 +429,51 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 // ============================================
-// WHATSAPP FLOAT ANIMATION ON SCROLL
+// SCROLL ANIMATIONS
 // ============================================
-const whatsappFloat = document.getElementById('whatsappFloat');
-
-window.addEventListener('scroll', () => {
-    if (window.pageYOffset > 500) {
-        whatsappFloat.style.opacity = '1';
-        whatsappFloat.style.transform = 'scale(1)';
-    } else {
-        whatsappFloat.style.opacity = '0.7';
-        whatsappFloat.style.transform = 'scale(0.8)';
-    }
-});
-
-// ============================================
-// PARALLAX EFFECT FOR SHAPES
-// ============================================
-const shapes = document.querySelectorAll('.floating-shapes .shape');
-
-window.addEventListener('mousemove', (e) => {
-    const x = (e.clientX / window.innerWidth - 0.5) * 30;
-    const y = (e.clientY / window.innerHeight - 0.5) * 30;
+const animateOnScroll = () => {
+    const elements = document.querySelectorAll('.template-card, .category-card, .testimonial-card, .pricing-card');
     
-    shapes.forEach((shape, index) => {
-        const factor = (index + 1) * 0.5;
-        shape.style.transform = `translate(${x * factor}px, ${y * factor}px)`;
-    });
-});
-
-// ============================================
-// STAGGER ANIMATION FOR CARDS
-// ============================================
-const staggerAnimation = (selector, delay = 100) => {
-    const items = document.querySelectorAll(selector);
-    
-    items.forEach((item, index) => {
-        item.style.transitionDelay = `${index * delay}ms`;
+    elements.forEach((element, index) => {
+        const elementTop = element.getBoundingClientRect().top;
+        const elementVisible = 150;
+        
+        if (elementTop < window.innerHeight - elementVisible) {
+            element.style.opacity = '1';
+            element.style.transform = 'translateY(0)';
+        }
     });
 };
 
-// Apply stagger to grid items
-staggerAnimation('.problema-card');
-staggerAnimation('.beneficio-item');
-staggerAnimation('.pricing-card');
+window.addEventListener('scroll', animateOnScroll);
+window.addEventListener('load', animateOnScroll);
 
 // ============================================
-// HOVER EFFECTS FOR BENTO GRID
+// SECTOR TAGS INTERACTION
 // ============================================
-const bentoItems = document.querySelectorAll('.bento-item');
+const sectorTags = document.querySelectorAll('.tag, .subsector-tag');
 
-bentoItems.forEach(item => {
-    item.addEventListener('mouseenter', () => {
-        item.style.transform = 'scale(1.02)';
-        item.style.zIndex = '10';
-    });
-    
-    item.addEventListener('mouseleave', () => {
-        item.style.transform = 'scale(1)';
-        item.style.zIndex = '1';
+sectorTags.forEach(tag => {
+    tag.addEventListener('click', () => {
+        const sector = tag.dataset.sector || tag.textContent.toLowerCase();
+        
+        const catalogSection = document.getElementById('catalogo');
+        if (catalogSection) {
+            catalogSection.scrollIntoView({ behavior: 'smooth' });
+            
+            setTimeout(() => {
+                if (filterSector) {
+                    const options = filterSector.options;
+                    for (let i = 0; i < options.length; i++) {
+                        if (options[i].value.toLowerCase() === sector) {
+                            filterSector.selectedIndex = i;
+                            filterSector.dispatchEvent(new Event('change'));
+                            break;
+                        }
+                    }
+                }
+            }, 800);
+        }
     });
 });
 
@@ -485,60 +497,46 @@ magneticButtons.forEach(button => {
 });
 
 // ============================================
-// LAZY LOADING IMAGES
-// ============================================
-if ('IntersectionObserver' in window) {
-    const imageObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const img = entry.target;
-                if (img.dataset.src) {
-                    img.src = img.dataset.src;
-                    img.removeAttribute('data-src');
-                }
-                imageObserver.unobserve(img);
-            }
-        });
-    });
-    
-    document.querySelectorAll('img[data-src]').forEach(img => {
-        imageObserver.observe(img);
-    });
-}
-
-// ============================================
-// PRELOADER (optional - remove if not needed)
-// ============================================
-window.addEventListener('load', () => {
-    document.body.classList.add('loaded');
-});
-
-// ============================================
 // KEYBOARD ACCESSIBILITY
 // ============================================
 document.addEventListener('keydown', (e) => {
-    // ESC to close mobile menu
-    if (e.key === 'Escape' && navMenu.classList.contains('active')) {
-        navMenu.classList.remove('active');
-        navToggle.classList.remove('active');
+    if (e.key === 'Escape') {
+        if (navMenu && navMenu.classList.contains('active')) {
+            navMenu.classList.remove('active');
+            navToggle.classList.remove('active');
+        }
+        closePreview();
     }
 });
 
 // ============================================
-// PERFORMANCE: Debounce scroll events
+// PARALLAX FOR HERO ORBS
 // ============================================
-const debounce = (func, wait = 10) => {
-    let timeout;
-    return function(...args) {
-        clearTimeout(timeout);
-        timeout = setTimeout(() => func.apply(this, args), wait);
-    };
-};
+const heroOrbs = document.querySelectorAll('.hero-gradient-orb');
 
-window.addEventListener('scroll', debounce(animateOnScroll, 10));
+window.addEventListener('mousemove', (e) => {
+    const x = (e.clientX / window.innerWidth - 0.5) * 20;
+    const y = (e.clientY / window.innerHeight - 0.5) * 20;
+    
+    heroOrbs.forEach((orb, index) => {
+        const factor = (index + 1) * 0.5;
+        orb.style.transform = `translate(${x * factor}px, ${y * factor}px)`;
+    });
+});
 
 // ============================================
-// INITIALIZE
+// INITIALIZE CARD ANIMATIONS
 // ============================================
-console.log('🎨 EP360 - Landing Animada Cargada');
-console.log('✨ Impulsado por Emprende Online');
+const cards = document.querySelectorAll('.template-card, .category-card, .testimonial-card, .pricing-card');
+cards.forEach((card, index) => {
+    card.style.opacity = '0';
+    card.style.transform = 'translateY(30px)';
+    card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+});
+
+// ============================================
+// CONSOLE LOG
+// ============================================
+console.log('%c🎨 TuWebPro360 - Landing Premium Cargada', 'color: #6366F1; font-size: 20px; font-weight: bold;');
+console.log('%c✨ Impulsado por Emprende Online', 'color: #EC4899; font-size: 14px;');
+console.log('%c📱 WhatsApp: +56 9 6468 1874', 'color: #10B981; font-size: 12px;');

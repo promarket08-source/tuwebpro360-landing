@@ -1,0 +1,1119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="PinturasExpress - Servicios profesionales de pintura residencial y comercial. Interior, exterior, texturas y decorativos.">
+    <title>PinturasExpress | Pintores Profesionales en Chile</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    
+    <style>
+        :root {
+            --primary: #E74C3C;
+            --primary-dark: #C0392B;
+            --secondary: #F39C12;
+            --accent: #27AE60;
+            --bg-dark: #1A1A2E;
+            --bg-card: #16213E;
+            --bg-gradient: linear-gradient(135deg, #1A1A2E 0%, #16213E 100%);
+            --text-white: #FFFFFF;
+            --text-gray: #A0A0B0;
+            --paint-splash: rgba(231, 76, 60, 0.1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-white);
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3 { font-family: 'Playfair Display', serif; }
+
+        /* NAVBAR */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 15px 0;
+            background: rgba(26, 26, 46, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(231, 76, 60, 0.2);
+        }
+
+        .nav-container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+            font-weight: 700;
+        }
+
+        .logo-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+        }
+
+        .logo span { color: var(--secondary); }
+
+        .nav-menu { display: flex; gap: 30px; }
+
+        .nav-link {
+            color: var(--text-gray);
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        .nav-link:hover { color: var(--primary); }
+
+        .nav-cta {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            padding: 12px 24px;
+            border-radius: 30px;
+            font-weight: 600;
+        }
+
+        .nav-cta:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(231, 76, 60, 0.4);
+        }
+
+        /* HERO */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            padding: 100px 20px 60px;
+        }
+
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            background: var(--bg-gradient);
+        }
+
+        /* Paint splatter decorations */
+        .splatter {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.1;
+        }
+
+        .splatter-1 {
+            width: 400px;
+            height: 400px;
+            background: var(--primary);
+            top: -100px;
+            right: -100px;
+            animation: splatterFloat 8s ease-in-out infinite;
+        }
+
+        .splatter-2 {
+            width: 300px;
+            height: 300px;
+            background: var(--secondary);
+            bottom: -50px;
+            left: -50px;
+            animation: splatterFloat 6s ease-in-out infinite reverse;
+        }
+
+        .splatter-3 {
+            width: 200px;
+            height: 200px;
+            background: var(--accent);
+            top: 50%;
+            left: 30%;
+            animation: splatterFloat 10s ease-in-out infinite;
+        }
+
+        @keyframes splatterFloat {
+            0%, 100% { transform: scale(1) rotate(0deg); }
+            50% { transform: scale(1.1) rotate(10deg); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            max-width: 1300px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .hero-text h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        .hero-text h1 span {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-text p {
+            font-size: 1.15rem;
+            color: var(--text-gray);
+            margin-bottom: 30px;
+            line-height: 1.8;
+        }
+
+        .hero-features {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .feature-item i {
+            width: 45px;
+            height: 45px;
+            background: rgba(231, 76, 60, 0.15);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+        }
+
+        .feature-item span { font-weight: 500; }
+
+        .hero-buttons { display: flex; gap: 15px; flex-wrap: wrap; }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 16px 32px;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            box-shadow: 0 10px 30px rgba(231, 76, 60, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(231, 76, 60, 0.5);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            border: 2px solid var(--accent);
+            color: var(--accent);
+        }
+
+        .btn-secondary:hover {
+            background: var(--accent);
+            color: white;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .stat-item { text-align: center; }
+
+        .stat-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: var(--text-gray);
+        }
+
+        /* SERVICES */
+        .services {
+            padding: 100px 20px;
+            background: var(--bg-card);
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 60px;
+        }
+
+        .section-badge {
+            display: inline-block;
+            background: rgba(231, 76, 60, 0.15);
+            border: 1px solid rgba(231, 76, 60, 0.3);
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+        .section-title {
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin-bottom: 15px;
+        }
+
+        .section-subtitle { color: var(--text-gray); font-size: 1.1rem; }
+
+        .services-grid {
+            max-width: 1300px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: var(--bg-dark);
+            border-radius: 20px;
+            padding: 40px 30px;
+            text-align: center;
+            transition: 0.4s;
+            border: 1px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            transform: scaleX(0);
+            transition: 0.4s;
+        }
+
+        .service-card:hover::before { transform: scaleX(1); }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(231, 76, 60, 0.3);
+            box-shadow: 0 25px 50px rgba(231, 76, 60, 0.15);
+        }
+
+        .service-icon {
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            color: white;
+            margin: 0 auto 25px;
+        }
+
+        .service-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 12px;
+        }
+
+        .service-card p {
+            color: var(--text-gray);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        /* PRICING */
+        .pricing {
+            padding: 100px 20px;
+            background: var(--bg-dark);
+        }
+
+        .pricing-grid {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .price-card {
+            background: var(--bg-card);
+            border-radius: 25px;
+            padding: 40px 30px;
+            text-align: center;
+            transition: 0.4s;
+            position: relative;
+            border: 1px solid rgba(231, 76, 60, 0.1);
+        }
+
+        .price-card.featured {
+            border-color: var(--primary);
+            background: linear-gradient(145deg, var(--bg-card), rgba(231, 76, 60, 0.05));
+            transform: scale(1.05);
+        }
+
+        .price-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .price-card.featured:hover {
+            transform: scale(1.05) translateY(-10px);
+        }
+
+        .price-badge {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            padding: 8px 25px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
+
+        .price-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+        }
+
+        .price-card .description {
+            color: var(--text-gray);
+            font-size: 0.9rem;
+            margin-bottom: 25px;
+        }
+
+        .price-amount {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 5px;
+        }
+
+        .price-period {
+            color: var(--text-gray);
+            font-size: 0.85rem;
+            margin-bottom: 25px;
+        }
+
+        .price-features { text-align: left; margin-bottom: 30px; }
+
+        .price-features li {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .price-features li:last-child { border-bottom: none; }
+        .price-features i { color: var(--accent); }
+
+        .btn-price {
+            width: 100%;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+        }
+
+        .btn-price:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(231, 76, 60, 0.4);
+        }
+
+        /* GALLERY */
+        .gallery {
+            padding: 100px 20px;
+            background: var(--bg-card);
+        }
+
+        .gallery-grid {
+            max-width: 1300px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .gallery-item {
+            border-radius: 15px;
+            overflow: hidden;
+            aspect-ratio: 1;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .gallery-item:nth-child(1) { grid-row: span 2; }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: 0.5s;
+        }
+
+        .gallery-item:hover img { transform: scale(1.1); }
+
+        .gallery-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+            display: flex;
+            align-items: flex-end;
+            padding: 20px;
+            opacity: 0;
+            transition: 0.4s;
+        }
+
+        .gallery-item:hover .gallery-overlay { opacity: 1; }
+
+        .gallery-overlay span { font-weight: 600; }
+
+        /* TESTIMONIALS */
+        .testimonials {
+            padding: 100px 20px;
+            background: var(--bg-dark);
+        }
+
+        .testimonials-grid {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .testimonial-card {
+            background: var(--bg-card);
+            border-radius: 20px;
+            padding: 35px;
+            transition: 0.4s;
+            border: 1px solid transparent;
+        }
+
+        .testimonial-card:hover {
+            border-color: rgba(231, 76, 60, 0.3);
+            transform: translateY(-5px);
+        }
+
+        .testimonial-stars { color: var(--secondary); margin-bottom: 15px; }
+
+        .testimonial-text {
+            font-size: 1rem;
+            line-height: 1.8;
+            color: var(--text-gray);
+            margin-bottom: 25px;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .testimonial-author img {
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--primary);
+        }
+
+        .testimonial-author h4 { font-size: 1rem; font-weight: 600; }
+        .testimonial-author span { font-size: 0.85rem; color: var(--text-gray); }
+
+        /* CONTACT */
+        .contact {
+            padding: 100px 20px;
+            background: var(--bg-card);
+        }
+
+        .contact-grid {
+            max-width: 1300px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .contact-info h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin-bottom: 20px;
+        }
+
+        .contact-info p {
+            color: var(--text-gray);
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+        }
+
+        .contact-methods { display: flex; flex-direction: column; gap: 20px; }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding: 20px;
+            background: var(--bg-dark);
+            border-radius: 15px;
+            transition: 0.3s;
+        }
+
+        .contact-item:hover {
+            transform: translateX(10px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .contact-item i {
+            width: 55px;
+            height: 55px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+
+        .contact-item h4 { font-size: 1rem; margin-bottom: 5px; }
+        .contact-item span { color: var(--text-gray); font-size: 0.9rem; }
+
+        .contact-form {
+            background: var(--bg-dark);
+            border-radius: 25px;
+            padding: 45px;
+        }
+
+        .form-group { margin-bottom: 20px; }
+
+        .form-group label {
+            display: block;
+            font-weight: 500;
+            margin-bottom: 8px;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 15px 20px;
+            background: var(--bg-card);
+            border: 2px solid rgba(231, 76, 60, 0.1);
+            border-radius: 12px;
+            color: var(--text-white);
+            font-size: 1rem;
+            font-family: inherit;
+            transition: 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        .form-group textarea { resize: vertical; min-height: 120px; }
+
+        /* FOOTER */
+        .footer {
+            background: #0F0F1A;
+            padding: 60px 20px 30px;
+            border-top: 1px solid rgba(231, 76, 60, 0.1);
+        }
+
+        .footer-content {
+            max-width: 1300px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-brand p { color: var(--text-gray); margin-top: 15px; line-height: 1.7; }
+        .footer h4 { font-size: 1.1rem; margin-bottom: 20px; }
+        .footer ul { display: flex; flex-direction: column; gap: 12px; }
+        .footer a { color: var(--text-gray); transition: 0.3s; }
+        .footer a:hover { color: var(--primary); }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(231, 76, 60, 0.1);
+            color: var(--text-gray);
+            font-size: 0.9rem;
+        }
+
+        /* WHATSAPP */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 65px;
+            height: 65px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: white;
+            box-shadow: 0 8px 30px rgba(37, 211, 102, 0.5);
+            z-index: 1000;
+            animation: pulse 2s infinite;
+            text-decoration: none;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 1024px) {
+            .hero-content { grid-template-columns: 1fr; }
+            .pricing-grid { grid-template-columns: 1fr; max-width: 450px; }
+            .price-card.featured { transform: scale(1); }
+            .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+            .testimonials-grid { grid-template-columns: 1fr; }
+            .contact-grid { grid-template-columns: 1fr; }
+            .footer-content { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media (max-width: 768px) {
+            .nav-menu { display: none; }
+            .hero-features { grid-template-columns: 1fr; }
+            .hero-stats { flex-wrap: wrap; gap: 20px; }
+            .services-grid { grid-template-columns: 1fr; }
+            .gallery-grid { grid-template-columns: 1fr; }
+            .gallery-item:nth-child(1) { grid-row: span 1; }
+            .footer-content { grid-template-columns: 1fr; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <div class="logo-icon"><i class="fas fa-paint-roller"></i></div>
+                <span>Pinturas</span>Express
+            </a>
+            <div class="nav-menu">
+                <a href="#inicio" class="nav-link">Inicio</a>
+                <a href="#servicios" class="nav-link">Servicios</a>
+                <a href="#galeria" class="nav-link">Galería</a>
+                <a href="#precios" class="nav-link">Precios</a>
+                <a href="#contacto" class="nav-link">Contacto</a>
+            </div>
+            <a href="https://wa.me/56964681874?text=Hola!%20Quiero%20cotizar%20servicio%20de%20pintura" target="_blank" class="nav-cta">
+                <i class="fab fa-whatsapp"></i> Cotizar
+            </a>
+        </div>
+    </nav>
+
+    <section class="hero" id="inicio">
+        <div class="hero-bg">
+            <div class="splatter splatter-1"></div>
+            <div class="splatter splatter-2"></div>
+            <div class="splatter splatter-3"></div>
+        </div>
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>
+                    Transforma tu Hogar con <span>Expertos en Pintura</span>
+                </h1>
+                <p>
+                    Más de 10 años dando vida a espacios. Pintura interior, exterior, texturas decorativas 
+                    y más. Acabados impecables y precios justos.
+                </p>
+                <div class="hero-features">
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Pintores Certificados</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Materiales Premium</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Garantía de Obra</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Presupuesto Gratis</span>
+                    </div>
+                </div>
+                <div class="hero-buttons">
+                    <a href="https://wa.me/56964681874?text=Hola!%20Quiero%20cotizar%20pintura" target="_blank" class="btn btn-primary">
+                        <i class="fab fa-whatsapp"></i> Cotizar Ahora
+                    </a>
+                    <a href="#galeria" class="btn btn-secondary">
+                        <i class="fas fa-images"></i> Ver Trabajos
+                    </a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <div class="stat-number">3,000+</div>
+                        <div class="stat-label">Proyectos</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">10+</div>
+                        <div class="stat-label">Años</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">100%</div>
+                        <div class="stat-label">Satisfacción</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="services" id="servicios">
+        <div class="section-header">
+            <span class="section-badge">SERVICIOS</span>
+            <h2 class="section-title">Todo en Pintura Profesional</h2>
+            <p class="section-subtitle">Desde pintura básica hasta acabados decorativos de lujo</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon"><i class="fas fa-home"></i></div>
+                <h3>Pintura Interior</h3>
+                <p>Paredes, cielos y muros. Acabados mate, satinados o semi-brillo. Transformamos tus ambientes.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon"><i class="fas fa-building"></i></div>
+                <h3>Pintura Exterior</h3>
+                <p>Fachadas, muros perimetrales y exteriores. Pinturas resistentes a la intemperie y UV.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon"><i class="fas fa-border-all"></i></div>
+                <h3>Texturas Decorativas</h3>
+                <p>Efectos únicos: papel tapiz, veneciana, estuco, rayado y más. Dale personalidad a tus muros.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon"><i class="fas fa-tools"></i></div>
+                <h3>Reparación de Muros</h3>
+                <p>Empaste, lijado y preparación. Dejamos la superficie perfecta antes de pintar.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon"><i class="fas fa-store"></i></div>
+                <h3>Pintura Comercial</h3>
+                <p>Oficinas, locales y edificios. Trabajamos en horario comercial sin interrumpir tu negocio.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon"><i class="fas fa-spray-can"></i></div>
+                <h3>Aplicación Airless</h3>
+                <p>Terminación perfecta en grandes superficies. Más rápido y con menor consumo de pintura.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="gallery" id="galeria">
+        <div class="section-header">
+            <span class="section-badge">GALERÍA</span>
+            <h2 class="section-title">Nuestros Trabajos</h2>
+        </div>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1562663474-6cbb3eaa4d14?w=600&h=800&fit=crop" alt="Pintura Interior">
+                <div class="gallery-overlay"><span>Living Moderno</span></div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=600&h=400&fit=crop" alt="Dormitorio">
+                <div class="gallery-overlay"><span>Dormitorio Principal</span></div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=600&h=400&fit=crop" alt="Fachada">
+                <div class="gallery-overlay"><span>Fachada Exterior</span></div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=600&h=400&fit=crop" alt="Oficina">
+                <div class="gallery-overlay"><span>Oficina Corporativa</span></div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&h=400&fit=crop" alt="Cocina">
+                <div class="gallery-overlay"><span>Cocina Integrada</span></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="pricing" id="precios">
+        <div class="section-header">
+            <span class="section-badge">PRECIOS</span>
+            <h2 class="section-title">Planes según tu Proyecto</h2>
+            <p class="section-subtitle">Presupuesto fijo sin sorpresas. Incluye materiales y mano de obra</p>
+        </div>
+        <div class="pricing-grid">
+            <div class="price-card">
+                <h3>REPLICAR</h3>
+                <p class="description">Pintura estándar</p>
+                <div class="price-amount">$89.000</div>
+                <p class="price-period">por ambiente</p>
+                <ul class="price-features">
+                    <li><i class="fas fa-check"></i> Hasta 25 m²</li>
+                    <li><i class="fas fa-check"></i> 1 capa de pintura</li>
+                    <li><i class="fas fa-check"></i> Color a elección</li>
+                    <li><i class="fas fa-check"></i> Preparación básica</li>
+                </ul>
+                <a href="https://wa.me/56964681874?text=Hola!%20Quiero%20el%20plan%20REPLICAR%20para%20pintura" target="_blank" class="btn btn-price">
+                    <i class="fab fa-whatsapp"></i> Solicitar
+                </a>
+            </div>
+            <div class="price-card featured">
+                <span class="price-badge">MÁS POPULAR</span>
+                <h3>ADAPTAR</h3>
+                <p class="description">Pintura completa</p>
+                <div class="price-amount">$199.000</div>
+                <p class="price-period">por ambiente</p>
+                <ul class="price-features">
+                    <li><i class="fas fa-check"></i> Hasta 40 m²</li>
+                    <li><i class="fas fa-check"></i> 2 capas de pintura</li>
+                    <li><i class="fas fa-check"></i> Empaste y lijado</li>
+                    <li><i class="fas fa-check"></i> Incluye materiales</li>
+                    <li><i class="fas fa-check"></i> Garantía 1 año</li>
+                </ul>
+                <a href="https://wa.me/56964681874?text=Hola!%20Quiero%20el%20plan%20ADAPTAR%20para%20pintura" target="_blank" class="btn btn-price">
+                    <i class="fab fa-whatsapp"></i> Solicitar
+                </a>
+            </div>
+            <div class="price-card">
+                <h3>PERSONALIZAR</h3>
+                <p class="description">Proyecto premium</p>
+                <div class="price-amount">$349.000</div>
+                <p class="price-period">por ambiente</p>
+                <ul class="price-features">
+                    <li><i class="fas fa-check"></i> Superficie ilimitada</li>
+                    <li><i class="fas fa-check"></i> Textura decorativa</li>
+                    <li><i class="fas fa-check"></i> Reparación completa</li>
+                    <li><i class="fas fa-check"></i> Acabados premium</li>
+                    <li><i class="fas fa-check"></i> Garantía 2 años</li>
+                </ul>
+                <a href="https://wa.me/56964681874?text=Hola!%20Quiero%20el%20plan%20PERSONALIZAR%20para%20pintura" target="_blank" class="btn btn-price">
+                    <i class="fab fa-whatsapp"></i> Solicitar
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials">
+        <div class="section-header">
+            <span class="section-badge">TESTIMONIOS</span>
+            <h2 class="section-title">Clientes Felices</h2>
+        </div>
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <div class="testimonial-stars">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+                <p class="testimonial-text">
+                    "Quedamos encantados con el trabajo. Pintaron toda la casa en 5 días y dejaron todo impecable. Los recomiendo."
+                </p>
+                <div class="testimonial-author">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop" alt="Cliente">
+                    <div>
+                        <h4>Claudio Urrea</h4>
+                        <span>Propietario, Las Condes</span>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-stars">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+                <p class="testimonial-text">
+                    "Hicieron textura decorativa en el living y quedó espectacular. El acabado es de muy alta calidad. Excelente trabajo."
+                </p>
+                <div class="testimonial-author">
+                    <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop" alt="Cliente">
+                    <div>
+                        <h4>Patricia González</h4>
+                        <span>Arquitecta, Viña del Mar</span>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-stars">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+                <p class="testimonial-text">
+                    "Pintaron mi restaurant antes de la apertura. Cumplieron con los plazos y el presupuesto. 100% recomendados."
+                </p>
+                <div class="testimonial-author">
+                    <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop" alt="Cliente">
+                    <div>
+                        <h4>Marco Silva</h4>
+                        <span>Restaurante, Providencia</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact" id="contacto">
+        <div class="contact-grid">
+            <div class="contact-info">
+                <h2>¿Listo para Pintar?</h2>
+                <p>Solicita tu presupuesto sin compromiso. Visitas técnicas gratuitas en Santiago.</p>
+                <div class="contact-methods">
+                    <a href="https://wa.me/56964681874?text=Hola!%20Quiero%20cotizar%20servicio%20de%20pintura" target="_blank" class="contact-item">
+                        <i class="fab fa-whatsapp"></i>
+                        <div>
+                            <h4>WhatsApp</h4>
+                            <span>+56 9 6468 1874</span>
+                        </div>
+                    </a>
+                    <div class="contact-item">
+                        <i class="fas fa-phone-alt"></i>
+                        <div>
+                            <h4>Teléfono</h4>
+                            <span>(02) 2345 6789</span>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <span>ventas@pinturasexpress.cl</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <form class="contact-form" onsubmit="event.preventDefault(); alert('¡Te contactaremos pronto!');">
+                <h3 style="margin-bottom: 25px;">Solicita tu Cotización</h3>
+                <div class="form-group">
+                    <label>Nombre</label>
+                    <input type="text" placeholder="Tu nombre" required>
+                </div>
+                <div class="form-group">
+                    <label>Teléfono</label>
+                    <input type="tel" placeholder="+56 9 XXXX XXXX" required>
+                </div>
+                <div class="form-group">
+                    <label>Tipo de servicio</label>
+                    <select>
+                        <option>Pintura Interior</option>
+                        <option>Pintura Exterior</option>
+                        <option>Texturas Decorativas</option>
+                        <option>Otro</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Mensaje</label>
+                    <textarea placeholder="Describe tu proyecto..."></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center;">
+                    <i class="fas fa-paper-plane"></i> Enviar
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <div class="logo">
+                    <div class="logo-icon"><i class="fas fa-paint-roller"></i></div>
+                    <span>Pinturas</span>Express
+                </div>
+                <p>Expertos en pintura profesional. Transformamos espacios con calidad y dedication.</p>
+            </div>
+            <div>
+                <h4>Servicios</h4>
+                <ul>
+                    <li><a href="#">Interior</a></li>
+                    <li><a href="#">Exterior</a></li>
+                    <li><a href="#">Texturas</a></li>
+                    <li><a href="#">Comercial</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Empresa</h4>
+                <ul>
+                    <li><a href="#">Nosotros</a></li>
+                    <li><a href="#">Proyectos</a></li>
+                    <li><a href="#">Testimonios</a></li>
+                    <li><a href="#">Blog</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Contacto</h4>
+                <ul>
+                    <li><a href="https://wa.me/56964681874" target="_blank">WhatsApp</a></li>
+                    <li><a href="tel:+56223456789">Fono</a></li>
+                    <li><a href="mailto:ventas@pinturasexpress.cl">Email</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 PinturasExpress. Todos los derechos reservados.</p>
+            <p style="margin-top: 10px; color: var(--primary);">Impulsado por TuWebPro360 | EP360</p>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/56964681874?text=Hola!%20Quiero%20cotizar%20servicio%20de%20pintura" target="_blank" class="whatsapp-float">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+
+        console.log('%cPinturasExpress', 'color: #E74C3C; font-size: 24px; font-weight: bold;');
+        console.log('%cTuWebPro360 | EP360', 'color: #27AE60; font-size: 14px;');
+    </script>
+</body>
+</html>

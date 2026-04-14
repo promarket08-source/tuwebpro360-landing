@@ -1,0 +1,1080 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="MegaBuild Chile - Constructoras líderes en proyectos residenciales, comerciales e industriales. Calidad garantizada.">
+    <title>MegaBuild Chile | Constructora Profesional</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700;800&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    
+    <style>
+        :root {
+            --primary: #FF6B00;
+            --primary-dark: #E65C00;
+            --secondary: #FF9500;
+            --accent: #2ECC71;
+            --bg-dark: #1A1A1A;
+            --bg-card: #242424;
+            --bg-gradient: linear-gradient(135deg, #1A1A1A 0%, #2D2D2D 100%);
+            --text-white: #FFFFFF;
+            --text-gray: #B0B0B0;
+            --construction: #F39C12;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-white);
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3 { font-family: 'Raleway', sans-serif; font-weight: 700; }
+
+        /* NAVBAR */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 15px 0;
+            background: rgba(26, 26, 26, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 107, 0, 0.2);
+        }
+
+        .nav-container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-family: 'Raleway', sans-serif;
+            font-size: 1.6rem;
+            font-weight: 800;
+            text-transform: uppercase;
+        }
+
+        .logo-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+        }
+
+        .logo span { color: var(--primary); }
+
+        .nav-menu { display: flex; gap: 30px; }
+
+        .nav-link {
+            color: var(--text-gray);
+            font-weight: 500;
+            transition: 0.3s;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+        }
+
+        .nav-link:hover { color: var(--primary); }
+
+        .nav-cta {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            padding: 12px 24px;
+            border-radius: 5px;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+        }
+
+        .nav-cta:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(255, 107, 0, 0.4);
+        }
+
+        /* HERO */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            padding: 100px 20px 60px;
+        }
+
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            background: var(--bg-gradient);
+        }
+
+        /* Construction pattern */
+        .pattern {
+            position: absolute;
+            inset: 0;
+            background-image: 
+                linear-gradient(45deg, rgba(255, 107, 0, 0.03) 25%, transparent 25%),
+                linear-gradient(-45deg, rgba(255, 107, 0, 0.03) 25%, transparent 25%),
+                linear-gradient(45deg, transparent 75%, rgba(255, 107, 0, 0.03) 75%),
+                linear-gradient(-45deg, transparent 75%, rgba(255, 107, 0, 0.03) 75%);
+            background-size: 60px 60px;
+            background-position: 0 0, 0 30px, 30px -30px, -30px 0px;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            max-width: 1300px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .hero-text h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        .hero-text h1 span {
+            color: var(--primary);
+            display: block;
+        }
+
+        .hero-text p {
+            font-size: 1.15rem;
+            color: var(--text-gray);
+            margin-bottom: 30px;
+            line-height: 1.8;
+        }
+
+        .hero-credentials {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        .credential {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(255, 107, 0, 0.1);
+            border: 1px solid rgba(255, 107, 0, 0.3);
+            padding: 12px 20px;
+            border-radius: 5px;
+        }
+
+        .credential i { color: var(--primary); font-size: 1.2rem; }
+        .credential span { font-weight: 600; font-size: 0.9rem; }
+
+        .hero-buttons { display: flex; gap: 15px; flex-wrap: wrap; }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 16px 32px;
+            border-radius: 5px;
+            font-weight: 700;
+            text-transform: uppercase;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            box-shadow: 0 10px 30px rgba(255, 107, 0, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(255, 107, 0, 0.5);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            border: 2px solid var(--accent);
+            color: var(--accent);
+        }
+
+        .btn-secondary:hover {
+            background: var(--accent);
+            color: white;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .stat-item { text-align: center; }
+
+        .stat-number {
+            font-family: 'Raleway', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--primary);
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: var(--text-gray);
+            text-transform: uppercase;
+        }
+
+        /* PROJECTS */
+        .projects {
+            padding: 100px 20px;
+            background: var(--bg-card);
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 60px;
+        }
+
+        .section-badge {
+            display: inline-block;
+            background: rgba(255, 107, 0, 0.15);
+            border: 1px solid rgba(255, 107, 0, 0.3);
+            padding: 8px 20px;
+            border-radius: 5px;
+            font-size: 0.85rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .section-title {
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin-bottom: 15px;
+        }
+
+        .section-subtitle { color: var(--text-gray); font-size: 1.1rem; }
+
+        .projects-grid {
+            max-width: 1300px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .project-card {
+            border-radius: 15px;
+            overflow: hidden;
+            position: relative;
+            aspect-ratio: 4/3;
+            cursor: pointer;
+        }
+
+        .project-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: 0.5s;
+        }
+
+        .project-card:hover img { transform: scale(1.1); }
+
+        .project-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.9));
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 30px;
+            opacity: 0;
+            transition: 0.4s;
+        }
+
+        .project-card:hover .project-overlay { opacity: 1; }
+
+        .project-category {
+            background: var(--primary);
+            padding: 5px 12px;
+            border-radius: 3px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            width: fit-content;
+            margin-bottom: 10px;
+        }
+
+        .project-overlay h3 { font-size: 1.3rem; margin-bottom: 5px; }
+        .project-overlay p { color: var(--text-gray); font-size: 0.9rem; }
+
+        /* SERVICES */
+        .services {
+            padding: 100px 20px;
+            background: var(--bg-dark);
+        }
+
+        .services-grid {
+            max-width: 1300px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: var(--bg-card);
+            border-radius: 15px;
+            padding: 40px 30px;
+            transition: 0.4s;
+            border: 1px solid transparent;
+            position: relative;
+        }
+
+        .service-card:hover {
+            border-color: rgba(255, 107, 0, 0.3);
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(255, 107, 0, 0.1);
+        }
+
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: white;
+            margin-bottom: 25px;
+        }
+
+        .service-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 12px;
+        }
+
+        .service-card p {
+            color: var(--text-gray);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        /* PRICING */
+        .pricing {
+            padding: 100px 20px;
+            background: var(--bg-card);
+        }
+
+        .pricing-grid {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .price-card {
+            background: var(--bg-dark);
+            border-radius: 15px;
+            padding: 40px 30px;
+            text-align: center;
+            transition: 0.4s;
+            position: relative;
+            border: 1px solid rgba(255, 107, 0, 0.1);
+        }
+
+        .price-card.featured {
+            border-color: var(--primary);
+            background: linear-gradient(145deg, var(--bg-dark), rgba(255, 107, 0, 0.05));
+            transform: scale(1.05);
+        }
+
+        .price-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .price-card.featured:hover {
+            transform: scale(1.05) translateY(-10px);
+        }
+
+        .price-badge {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            padding: 8px 25px;
+            border-radius: 5px;
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
+
+        .price-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+        }
+
+        .price-card .description {
+            color: var(--text-gray);
+            font-size: 0.9rem;
+            margin-bottom: 25px;
+        }
+
+        .price-amount {
+            font-family: 'Raleway', sans-serif;
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 5px;
+        }
+
+        .price-period {
+            color: var(--text-gray);
+            font-size: 0.85rem;
+            margin-bottom: 25px;
+        }
+
+        .price-features { text-align: left; margin-bottom: 30px; }
+
+        .price-features li {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .price-features li:last-child { border-bottom: none; }
+        .price-features i { color: var(--accent); }
+
+        .btn-price {
+            width: 100%;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+        }
+
+        .btn-price:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(255, 107, 0, 0.4);
+        }
+
+        /* TESTIMONIALS */
+        .testimonials {
+            padding: 100px 20px;
+            background: var(--bg-dark);
+        }
+
+        .testimonials-grid {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .testimonial-card {
+            background: var(--bg-card);
+            border-radius: 15px;
+            padding: 35px;
+            transition: 0.4s;
+            border: 1px solid transparent;
+        }
+
+        .testimonial-card:hover {
+            border-color: rgba(255, 107, 0, 0.3);
+            transform: translateY(-5px);
+        }
+
+        .testimonial-stars { color: var(--construction); margin-bottom: 15px; }
+
+        .testimonial-text {
+            font-size: 1rem;
+            line-height: 1.8;
+            color: var(--text-gray);
+            margin-bottom: 25px;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .testimonial-author img {
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--primary);
+        }
+
+        .testimonial-author h4 { font-size: 1rem; font-weight: 600; }
+        .testimonial-author span { font-size: 0.85rem; color: var(--text-gray); }
+
+        /* CONTACT */
+        .contact {
+            padding: 100px 20px;
+            background: var(--bg-card);
+        }
+
+        .contact-grid {
+            max-width: 1300px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .contact-info h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin-bottom: 20px;
+        }
+
+        .contact-info p {
+            color: var(--text-gray);
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+        }
+
+        .contact-methods { display: flex; flex-direction: column; gap: 20px; }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding: 20px;
+            background: var(--bg-dark);
+            border-radius: 10px;
+            transition: 0.3s;
+        }
+
+        .contact-item:hover {
+            transform: translateX(10px);
+            border-left: 4px solid var(--primary);
+        }
+
+        .contact-item i {
+            width: 55px;
+            height: 55px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+
+        .contact-item h4 { font-size: 1rem; margin-bottom: 5px; }
+        .contact-item span { color: var(--text-gray); font-size: 0.9rem; }
+
+        .contact-form {
+            background: var(--bg-dark);
+            border-radius: 15px;
+            padding: 45px;
+        }
+
+        .form-group { margin-bottom: 20px; }
+
+        .form-group label {
+            display: block;
+            font-weight: 500;
+            margin-bottom: 8px;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 15px 20px;
+            background: var(--bg-card);
+            border: 2px solid rgba(255, 107, 0, 0.1);
+            border-radius: 8px;
+            color: var(--text-white);
+            font-size: 1rem;
+            font-family: inherit;
+            transition: 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        .form-group textarea { resize: vertical; min-height: 120px; }
+
+        /* FOOTER */
+        .footer {
+            background: #0D0D0D;
+            padding: 60px 20px 30px;
+            border-top: 1px solid rgba(255, 107, 0, 0.1);
+        }
+
+        .footer-content {
+            max-width: 1300px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-brand p { color: var(--text-gray); margin-top: 15px; line-height: 1.7; }
+        .footer h4 { font-size: 1.1rem; margin-bottom: 20px; color: var(--primary); }
+        .footer ul { display: flex; flex-direction: column; gap: 12px; }
+        .footer a { color: var(--text-gray); transition: 0.3s; }
+        .footer a:hover { color: var(--primary); }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 107, 0, 0.1);
+            color: var(--text-gray);
+            font-size: 0.9rem;
+        }
+
+        /* WHATSAPP */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 65px;
+            height: 65px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: white;
+            box-shadow: 0 8px 30px rgba(37, 211, 102, 0.5);
+            z-index: 1000;
+            animation: pulse 2s infinite;
+            text-decoration: none;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 1024px) {
+            .hero-content { grid-template-columns: 1fr; }
+            .projects-grid { grid-template-columns: repeat(2, 1fr); }
+            .pricing-grid { grid-template-columns: 1fr; max-width: 450px; }
+            .price-card.featured { transform: scale(1); }
+            .testimonials-grid { grid-template-columns: 1fr; }
+            .contact-grid { grid-template-columns: 1fr; }
+            .footer-content { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media (max-width: 768px) {
+            .nav-menu { display: none; }
+            .hero-credentials { flex-direction: column; }
+            .hero-stats { flex-wrap: wrap; gap: 20px; }
+            .projects-grid { grid-template-columns: 1fr; }
+            .services-grid { grid-template-columns: 1fr; }
+            .footer-content { grid-template-columns: 1fr; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <div class="logo-icon"><i class="fas fa-hard-hat"></i></div>
+                <span>MEGA</span>BUILD
+            </a>
+            <div class="nav-menu">
+                <a href="#inicio" class="nav-link">Inicio</a>
+                <a href="#proyectos" class="nav-link">Proyectos</a>
+                <a href="#servicios" class="nav-link">Servicios</a>
+                <a href="#precios" class="nav-link">Precios</a>
+                <a href="#contacto" class="nav-link">Contacto</a>
+            </div>
+            <a href="https://wa.me/56964681874?text=Hola!%20Quiero%20cotizar%20un%20proyecto%20de%20construcción" target="_blank" class="nav-cta">
+                <i class="fab fa-whatsapp"></i> Cotizar
+            </a>
+        </div>
+    </nav>
+
+    <section class="hero" id="inicio">
+        <div class="hero-bg">
+            <div class="pattern"></div>
+        </div>
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>
+                    Construimos tu<br>
+                    <span>Futuro Sólido</span>
+                </h1>
+                <p>
+                    Más de 25 años construyendo sueños. Proyectos residenciales, comerciales e industriales 
+                    con los más altos estándares de calidad y seguridad.
+                </p>
+                <div class="hero-credentials">
+                    <div class="credential">
+                        <i class="fas fa-certificate"></i>
+                        <span>ISO 9001</span>
+                    </div>
+                    <div class="credential">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>Seguros</span>
+                    </div>
+                    <div class="credential">
+                        <i class="fas fa-award"></i>
+                        <span>DBM</span>
+                    </div>
+                </div>
+                <div class="hero-buttons">
+                    <a href="https://wa.me/56964681874?text=Hola!%20Quiero%20cotizar%20un%20proyecto%20de%20construcción" target="_blank" class="btn btn-primary">
+                        <i class="fab fa-whatsapp"></i> Cotizar Proyecto
+                    </a>
+                    <a href="#proyectos" class="btn btn-secondary">
+                        <i class="fas fa-images"></i> Ver Proyectos
+                    </a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <div class="stat-number">500+</div>
+                        <div class="stat-label">Proyectos</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">25+</div>
+                        <div class="stat-label">Años</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">100%</div>
+                        <div class="stat-label">Entrega</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="projects" id="proyectos">
+        <div class="section-header">
+            <span class="section-badge">PROYECTOS</span>
+            <h2 class="section-title">Obras Destacadas</h2>
+            <p class="section-subtitle">Proyectos residenciales, comerciales e industriales</p>
+        </div>
+        <div class="projects-grid">
+            <div class="project-card">
+                <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=600&h=450&fit=crop" alt="Edificio">
+                <div class="project-overlay">
+                    <span class="project-category">Comercial</span>
+                    <h3>Torre Empresarial</h3>
+                    <p>Santiago Centro - 15 pisos</p>
+                </div>
+            </div>
+            <div class="project-card">
+                <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&h=450&fit=crop" alt="Casa">
+                <div class="project-overlay">
+                    <span class="project-category">Residencial</span>
+                    <h3>Villa Premium</h3>
+                    <p>Las Condes - 8 unidades</p>
+                </div>
+            </div>
+            <div class="project-card">
+                <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&h=450&fit=crop" alt="Industrial">
+                <div class="project-overlay">
+                    <span class="project-category">Industrial</span>
+                    <h3>Centro Logístico</h3>
+                    <p>Quilicura - 5.000 m²</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="services" id="servicios">
+        <div class="section-header">
+            <span class="section-badge">SERVICIOS</span>
+            <h2 class="section-title">Construcción Integral</h2>
+            <p class="section-subtitle">Desde el diseño hasta la entrega final</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon"><i class="fas fa-home"></i></div>
+                <h3>Construcción Residencial</h3>
+                <p>Casas, departamentos y townhouses. Gestión completa del proyecto con entrega garantizada.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon"><i class="fas fa-building"></i></div>
+                <h3>Construcción Comercial</h3>
+                <p>Oficinas, locales y centros comerciales. Proyectos llave en mano para tu negocio.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon"><i class="fas fa-industry"></i></div>
+                <h3>Construcción Industrial</h3>
+                <p>Bodegas, fábricas y centros logísticos. Estructuras metálicas y de hormigón.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon"><i class="fas fa-pencil-ruler"></i></div>
+                <h3>Diseño y Planificación</h3>
+                <p>Proyectos arquitectónicos, estructural y de instalaciones. Todo en un solo lugar.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon"><i class="fas fa-tools"></i></div>
+                <h3>Remodelaciones</h3>
+                <p>Ampliaciones, remodelaciones y mejoras. Transformamos espacios existentes.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon"><i class="fas fa-hard-hat"></i></div>
+                <h3>Dirección de Obra</h3>
+                <p>Supervisión técnica y administrativa. Aseguramos calidad y plazos.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="pricing" id="precios">
+        <div class="section-header">
+            <span class="section-badge">PRECIOS</span>
+            <h2 class="section-title">Planes según tu Proyecto</h2>
+            <p class="section-subtitle">Presupuestos personalizados según tus necesidades</p>
+        </div>
+        <div class="pricing-grid">
+            <div class="price-card">
+                <h3>REPLICAR</h3>
+                <p class="description">Casa estándar</p>
+                <div class="price-amount">$45M</div>
+                <p class="price-period">desde</p>
+                <ul class="price-features">
+                    <li><i class="fas fa-check"></i> Casa 80-120 m²</li>
+                    <li><i class="fas fa-check"></i> 3-4 dormitorios</li>
+                    <li><i class="fas fa-check"></i> Estándar premium</li>
+                    <li><i class="fas fa-check"></i> 6-8 meses</li>
+                </ul>
+                <a href="https://wa.me/56964681874?text=Hola!%20Quiero%20cotizar%20una%20casa" target="_blank" class="btn btn-price">
+                    <i class="fab fa-whatsapp"></i> Cotizar
+                </a>
+            </div>
+            <div class="price-card featured">
+                <span class="price-badge">MÁS POPULAR</span>
+                <h3>ADAPTAR</h3>
+                <p class="description">Proyecto personalizado</p>
+                <div class="price-amount">$80M</div>
+                <p class="price-period">desde</p>
+                <ul class="price-features">
+                    <li><i class="fas fa-check"></i> Casa 150-250 m²</li>
+                    <li><i class="fas fa-check"></i> 4-5 dormitorios</li>
+                    <li><i class="fas fa-check"></i> Diseño exclusivo</li>
+                    <li><i class="fas fa-check"></i> 8-12 meses</li>
+                    <li><i class="fas fa-check"></i> Garantía 5 años</li>
+                </ul>
+                <a href="https://wa.me/56964681874?text=Hola!%20Quiero%20cotizar%20un%20proyecto%20personalizado" target="_blank" class="btn btn-price">
+                    <i class="fab fa-whatsapp"></i> Cotizar
+                </a>
+            </div>
+            <div class="price-card">
+                <h3>PERSONALIZAR</h3>
+                <p class="description">Edificación completa</p>
+                <div class="price-amount">$200M</div>
+                <p class="price-period">desde</p>
+                <ul class="price-features">
+                    <li><i class="fas fa-check"></i> Edificio o proyecto</li>
+                    <li><i class="fas fa-check"></i> A medida</li>
+                    <li><i class="fas fa-check"></i> Llave en mano</li>
+                    <li><i class="fas fa-check"></i> Según proyecto</li>
+                    <li><i class="fas fa-check"></i> Garantía 10 años</li>
+                </ul>
+                <a href="https://wa.me/56964681874?text=Hola!%20Quiero%20cotizar%20un%20edificio" target="_blank" class="btn btn-price">
+                    <i class="fab fa-whatsapp"></i> Cotizar
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials">
+        <div class="section-header">
+            <span class="section-badge">TESTIMONIOS</span>
+            <h2 class="section-title">Clientes Satisfechos</h2>
+        </div>
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <div class="testimonial-stars">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+                <p class="testimonial-text">
+                    "Construyeron nuestra casa en Las Condes en 8 meses. El resultado superó nuestras expectativas. Altamente recomendados."
+                </p>
+                <div class="testimonial-author">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop" alt="Cliente">
+                    <div>
+                        <h4>Francisco Torres</h4>
+                        <span>Propietario, Las Condes</span>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-stars">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+                <p class="testimonial-text">
+                    "Contratamos para el proyecto del edificio comercial. Cumplieron con los plazos y el presupuesto. Excelente equipo."
+                </p>
+                <div class="testimonial-author">
+                    <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop" alt="Cliente">
+                    <div>
+                        <h4>Inmobiliaria Andes</h4>
+                        <span>Santiago Centro</span>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-stars">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+                <p class="testimonial-text">
+                    "Remodelaron completamente nuestro local comercial. Quedó espectacular y abrieron a tiempo. 100% recomendados."
+                </p>
+                <div class="testimonial-author">
+                    <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop" alt="Cliente">
+                    <div>
+                        <h4>Café Premium SPA</h4>
+                        <span>Providencia</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact" id="contacto">
+        <div class="contact-grid">
+            <div class="contact-info">
+                <h2>¿Listo para Construir?</h2>
+                <p>Agenda una reunión con nuestros expertos. Visitas a terreno y cotizaciones sin compromiso.</p>
+                <div class="contact-methods">
+                    <a href="https://wa.me/56964681874?text=Hola!%20Quiero%20cotizar%20un%20proyecto%20de%20construcción" target="_blank" class="contact-item">
+                        <i class="fab fa-whatsapp"></i>
+                        <div>
+                            <h4>WhatsApp</h4>
+                            <span>+56 9 6468 1874</span>
+                        </div>
+                    </a>
+                    <div class="contact-item">
+                        <i class="fas fa-phone-alt"></i>
+                        <div>
+                            <h4>Teléfono</h4>
+                            <span>(02) 2345 6789</span>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <span>proyectos@megabuild.cl</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <form class="contact-form" onsubmit="event.preventDefault(); alert('¡Te contactaremos pronto!');">
+                <h3 style="margin-bottom: 25px;">Solicita tu Cotización</h3>
+                <div class="form-group">
+                    <label>Nombre</label>
+                    <input type="text" placeholder="Tu nombre" required>
+                </div>
+                <div class="form-group">
+                    <label>Teléfono</label>
+                    <input type="tel" placeholder="+56 9 XXXX XXXX" required>
+                </div>
+                <div class="form-group">
+                    <label>Tipo de proyecto</label>
+                    <input type="text" placeholder="Ej: Casa, Edificio...">
+                </div>
+                <div class="form-group">
+                    <label>Mensaje</label>
+                    <textarea placeholder="Describe tu proyecto..."></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center;">
+                    <i class="fas fa-paper-plane"></i> Enviar
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <div class="logo">
+                    <div class="logo-icon"><i class="fas fa-hard-hat"></i></div>
+                    <span>MEGA</span>BUILD
+                </div>
+                <p>Constructora líder en Chile. Más de 25 años construyendo sueños y proyectos exitosos.</p>
+            </div>
+            <div>
+                <h4>Servicios</h4>
+                <ul>
+                    <li><a href="#">Residencial</a></li>
+                    <li><a href="#">Comercial</a></li>
+                    <li><a href="#">Industrial</a></li>
+                    <li><a href="#">Remodelaciones</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Empresa</h4>
+                <ul>
+                    <li><a href="#">Nosotros</a></li>
+                    <li><a href="#">Proyectos</a></li>
+                    <li><a href="#">Testimonios</a></li>
+                    <li><a href="#">Blog</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Contacto</h4>
+                <ul>
+                    <li><a href="https://wa.me/56964681874" target="_blank">WhatsApp</a></li>
+                    <li><a href="tel:+56223456789">Fono</a></li>
+                    <li><a href="mailto:proyectos@megabuild.cl">Email</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 MegaBuild Chile. Todos los derechos reservados.</p>
+            <p style="margin-top: 10px; color: var(--primary);">Impulsado por TuWebPro360 | EP360</p>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/56964681874?text=Hola!%20Quiero%20cotizar%20un%20proyecto%20de%20construcción" target="_blank" class="whatsapp-float">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+
+        console.log('%cMegaBuild Chile', 'color: #FF6B00; font-size: 24px; font-weight: bold;');
+        console.log('%cTuWebPro360 | EP360', 'color: #2ECC71; font-size: 14px;');
+    </script>
+</body>
+</html>

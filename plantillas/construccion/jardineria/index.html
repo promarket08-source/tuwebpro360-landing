@@ -1,0 +1,1005 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="JardínPro Chile - Diseño y mantención de jardines. Paisajismo profesional. Tu espacio verde perfecto.">
+    <title>JardínPro Chile | Paisajismo y Jardinería</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    
+    <style>
+        :root {
+            --primary: #2ECC71;
+            --primary-dark: #27AE60;
+            --secondary: #1ABC9C;
+            --accent: #F39C12;
+            --bg-dark: #0D1F0D;
+            --bg-card: #132613;
+            --bg-gradient: linear-gradient(135deg, #0D1F0D 0%, #132613 100%);
+            --text-white: #FFFFFF;
+            --text-gray: #A0C4A0;
+            --leaf: #58D68D;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Nunito', sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-white);
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3 { font-family: 'Playfair Display', serif; }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 15px 0;
+            background: rgba(13, 31, 13, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(46, 204, 113, 0.2);
+        }
+
+        .nav-container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+            font-weight: 600;
+        }
+
+        .logo-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+        }
+
+        .logo span { color: var(--secondary); }
+
+        .nav-menu { display: flex; gap: 30px; }
+
+        .nav-link {
+            color: var(--text-gray);
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        .nav-link:hover { color: var(--leaf); }
+
+        .nav-cta {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            padding: 12px 24px;
+            border-radius: 30px;
+            font-weight: 600;
+        }
+
+        .nav-cta:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(46, 204, 113, 0.4);
+        }
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            padding: 100px 20px 60px;
+        }
+
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            background: var(--bg-gradient);
+        }
+
+        /* Floating leaves */
+        .leaf {
+            position: absolute;
+            color: rgba(46, 204, 113, 0.1);
+            font-size: 3rem;
+            animation: floatLeaf 10s ease-in-out infinite;
+        }
+
+        .leaf:nth-child(1) { top: 10%; left: 10%; animation-delay: 0s; }
+        .leaf:nth-child(2) { top: 20%; right: 15%; animation-delay: 2s; font-size: 2rem; }
+        .leaf:nth-child(3) { bottom: 30%; left: 20%; animation-delay: 4s; }
+        .leaf:nth-child(4) { bottom: 20%; right: 10%; animation-delay: 6s; font-size: 2.5rem; }
+
+        @keyframes floatLeaf {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-30px) rotate(15deg); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            max-width: 1300px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .hero-text h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        .hero-text h1 span {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-text p {
+            font-size: 1.15rem;
+            color: var(--text-gray);
+            margin-bottom: 30px;
+            line-height: 1.8;
+        }
+
+        .hero-services {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        .service-tag {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(46, 204, 113, 0.1);
+            border: 1px solid rgba(46, 204, 113, 0.2);
+            padding: 10px 18px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .service-tag i { color: var(--primary); }
+
+        .hero-buttons { display: flex; gap: 15px; flex-wrap: wrap; }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 16px 32px;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            box-shadow: 0 10px 30px rgba(46, 204, 113, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(46, 204, 113, 0.5);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            border: 2px solid var(--accent);
+            color: var(--accent);
+        }
+
+        .btn-secondary:hover {
+            background: var(--accent);
+            color: white;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .stat-item { text-align: center; }
+
+        .stat-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: var(--text-gray);
+        }
+
+        .services {
+            padding: 100px 20px;
+            background: var(--bg-card);
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 60px;
+        }
+
+        .section-badge {
+            display: inline-block;
+            background: rgba(46, 204, 113, 0.15);
+            border: 1px solid rgba(46, 204, 113, 0.3);
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+        .section-title {
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin-bottom: 15px;
+        }
+
+        .section-subtitle { color: var(--text-gray); font-size: 1.1rem; }
+
+        .services-grid {
+            max-width: 1300px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: var(--bg-dark);
+            border-radius: 25px;
+            padding: 40px 30px;
+            text-align: center;
+            transition: 0.4s;
+            border: 1px solid transparent;
+        }
+
+        .service-card:hover {
+            border-color: rgba(46, 204, 113, 0.3);
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(46, 204, 113, 0.15);
+        }
+
+        .service-icon {
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            color: white;
+            margin: 0 auto 25px;
+        }
+
+        .service-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 12px;
+        }
+
+        .service-card p {
+            color: var(--text-gray);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        .gallery {
+            padding: 100px 20px;
+            background: var(--bg-dark);
+        }
+
+        .gallery-grid {
+            max-width: 1300px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .gallery-item {
+            border-radius: 20px;
+            overflow: hidden;
+            aspect-ratio: 1;
+        }
+
+        .gallery-item:first-child { grid-column: span 2; grid-row: span 2; }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: 0.5s;
+        }
+
+        .gallery-item:hover img { transform: scale(1.1); }
+
+        .pricing {
+            padding: 100px 20px;
+            background: var(--bg-card);
+        }
+
+        .pricing-grid {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .price-card {
+            background: var(--bg-dark);
+            border-radius: 25px;
+            padding: 40px 30px;
+            text-align: center;
+            transition: 0.4s;
+            position: relative;
+            border: 1px solid rgba(46, 204, 113, 0.1);
+        }
+
+        .price-card.featured {
+            border-color: var(--primary);
+            background: linear-gradient(145deg, var(--bg-dark), rgba(46, 204, 113, 0.05));
+            transform: scale(1.05);
+        }
+
+        .price-card:hover { transform: translateY(-10px); }
+        .price-card.featured:hover { transform: scale(1.05) translateY(-10px); }
+
+        .price-badge {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            padding: 8px 25px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
+
+        .price-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+        }
+
+        .price-card .description {
+            color: var(--text-gray);
+            font-size: 0.9rem;
+            margin-bottom: 25px;
+        }
+
+        .price-amount {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 5px;
+        }
+
+        .price-period {
+            color: var(--text-gray);
+            font-size: 0.85rem;
+            margin-bottom: 25px;
+        }
+
+        .price-features { text-align: left; margin-bottom: 30px; }
+
+        .price-features li {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .price-features li:last-child { border-bottom: none; }
+        .price-features i { color: var(--secondary); }
+
+        .btn-price {
+            width: 100%;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+        }
+
+        .btn-price:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(46, 204, 113, 0.4);
+        }
+
+        .testimonials {
+            padding: 100px 20px;
+            background: var(--bg-dark);
+        }
+
+        .testimonials-grid {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .testimonial-card {
+            background: var(--bg-card);
+            border-radius: 20px;
+            padding: 35px;
+            border: 1px solid rgba(46, 204, 113, 0.1);
+        }
+
+        .testimonial-stars { color: var(--accent); margin-bottom: 15px; }
+
+        .testimonial-text {
+            font-size: 1rem;
+            line-height: 1.8;
+            color: var(--text-gray);
+            margin-bottom: 25px;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .testimonial-author img {
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--primary);
+        }
+
+        .testimonial-author h4 { font-size: 1rem; font-weight: 600; }
+        .testimonial-author span { font-size: 0.85rem; color: var(--text-gray); }
+
+        .contact {
+            padding: 100px 20px;
+            background: var(--bg-card);
+        }
+
+        .contact-grid {
+            max-width: 1300px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+        }
+
+        .contact-info h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin-bottom: 20px;
+        }
+
+        .contact-info p {
+            color: var(--text-gray);
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+        }
+
+        .contact-methods { display: flex; flex-direction: column; gap: 20px; }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding: 20px;
+            background: var(--bg-dark);
+            border-radius: 15px;
+        }
+
+        .contact-item i {
+            width: 55px;
+            height: 55px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+
+        .contact-item h4 { font-size: 1rem; margin-bottom: 5px; }
+        .contact-item span { color: var(--text-gray); font-size: 0.9rem; }
+
+        .contact-form {
+            background: var(--bg-dark);
+            border-radius: 25px;
+            padding: 45px;
+        }
+
+        .form-group { margin-bottom: 20px; }
+
+        .form-group label {
+            display: block;
+            font-weight: 500;
+            margin-bottom: 8px;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 15px 20px;
+            background: var(--bg-card);
+            border: 2px solid rgba(46, 204, 113, 0.1);
+            border-radius: 12px;
+            color: var(--text-white);
+            font-size: 1rem;
+            font-family: inherit;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        .form-group textarea { resize: vertical; min-height: 120px; }
+
+        .footer {
+            background: #071007;
+            padding: 60px 20px 30px;
+            border-top: 1px solid rgba(46, 204, 113, 0.1);
+        }
+
+        .footer-content {
+            max-width: 1300px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-brand p { color: var(--text-gray); margin-top: 15px; line-height: 1.7; }
+        .footer h4 { font-size: 1.1rem; margin-bottom: 20px; }
+        .footer ul { display: flex; flex-direction: column; gap: 12px; }
+        .footer a { color: var(--text-gray); transition: 0.3s; }
+        .footer a:hover { color: var(--primary); }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(46, 204, 113, 0.1);
+            color: var(--text-gray);
+            font-size: 0.9rem;
+        }
+
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 65px;
+            height: 65px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: white;
+            box-shadow: 0 8px 30px rgba(37, 211, 102, 0.5);
+            z-index: 1000;
+            animation: pulse 2s infinite;
+            text-decoration: none;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        @media (max-width: 1024px) {
+            .hero-content { grid-template-columns: 1fr; }
+            .pricing-grid { grid-template-columns: 1fr; max-width: 450px; }
+            .price-card.featured { transform: scale(1); }
+            .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+            .gallery-item:first-child { grid-column: span 2; }
+            .testimonials-grid { grid-template-columns: 1fr; }
+            .contact-grid { grid-template-columns: 1fr; }
+            .footer-content { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media (max-width: 768px) {
+            .nav-menu { display: none; }
+            .hero-stats { flex-wrap: wrap; gap: 20px; }
+            .gallery-grid { grid-template-columns: 1fr; }
+            .gallery-item:first-child { grid-column: span 1; }
+            .footer-content { grid-template-columns: 1fr; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <div class="logo-icon"><i class="fas fa-leaf"></i></div>
+                <span>Jardín</span>Pro
+            </a>
+            <div class="nav-menu">
+                <a href="#inicio" class="nav-link">Inicio</a>
+                <a href="#servicios" class="nav-link">Servicios</a>
+                <a href="#galeria" class="nav-link">Galería</a>
+                <a href="#precios" class="nav-link">Precios</a>
+                <a href="#contacto" class="nav-link">Contacto</a>
+            </div>
+            <a href="https://wa.me/56964681874?text=Hola!%20Quiero%20cotizar%20un%20jardín" target="_blank" class="nav-cta">
+                <i class="fab fa-whatsapp"></i> Cotizar
+            </a>
+        </div>
+    </nav>
+
+    <section class="hero" id="inicio">
+        <div class="hero-bg">
+            <div class="leaf"><i class="fas fa-leaf"></i></div>
+            <div class="leaf"><i class="fas fa-seedling"></i></div>
+            <div class="leaf"><i class="fas fa-tree"></i></div>
+            <div class="leaf"><i class="fas fa-leaf"></i></div>
+        </div>
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>
+                    Transforma tu<br>
+                    <span>Jardín en un Paraíso</span>
+                </h1>
+                <p>
+                    Diseñamos y construimos jardines que inspiran. Paisajismo profesional, 
+                    mantención y todo para tu espacio verde.
+                </p>
+                <div class="hero-services">
+                    <div class="service-tag">
+                        <i class="fas fa-check"></i>
+                        <span>Diseño</span>
+                    </div>
+                    <div class="service-tag">
+                        <i class="fas fa-check"></i>
+                        <span>Instalación</span>
+                    </div>
+                    <div class="service-tag">
+                        <i class="fas fa-check"></i>
+                        <span>Mantención</span>
+                    </div>
+                </div>
+                <div class="hero-buttons">
+                    <a href="https://wa.me/56964681874?text=Hola!%20Quiero%20cotizar%20un%20jardín" target="_blank" class="btn btn-primary">
+                        <i class="fab fa-whatsapp"></i> Cotizar Ahora
+                    </a>
+                    <a href="#galeria" class="btn btn-secondary">
+                        <i class="fas fa-images"></i> Ver Trabajos
+                    </a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <div class="stat-number">1,500+</div>
+                        <div class="stat-label">Jardines</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">15+</div>
+                        <div class="stat-label">Años</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">100%</div>
+                        <div class="stat-label">Orgánico</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="services" id="servicios">
+        <div class="section-header">
+            <span class="section-badge">SERVICIOS</span>
+            <h2 class="section-title">Todo para tu Jardín</h2>
+            <p class="section-subtitle">Soluciones completas en paisajismo y jardinería</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon"><i class="fas fa-palette"></i></div>
+                <h3>Diseño de Jardines</h3>
+                <p>Proyectos personalizados que transforman tu espacio exterior en un oasis.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon"><i class="fas fa-seedling"></i></div>
+                <h3>Plantación</h3>
+                <p>Selección de plantas, árboles y arbustos adaptados al clima local.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon"><i class="fas fa-tint"></i></div>
+                <h3>Riego automático</h3>
+                <p>Sistemas de riego inteligente que ahorran agua y mantienen tu jardín perfecto.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon"><i class="fas fa-hammer"></i></div>
+                <h3>Pavimentos y Caminos</h3>
+                <p>Diseños en piedra, adoquines y materiales naturales para senderos y terrazas.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon"><i class="fas fa-fountain"></i></div>
+                <h3>Fuentes y Estanques</h3>
+                <p>Elementos acuáticos que dan vida y frescura a tu jardín.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon"><i class="fas fa-broom"></i></div>
+                <h3>Mantención</h3>
+                <p>Planes de cuidado mensual, poda, fertilización y control de plagas.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="gallery" id="galeria">
+        <div class="section-header">
+            <span class="section-badge">GALERÍA</span>
+            <h2 class="section-title">Nuestros Jardines</h2>
+        </div>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?w=600&h=600&fit=crop" alt="Jardín 1">
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=400&fit=crop" alt="Jardín 2">
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1583089892943-e02e5b017b6a?w=400&h=400&fit=crop" alt="Jardín 3">
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1604762525953-f53a47d7a5c5?w=400&h=400&fit=crop" alt="Jardín 4">
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1599629954294-14dfcac2b5b5?w=400&h=400&fit=crop" alt="Jardín 5">
+            </div>
+        </div>
+    </section>
+
+    <section class="pricing" id="precios">
+        <div class="section-header">
+            <span class="section-badge">PRECIOS</span>
+            <h2 class="section-title">Planes según tu Jardín</h2>
+            <p class="section-subtitle">Diseños para cada presupuesto</p>
+        </div>
+        <div class="pricing-grid">
+            <div class="price-card">
+                <h3>REPLICAR</h3>
+                <p class="description">Jardín básico</p>
+                <div class="price-amount">$199.000</div>
+                <p class="price-period">CLP</p>
+                <ul class="price-features">
+                    <li><i class="fas fa-check"></i> Diseño estándar</li>
+                    <li><i class="fas fa-check"></i> Plantas básicas</li>
+                    <li><i class="fas fa-check"></i> Hasta 50 m²</li>
+                    <li><i class="fas fa-check"></i> Incluye instalación</li>
+                </ul>
+                <a href="https://wa.me/56964681874?text=Hola!%20Quiero%20el%20plan%20REPLICAR" target="_blank" class="btn btn-price">
+                    <i class="fab fa-whatsapp"></i> Cotizar
+                </a>
+            </div>
+            <div class="price-card featured">
+                <span class="price-badge">MÁS POPULAR</span>
+                <h3>ADAPTAR</h3>
+                <p class="description">Jardín premium</p>
+                <div class="price-amount">$449.000</div>
+                <p class="price-period">CLP</p>
+                <ul class="price-features">
+                    <li><i class="fas fa-check"></i> Diseño personalizado</li>
+                    <li><i class="fas fa-check"></i> Plantas variadas</li>
+                    <li><i class="fas fa-check"></i> Riego automático</li>
+                    <li><i class="fas fa-check"></i> Iluminación</li>
+                    <li><i class="fas fa-check"></i> Garantía 1 año</li>
+                </ul>
+                <a href="https://wa.me/56964681874?text=Hola!%20Quiero%20el%20plan%20ADAPTAR" target="_blank" class="btn btn-price">
+                    <i class="fab fa-whatsapp"></i> Cotizar
+                </a>
+            </div>
+            <div class="price-card">
+                <h3>PERSONALIZAR</h3>
+                <p class="description">Proyecto completo</p>
+                <div class="price-amount">$799.000</div>
+                <p class="price-period">CLP</p>
+                <ul class="price-features">
+                    <li><i class="fas fa-check"></i> Jardín exclusivo</li>
+                    <li><i class="fas fa-check"></i> Elementos acuáticos</li>
+                    <li><i class="fas fa-check"></i> Pavimentos</li>
+                    <li><i class="fas fa-check"></i> Mantención 6 meses</li>
+                    <li><i class="fas fa-check"></i> Garantía 2 años</li>
+                </ul>
+                <a href="https://wa.me/56964681874?text=Hola!%20Quiero%20el%20plan%20PERSONALIZAR" target="_blank" class="btn btn-price">
+                    <i class="fab fa-whatsapp"></i> Cotizar
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials">
+        <div class="section-header">
+            <span class="section-badge">TESTIMONIOS</span>
+            <h2 class="section-title">Clientes Satisfechos</h2>
+        </div>
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <div class="testimonial-stars">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+                <p class="testimonial-text">
+                    "El jardín quedó espectacular. El equipo fue muy profesional y dejó todo impecable. Estamos encantados."
+                </p>
+                <div class="testimonial-author">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop" alt="Cliente">
+                    <div>
+                        <h4>Familia López</h4>
+                        <span>Las Condes</span>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-stars">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+                <p class="testimonial-text">
+                    "Diseñaron e instalaron todo el jardín de nuestra oficina. El resultado es increíble. Muy recomendados."
+                </p>
+                <div class="testimonial-author">
+                    <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop" alt="Cliente">
+                    <div>
+                        <h4>TechCorp Chile</h4>
+                        <span>Santiago</span>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-stars">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+                <p class="testimonial-text">
+                    "El servicio de mantención es excelente. Mi jardín siempre se ve perfecto. Valoran mucho las plantas."
+                </p>
+                <div class="testimonial-author">
+                    <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop" alt="Cliente">
+                    <div>
+                        <h4>Pedro Salamanca</h4>
+                        <span>Vitacura</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact" id="contacto">
+        <div class="contact-grid">
+            <div class="contact-info">
+                <h2>¿Listo para tu Jardín?</h2>
+                <p>Agenda una asesoría gratuita. Visitas a terreno en toda la Región Metropolitana.</p>
+                <div class="contact-methods">
+                    <a href="https://wa.me/56964681874?text=Hola!%20Quiero%20cotizar%20un%20jardín" target="_blank" class="contact-item">
+                        <i class="fab fa-whatsapp"></i>
+                        <div>
+                            <h4>WhatsApp</h4>
+                            <span>+56 9 6468 1874</span>
+                        </div>
+                    </a>
+                    <div class="contact-item">
+                        <i class="fas fa-phone-alt"></i>
+                        <div>
+                            <h4>Teléfono</h4>
+                            <span>(02) 2345 6789</span>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <span>hola@jar dinpro.cl</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <form class="contact-form" onsubmit="event.preventDefault(); alert('¡Te contactaremos pronto!');">
+                <h3 style="margin-bottom: 25px;">Solicita tu Cotización</h3>
+                <div class="form-group">
+                    <label>Nombre</label>
+                    <input type="text" placeholder="Tu nombre" required>
+                </div>
+                <div class="form-group">
+                    <label>Teléfono</label>
+                    <input type="tel" placeholder="+56 9 XXXX XXXX" required>
+                </div>
+                <div class="form-group">
+                    <label>Tipo de servicio</label>
+                    <input type="text" placeholder="Ej: Diseño, Mantención...">
+                </div>
+                <div class="form-group">
+                    <label>Mensaje</label>
+                    <textarea placeholder="Describe tu proyecto..."></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center;">
+                    <i class="fas fa-paper-plane"></i> Enviar
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <div class="logo">
+                    <div class="logo-icon"><i class="fas fa-leaf"></i></div>
+                    <span>Jardín</span>Pro
+                </div>
+                <p>Expertos en paisajismo y jardinería. Transformamos espacios verdes en paraísos.</p>
+            </div>
+            <div>
+                <h4>Servicios</h4>
+                <ul>
+                    <li><a href="#">Diseño</a></li>
+                    <li><a href="#">Plantación</a></li>
+                    <li><a href="#">Riego</a></li>
+                    <li><a href="#">Mantención</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Empresa</h4>
+                <ul>
+                    <li><a href="#">Nosotros</a></li>
+                    <li><a href="#">Proyectos</a></li>
+                    <li><a href="#">Blog</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Contacto</h4>
+                <ul>
+                    <li><a href="https://wa.me/56964681874" target="_blank">WhatsApp</a></li>
+                    <li><a href="mailto:hola@jar dinpro.cl">Email</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 JardínPro Chile. Todos los derechos reservados.</p>
+            <p style="margin-top: 10px; color: var(--primary);">Impulsado por TuWebPro360 | EP360</p>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/56964681874?text=Hola!%20Quiero%20cotizar%20un%20jardín" target="_blank" class="whatsapp-float">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script>
+        console.log('%cJardínPro Chile', 'color: #2ECC71; font-size: 24px; font-weight: bold;');
+        console.log('%cTuWebPro360 | EP360', 'color: #1ABC9C; font-size: 14px;');
+    </script>
+</body>
+</html>
